@@ -3,7 +3,7 @@
 > Uma plataforma web interativa desenvolvida para facilitar o aprendizado de matemática através de trilhas de estudo estruturadas, lições dinâmicas e quizzes.
 
 ## 🚀 Demonstração
-Acesse a aplicação em funcionamento através do link: [Trilhas de Matemática](https://trilhas-de-matematica.vercel.app/#/)
+Acesse a aplicação em funcionamento através do link: [Trilhas de Matemática](https://trilhas-de-matematica.vercel.app/)
 
 ---
 
