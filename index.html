@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trilhas de Matemática</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -26,7 +25,7 @@
   #app{min-height:100vh; display:flex; flex-direction:column;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 24px; width:100%;}
   .topbar{display:flex; align-items:center; justify-content:space-between; padding:22px 24px;}
-  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:.02em; display:flex; align-items:center; gap:8px;}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:.02em; display:flex; align-items:center; gap:8px; cursor:pointer;}
   .brand-dot{width:9px; height:9px; border-radius:50%; background:linear-gradient(135deg,#ff6b6b,#64b5f6,#b4e600); display:inline-block;}
   .crumbs{font-size:.85rem; color:var(--hub-muted);}
   .crumbs a:hover{color:var(--hub-text);}
@@ -36,6 +35,7 @@
   .hero h1{font-family:'Space Grotesk',sans-serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:700; letter-spacing:-0.01em;}
   .hero p{color:var(--hub-muted); max-width:520px; margin:14px auto 0; font-size:1.05rem; line-height:1.5;}
   .portals{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; padding:20px 24px 80px; max-width:1080px; margin:0 auto; width:100%;}
+  .portals.portals-2col{grid-template-columns:repeat(2,1fr); max-width:760px;}
   @media (max-width:820px){ .portals{grid-template-columns:1fr;} }
 
   .portal{
@@ -63,6 +63,14 @@
   .portal-em{background:#151924; color:#e8eaf0; border-radius:8px; font-family:'IBM Plex Sans',sans-serif;}
   .portal-em h3{font-family:'Sora',sans-serif;}
   .portal-em::before{content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(100,181,246,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(100,181,246,.07) 1px,transparent 1px); background-size:22px 22px; pointer-events:none;}
+
+  .portal-materia{background:var(--hub-bg2); border-radius:20px; font-family:'Inter',sans-serif; min-height:200px; justify-content:center; align-items:flex-start; text-align:left;}
+  .portal-materia .icone{font-size:2.6rem;}
+  .portal-materia h3{font-family:'Space Grotesk',sans-serif; font-size:1.5rem; margin-top:4px;}
+  .portal-materia.portal-matematica{border:1px solid rgba(100,181,246,.35);}
+  .portal-materia.portal-matematica:hover{border-color:#64b5f6;}
+  .portal-materia.portal-portugues{border:1px solid rgba(255,183,77,.35);}
+  .portal-materia.portal-portugues:hover{border-color:#ffb74d;}
 
   .footer-note{text-align:center; padding:0 24px 50px; color:var(--hub-muted); font-size:.8rem;}
 
@@ -102,7 +110,7 @@
   /* THEME: EF1 */
   [data-theme="ef1"]{background:#fff8ed; color:#3d348b; font-family:'Nunito',sans-serif;}
   [data-theme="ef1"] h1,[data-theme="ef1"] h3,[data-theme="ef1"] h4{font-family:'Baloo 2',sans-serif;}
-  [data-theme="ef1"] .mod-card,[data-theme="ef1"] .lic-row,[data-theme="ef1"] .exemplo-box,[data-theme="ef1"] .formula-box{background:#fff; border-radius:26px; box-shadow:0 6px 0 rgba(61,52,139,.08);}
+  [data-theme="ef1"] .mod-card,[data-theme="ef1"] .lic-row,[data-theme="ef1"] .exemplo-box,[data-theme="ef1"] .formula-box,[data-theme="ef1"] .figura-box{background:#fff; border-radius:26px; box-shadow:0 6px 0 rgba(61,52,139,.08);}
   [data-theme="ef1"] .level-tag{color:#ff6b6b;}
   [data-theme="ef1"] .soon-tag{background:#ffe08a; color:#8a5a00;}
   [data-theme="ef1"] .lic-num{color:#ff6b6b;}
@@ -115,7 +123,7 @@
   /* THEME: EF2 */
   [data-theme="ef2"]{background:#f5f4ff; color:#14142b; font-family:'Inter',sans-serif;}
   [data-theme="ef2"] h1,[data-theme="ef2"] h3,[data-theme="ef2"] h4{font-family:'Space Grotesk',sans-serif;}
-  [data-theme="ef2"] .mod-card,[data-theme="ef2"] .lic-row,[data-theme="ef2"] .exemplo-box,[data-theme="ef2"] .formula-box{background:#fff; border-radius:14px; border:2px solid #14142b;}
+  [data-theme="ef2"] .mod-card,[data-theme="ef2"] .lic-row,[data-theme="ef2"] .exemplo-box,[data-theme="ef2"] .formula-box,[data-theme="ef2"] .figura-box{background:#fff; border-radius:14px; border:2px solid #14142b;}
   [data-theme="ef2"] .level-tag{color:#5b5fef;}
   [data-theme="ef2"] .soon-tag{background:#14142b; color:#b4e600;}
   [data-theme="ef2"] .lic-num{color:#5b5fef;}
@@ -128,7 +136,7 @@
   /* THEME: EM */
   [data-theme="em"]{background:#0b0e14; color:#e8eaf0; font-family:'IBM Plex Sans',sans-serif;}
   [data-theme="em"] h1,[data-theme="em"] h3,[data-theme="em"] h4{font-family:'Sora',sans-serif;}
-  [data-theme="em"] .mod-card,[data-theme="em"] .lic-row,[data-theme="em"] .exemplo-box,[data-theme="em"] .formula-box{background:#151924; border-radius:8px; border:1px solid #232838;}
+  [data-theme="em"] .mod-card,[data-theme="em"] .lic-row,[data-theme="em"] .exemplo-box,[data-theme="em"] .formula-box,[data-theme="em"] .figura-box{background:#151924; border-radius:8px; border:1px solid #232838;}
   [data-theme="em"] .level-tag{color:#64b5f6;}
   [data-theme="em"] .soon-tag{background:#232838; color:#8a93a8;}
   [data-theme="em"] .lic-num{color:#64b5f6;}
@@ -160,6 +168,50 @@
   .modulos-soon-list h3{font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px;}
   .soon-pills{display:flex; flex-wrap:wrap; gap:8px;}
   .soon-pills span{font-size:.8rem; padding:6px 12px; border-radius:99px; border:1px dashed currentColor; opacity:.7;}
+
+  /* ---------- BUSCA (home) ---------- */
+  .search-wrap{max-width:520px; margin:0 auto; padding:0 24px 10px; position:relative;}
+  .search-input{width:100%; padding:14px 18px; font-size:1rem; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:var(--hub-bg2); color:var(--hub-text); font-family:'Inter',sans-serif;}
+  .search-input::placeholder{color:var(--hub-muted);}
+  .search-input:focus{outline:2px solid #64b5f6;}
+  .search-results{max-width:520px; margin:10px auto 0; padding:0 24px;}
+  .search-item{display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:10px; background:var(--hub-bg2); margin-bottom:8px; cursor:pointer; transition:transform .15s ease;}
+  .search-item:hover{transform:translateX(3px);}
+  .search-item .si-icon{font-size:1.2rem;}
+  .search-item .si-text{flex:1;}
+  .search-item .si-title{font-size:.92rem; font-weight:600;}
+  .search-item .si-path{font-size:.75rem; color:var(--hub-muted); margin-top:2px;}
+  .search-empty{text-align:center; color:var(--hub-muted); font-size:.85rem; padding:10px 0;}
+
+  /* ---------- PROGRESSO ---------- */
+  .progress-summary{display:flex; align-items:center; gap:12px; margin-top:18px; font-size:.85rem; opacity:.85;}
+  .progress-bar-outer{flex:1; max-width:220px; height:8px; border-radius:99px; background:rgba(120,120,140,.2); overflow:hidden;}
+  .progress-bar-inner{height:100%; border-radius:99px; background:currentColor; transition:width .3s ease;}
+  .mod-card .mini-progress{margin-top:auto;}
+  .mod-card .mini-bar-outer{height:5px; border-radius:99px; background:rgba(120,120,140,.2); overflow:hidden; margin-top:6px;}
+  .mod-card .mini-bar-inner{height:100%; border-radius:99px; background:currentColor;}
+  .lic-check{width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; flex-shrink:0; background:currentColor; color:var(--hub-bg,#fff);}
+  [data-theme] .lic-check.done{background:#06d6a0; color:#fff;}
+  [data-theme="em"] .lic-check.done{background:#64b5f6; color:#0b0e14;}
+
+  /* ---------- BOTÃO REVISÃO ---------- */
+  .btn-revisao{display:inline-flex; align-items:center; gap:6px; padding:9px 18px; font-size:.85rem; font-weight:700; border-radius:99px; margin-top:16px; border:1px dashed currentColor; background:none; color:inherit; opacity:.85;}
+  .btn-revisao:hover{opacity:1;}
+
+  /* ---------- QUESTÃO ABERTA ---------- */
+  .quiz-input-row{display:flex; gap:8px; margin-top:4px; flex-wrap:wrap;}
+  .quiz-input{flex:1; min-width:160px; padding:11px 14px; font-size:.92rem; border-radius:10px; border:1px solid rgba(120,120,140,.35); background:transparent; color:inherit; font-family:inherit;}
+  .quiz-input:focus{outline:2px solid currentColor;}
+  .quiz-tag-aberta{font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; opacity:.55; margin-bottom:8px;}
+  .quiz-tag-desafio{font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; color:#ffb74d; opacity:.9;}
+
+  .figura-box{padding:16px; border-radius:inherit; display:flex; justify-content:center;}
+  .figura-box svg{max-width:340px;}
+
+  /* ---------- REVISÃO RÁPIDA ---------- */
+  .revisao-intro{padding:22px; border-radius:inherit; margin-top:18px;}
+  .revisao-summary-item{display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:10px; margin-top:8px; cursor:pointer;}
+  .revisao-summary-item:hover{transform:translateX(3px);}
 </style>
 </head>
 <body>
@@ -171,69 +223,131 @@
    (mesmo modelo que futuramente pode virar coleções no Firestore)
    ========================================================================= */
 const DATA = {
+  materias: [
+    { id:"matematica", titulo:"Matemática", icone:"🔢",
+      descricao:"Números, operações, geometria e lógica — do primeiro contato aos exames." },
+    { id:"portugues", titulo:"Português", icone:"📚",
+      descricao:"Leitura, escrita, gramática e literatura — da alfabetização à redação do ENEM." }
+  ],
+
   niveis: [
     { id:"ef1", titulo:"Ensino Fundamental 1", subtitulo:"1º ao 5º ano", tema:"ef1", icone:"🎒",
-      descricao:"Alfabetização matemática, operações básicas e o primeiro contato com números, formas e medidas." },
+      descricao:"Alfabetização matemática, operações básicas e o primeiro contato com números, formas e medidas.",
+      descricaoPorMateria:{
+        matematica:"Alfabetização matemática, operações básicas e o primeiro contato com números, formas e medidas.",
+        portugues:"Alfabeto, sílabas, primeiras palavras e as primeiras noções de gramática, pontuação e interpretação de texto."
+      } },
     { id:"ef2", titulo:"Ensino Fundamental 2", subtitulo:"6º ao 9º ano", tema:"ef2", icone:"🧑‍🏫",
-      descricao:"Mais abstração: números inteiros, álgebra inicial, proporções e geometria com ângulos e áreas." },
+      descricao:"Mais abstração: números inteiros, álgebra inicial, proporções e geometria com ângulos e áreas.",
+      descricaoPorMateria:{
+        matematica:"Mais abstração: números inteiros, álgebra inicial, proporções e geometria com ângulos e áreas.",
+        portugues:"Classes de palavras, sintaxe, ortografia, concordância, gêneros textuais e figuras de linguagem."
+      } },
     { id:"em", titulo:"Ensino Médio", subtitulo:"1º ao 3º ano", tema:"em", icone:"🎓",
-      descricao:"Funções, trigonometria, geometria analítica e estatística — a base para ENEM e vestibulares." }
+      descricao:"Funções, trigonometria, geometria analítica e estatística — a base para ENEM e vestibulares.",
+      descricaoPorMateria:{
+        matematica:"Funções, trigonometria, geometria analítica e estatística — a base para ENEM e vestibulares.",
+        portugues:"Literatura, redação dissertativo-argumentativa, sintaxe avançada e interpretação de texto para o ENEM e vestibulares."
+      } }
   ],
 
   modulos: [
-    { id:"ef1-numeracao", nivelId:"ef1", titulo:"Sistema de Numeração", icone:"🔢",
+    { id:"ef1-numeracao", nivelId:"ef1", materiaId:"matematica", titulo:"Sistema de Numeração", icone:"🔢",
       descricao:"Leitura, escrita e comparação de números naturais." },
-    { id:"ef1-operacoes", nivelId:"ef1", titulo:"Operações Básicas", icone:"➕",
+    { id:"ef1-operacoes", nivelId:"ef1", materiaId:"matematica", titulo:"Operações Básicas", icone:"➕",
       descricao:"Adição e subtração com números naturais." },
 
-    { id:"ef2-algebra", nivelId:"ef2", titulo:"Álgebra Inicial", icone:"🧬",
+    { id:"ef2-algebra", nivelId:"ef2", materiaId:"matematica", titulo:"Álgebra Inicial", icone:"🧬",
       descricao:"Expressões algébricas e equações do 1º e 2º grau." },
-    { id:"ef2-razoes", nivelId:"ef2", titulo:"Razões e Proporções", icone:"📈",
+    { id:"ef2-razoes", nivelId:"ef2", materiaId:"matematica", titulo:"Razões e Proporções", icone:"📈",
       descricao:"Porcentagem e regra de três." },
 
-    { id:"em-funcoes", nivelId:"em", titulo:"Funções", icone:"📈",
+    { id:"em-funcoes", nivelId:"em", materiaId:"matematica", titulo:"Funções", icone:"📈",
       descricao:"Função afim e função quadrática." },
-    { id:"em-trigonometria", nivelId:"em", titulo:"Trigonometria", icone:"📐",
+    { id:"em-trigonometria", nivelId:"em", materiaId:"matematica", titulo:"Trigonometria", icone:"📐",
       descricao:"Razões trigonométricas e lei dos senos." },
 
-    { id:"ef1-fracoes", nivelId:"ef1", titulo:"Frações e Decimais", icone:"🍰",
+    { id:"ef1-fracoes", nivelId:"ef1", materiaId:"matematica", titulo:"Frações e Decimais", icone:"🍰",
       descricao:"Partes de um todo, metade, terça parte e dinheiro." },
-    { id:"ef1-geometria", nivelId:"ef1", titulo:"Geometria Visual", icone:"📐",
+    { id:"ef1-geometria", nivelId:"ef1", materiaId:"matematica", titulo:"Geometria Visual", icone:"📐",
       descricao:"Figuras planas, espaciais e simetria." },
-    { id:"ef1-medidas", nivelId:"ef1", titulo:"Grandezas e Medidas", icone:"📏",
+    { id:"ef1-medidas", nivelId:"ef1", materiaId:"matematica", titulo:"Grandezas e Medidas", icone:"📏",
       descricao:"Tempo, comprimento, massa e capacidade." },
-    { id:"ef1-graficos", nivelId:"ef1", titulo:"Gráficos Simples", icone:"📊",
+    { id:"ef1-graficos", nivelId:"ef1", materiaId:"matematica", titulo:"Gráficos Simples", icone:"📊",
       descricao:"Tabelas e gráficos de barras." },
 
-    { id:"ef2-aritmetica", nivelId:"ef2", titulo:"Aritmética Avançada", icone:"🧮",
+    { id:"ef2-aritmetica", nivelId:"ef2", materiaId:"matematica", titulo:"Aritmética Avançada", icone:"🧮",
       descricao:"Números inteiros, potenciação e radiciação." },
-    { id:"ef2-teoria-numeros", nivelId:"ef2", titulo:"Teoria dos Números", icone:"➗",
+    { id:"ef2-teoria-numeros", nivelId:"ef2", materiaId:"matematica", titulo:"Teoria dos Números", icone:"➗",
       descricao:"Divisibilidade, números primos, MMC e MDC." },
-    { id:"ef2-geometria-triangulos", nivelId:"ef2", titulo:"Geometria e Triângulos", icone:"🔺",
+    { id:"ef2-geometria-triangulos", nivelId:"ef2", materiaId:"matematica", titulo:"Geometria e Triângulos", icone:"🔺",
       descricao:"Ângulos, polígonos e Teorema de Pitágoras." },
-    { id:"ef2-areas-volumes", nivelId:"ef2", titulo:"Áreas e Volumes", icone:"🟫",
+    { id:"ef2-areas-volumes", nivelId:"ef2", materiaId:"matematica", titulo:"Áreas e Volumes", icone:"🟫",
       descricao:"Perímetro, área e volume de sólidos simples." },
-    { id:"ef2-estatistica", nivelId:"ef2", titulo:"Estatística e Chance", icone:"📊",
+    { id:"ef2-estatistica", nivelId:"ef2", materiaId:"matematica", titulo:"Estatística e Chance", icone:"📊",
       descricao:"Média aritmética e probabilidade simples." },
 
-    { id:"em-sequencias", nivelId:"em", titulo:"Sequências e Matrizes", icone:"🔢",
+    { id:"em-sequencias", nivelId:"em", materiaId:"matematica", titulo:"Sequências e Matrizes", icone:"🔢",
       descricao:"Progressão aritmética e determinantes." },
-    { id:"em-geo-analitica", nivelId:"em", titulo:"Geometria Analítica", icone:"📍",
+    { id:"em-geo-analitica", nivelId:"em", materiaId:"matematica", titulo:"Geometria Analítica", icone:"📍",
       descricao:"Distância entre pontos e equação da reta." },
-    { id:"em-geo-espacial", nivelId:"em", titulo:"Geometria Espacial", icone:"📦",
+    { id:"em-geo-espacial", nivelId:"em", materiaId:"matematica", titulo:"Geometria Espacial", icone:"📦",
       descricao:"Prismas, pirâmides, cilindros, cones e esferas." },
-    { id:"em-combinatoria", nivelId:"em", titulo:"Análise Combinatória", icone:"🎲",
+    { id:"em-combinatoria", nivelId:"em", materiaId:"matematica", titulo:"Análise Combinatória", icone:"🎲",
       descricao:"Fatorial, combinações e probabilidade condicional." },
-    { id:"em-estat-avancada", nivelId:"em", titulo:"Estatística Avançada", icone:"📉",
-      descricao:"Mediana, moda, variância e desvio padrão." }
+    { id:"em-estat-avancada", nivelId:"em", materiaId:"matematica", titulo:"Estatística Avançada", icone:"📉",
+      descricao:"Mediana, moda, variância e desvio padrão." },
+
+    { id:"pt-ef1-alfabeto", nivelId:"ef1", materiaId:"portugues", titulo:"Alfabeto e Sons das Letras", icone:"🔤",
+      descricao:"Vogais, consoantes e os fonemas de cada letra." },
+    { id:"pt-ef1-silabas", nivelId:"ef1", materiaId:"portugues", titulo:"Sílabas e Formação de Palavras", icone:"🔡",
+      descricao:"O que é sílaba e encontros vocálicos." },
+    { id:"pt-ef1-classes-basicas", nivelId:"ef1", materiaId:"portugues", titulo:"Substantivo, Adjetivo e Verbo", icone:"📖",
+      descricao:"As primeiras classes de palavras." },
+    { id:"pt-ef1-pontuacao", nivelId:"ef1", materiaId:"portugues", titulo:"Pontuação e Acentuação", icone:"❗",
+      descricao:"Ponto final, interrogação, exclamação e acento." },
+    { id:"pt-ef1-interpretacao", nivelId:"ef1", materiaId:"portugues", titulo:"Interpretação de Texto", icone:"🧐",
+      descricao:"Ideia principal e elementos de uma história." },
+    { id:"pt-ef1-producao", nivelId:"ef1", materiaId:"portugues", titulo:"Produção de Texto", icone:"✍️",
+      descricao:"Escrever bilhetes e pequenas histórias." },
+
+    { id:"pt-ef2-classes-palavras", nivelId:"ef2", materiaId:"portugues", titulo:"Classes de Palavras", icone:"🏷️",
+      descricao:"Substantivos próprios, comuns, coletivos e tempos verbais." },
+    { id:"pt-ef2-sintaxe", nivelId:"ef2", materiaId:"portugues", titulo:"Sujeito e Predicado", icone:"🧩",
+      descricao:"Frase, oração e período." },
+    { id:"pt-ef2-ortografia", nivelId:"ef2", materiaId:"portugues", titulo:"Ortografia", icone:"🔠",
+      descricao:"X ou CH, por que ou porque." },
+    { id:"pt-ef2-concordancia", nivelId:"ef2", materiaId:"portugues", titulo:"Concordância Verbal e Nominal", icone:"🔗",
+      descricao:"Ajustando gênero, número e pessoa na frase." },
+    { id:"pt-ef2-generos-textuais", nivelId:"ef2", materiaId:"portugues", titulo:"Gêneros Textuais", icone:"📰",
+      descricao:"Reconhecendo tipo e finalidade de um texto." },
+    { id:"pt-ef2-figuras-linguagem", nivelId:"ef2", materiaId:"portugues", titulo:"Figuras de Linguagem", icone:"🎭",
+      descricao:"Metáfora, comparação, hipérbole e personificação." },
+
+    { id:"pt-em-literatura", nivelId:"em", materiaId:"portugues", titulo:"Escolas Literárias", icone:"📚",
+      descricao:"Romantismo, Realismo e Modernismo brasileiro." },
+    { id:"pt-em-redacao", nivelId:"em", materiaId:"portugues", titulo:"Redação (ENEM)", icone:"✍️",
+      descricao:"Estrutura dissertativo-argumentativa e proposta de intervenção." },
+    { id:"pt-em-sintaxe-avancada", nivelId:"em", materiaId:"portugues", titulo:"Período Composto", icone:"🧵",
+      descricao:"Orações coordenadas e subordinadas." },
+    { id:"pt-em-semantica", nivelId:"em", materiaId:"portugues", titulo:"Semântica", icone:"🎨",
+      descricao:"Sinônimos, ambiguidade, ironia e eufemismo." },
+    { id:"pt-em-interpretacao-avancada", nivelId:"em", materiaId:"portugues", titulo:"Interpretação Avançada", icone:"🔍",
+      descricao:"Tese de um texto e inferência." },
+    { id:"pt-em-variacao-linguistica", nivelId:"em", materiaId:"portugues", titulo:"Variação Linguística", icone:"🗣️",
+      descricao:"Norma culta, variação e funções da linguagem." }
   ],
 
   // módulos que aparecem na trilha mas ainda não têm lições publicadas
-  modulosEmBreve: { ef1: [], ef2: [], em: [] },
+  modulosEmBreve: {
+    matematica: { ef1: [], ef2: [], em: [] },
+    portugues:  { ef1: [], ef2: [], em: [] }
+  },
 
   licoes: [
     // ---------- EF1 · Sistema de Numeração ----------
     { id:"ef1-numeracao-l1", moduloId:"ef1-numeracao", titulo:"Dezenas e Unidades",
+      figura:{tipo:"blocos-posicional", params:{dezenas:3, unidades:4}},
       conteudoTexto:"Quando contamos além de 9, agrupamos os números em grupinhos de 10. Cada grupinho de 10 é uma dezena. Os números soltos que sobram são as unidades.",
       exemplo:[
         "Pegue o número 34.",
@@ -247,6 +361,7 @@ const DATA = {
       ]
     },
     { id:"ef1-numeracao-l2", moduloId:"ef1-numeracao", titulo:"Comparando Números",
+      figura:{tipo:"comparar", params:{a:58, b:61}},
       conteudoTexto:"Para saber qual número é maior, olhamos primeiro quantos algarismos ele tem. Se os dois têm a mesma quantidade, comparamos casa por casa, começando pela esquerda.",
       exemplo:[
         "Compare 58 e 61.",
@@ -260,14 +375,33 @@ const DATA = {
       ]
     },
 
+    { id:"ef1-numeracao-l3", moduloId:"ef1-numeracao", titulo:"Centenas: Números até 1000",
+      figura:{tipo:"blocos-posicional", params:{centenas:4, dezenas:5, unidades:6}},
+      conteudoTexto:"Depois das dezenas, formamos as centenas: 10 grupos de 10 formam uma centena (100). Um número de três algarismos tem centena, dezena e unidade.",
+      exemplo:[
+        "Pegue o número 456.",
+        "O 4 está na casa das centenas: 4 × 100 = 400.",
+        "O 5 está na casa das dezenas: 5 × 10 = 50.",
+        "O 6 está na casa das unidades: 6.",
+        "400 + 50 + 6 = 456."
+      ],
+      quiz:[
+        { pergunta:"No número 738, quantas centenas existem?", opcoes:["7","3","8"], correta:0, explicacao:"O 7 está na casa das centenas." },
+        { pergunta:"Quanto vale o algarismo 2 no número 250?", opcoes:["2","20","200"], correta:2, explicacao:"O 2 está na casa das centenas, então vale 200." },
+        { tipo:"aberta", pergunta:"Escreva, só com números, o valor de 'trezentos e quinze'.", resposta:["315"], explicacao:"3 centenas, 1 dezena e 5 unidades formam 315." }
+      ]
+    },
+
     // ---------- EF1 · Operações Básicas ----------
     { id:"ef1-operacoes-l1", moduloId:"ef1-operacoes", titulo:"Adição sem Mistério",
+      figura:{tipo:"contagem", sub:"soma", params:{a:8, b:5}},
       conteudoTexto:"Somar é juntar duas quantidades. Quando a soma de uma casa passa de 9, a gente 'vai um' para a casa seguinte.",
       exemplo:[
         "Some 27 + 15.",
         "Unidades: 7 + 5 = 12 → escreve 2, vai 1 para as dezenas.",
         "Dezenas: 2 + 1 + 1(que veio) = 4.",
-        "Resultado: 42."
+        "Resultado: 42.",
+        "Veja com números menores na figura: 8 bolinhas azuis + 5 bolinhas laranjas = 13."
       ],
       quiz:[
         { pergunta:"Quanto é 8 + 5?", opcoes:["12","13","14"], correta:1, explicacao:"8 + 5 = 13." },
@@ -275,12 +409,14 @@ const DATA = {
       ]
     },
     { id:"ef1-operacoes-l2", moduloId:"ef1-operacoes", titulo:"Subtração Passo a Passo",
+      figura:{tipo:"contagem", sub:"subtracao", params:{a:9, b:4}},
       conteudoTexto:"Subtrair é tirar uma quantidade de outra. Quando o número de cima é menor que o de baixo, a gente 'empresta' 1 da casa vizinha.",
       exemplo:[
         "Calcule 42 - 15.",
         "Unidades: 2 é menor que 5, então empresta 1 da dezena → 12 - 5 = 7.",
         "Dezenas: 3 (4 emprestou 1) - 1 = 2.",
-        "Resultado: 27."
+        "Resultado: 27.",
+        "Veja com números menores na figura: de 9 bolinhas, riscamos 4 (removidas) e sobram 5."
       ],
       quiz:[
         { pergunta:"Quanto é 42 - 15?", opcoes:["27","26","37"], correta:0, explicacao:"42 - 15 = 27." },
@@ -288,8 +424,25 @@ const DATA = {
       ]
     },
 
+    { id:"ef1-operacoes-l3", moduloId:"ef1-operacoes", titulo:"Multiplicação como Soma Repetida",
+      figura:{tipo:"grupos-iguais", params:{grupos:3, porGrupo:4}},
+      conteudoTexto:"Multiplicar é somar o mesmo número várias vezes. Em vez de somar 3+3+3+3, podemos escrever 3 × 4 (3 grupos de... quatro vezes).",
+      exemplo:[
+        "Calcule 3 × 4.",
+        "É o mesmo que 3 + 3 + 3 + 3.",
+        "3+3=6, 6+3=9, 9+3=12.",
+        "3 × 4 = 12."
+      ],
+      quiz:[
+        { pergunta:"Quanto é 5 × 3?", opcoes:["8","15","10"], correta:1, explicacao:"5+5+5 = 15." },
+        { pergunta:"6 × 2 é o mesmo que somar:", opcoes:["6 duas vezes","2 seis vezes","Ambas estão certas"], correta:2, explicacao:"6+6 e 2+2+2+2+2+2 dão o mesmo resultado: 12." },
+        { tipo:"aberta", pergunta:"Quanto é 7 × 4?", resposta:["28"], explicacao:"7+7+7+7 = 28." }
+      ]
+    },
+
     // ---------- EF1 · Frações e Decimais ----------
     { id:"ef1-fracoes-l1", moduloId:"ef1-fracoes", titulo:"Partes de um Todo",
+      figura:{tipo:"pizza", params:{partes:4, pintadas:1}},
       conteudoTexto:"Uma fração representa uma parte de um todo dividido em partes iguais. O número de baixo (denominador) diz em quantas partes o todo foi dividido; o de cima (numerador) diz quantas partes a gente pegou.",
       exemplo:[
         "Imagine uma pizza inteira.",
@@ -303,6 +456,7 @@ const DATA = {
       ]
     },
     { id:"ef1-fracoes-l2", moduloId:"ef1-fracoes", titulo:"Dinheiro: Metade e Terça Parte",
+      figura:{tipo:"barra-fracao", params:{partes:2, pintadas:1, rotulo:"R$10 dividido em 2 partes = R$5 cada"}},
       conteudoTexto:"Usamos frações o tempo todo com dinheiro. A metade é dividir em 2 partes iguais (1/2). A terça parte é dividir em 3 partes iguais (1/3).",
       exemplo:[
         "Repartir R$10 entre 2 amigos.",
@@ -316,8 +470,25 @@ const DATA = {
       ]
     },
 
+    { id:"ef1-fracoes-l3", moduloId:"ef1-fracoes", titulo:"Comparando Frações Simples",
+      figura:{tipo:"comparar-fracoes", params:{lista:[[1,4],[3,4]]}},
+      conteudoTexto:"Quando duas frações têm o mesmo denominador (a mesma quantidade de partes), a maior é aquela com o numerador maior — porque significa que peguei mais pedaços do mesmo tamanho.",
+      exemplo:[
+        "Compare 2/5 e 4/5.",
+        "As duas têm o todo dividido em 5 partes.",
+        "4/5 tem mais partes escolhidas que 2/5.",
+        "Logo, 4/5 é maior que 2/5."
+      ],
+      quiz:[
+        { pergunta:"Qual fração é maior: 1/4 ou 3/4?", opcoes:["1/4","3/4"], correta:1, explicacao:"Com o mesmo denominador, quanto maior o numerador, maior a fração." },
+        { pergunta:"Se você comeu 3/6 de uma pizza e seu amigo comeu 2/6, quem comeu mais?", opcoes:["Você","Seu amigo","Comeram igual"], correta:0, explicacao:"3/6 é maior que 2/6." },
+        { tipo:"aberta", pergunta:"Escreva a fração que representa 5 partes pintadas de um total de 8 partes iguais (formato n/d).", resposta:["5/8"], explicacao:"5 partes pintadas de 8 no total é 5/8." }
+      ]
+    },
+
     // ---------- EF1 · Geometria Visual ----------
     { id:"ef1-geometria-l1", moduloId:"ef1-geometria", titulo:"Figuras Planas: Quadrado e Círculo",
+      figura:{tipo:"formas-planas", params:{lista:["quadrado","circulo"]}},
       conteudoTexto:"Figuras planas são desenhos 'achatados', como um desenho no papel. O quadrado tem 4 lados iguais e 4 cantinhos (vértices). O círculo é redondo, sem cantos nem lados retos.",
       exemplo:[
         "Olhe para uma janela: geralmente é um quadrado ou retângulo.",
@@ -330,6 +501,7 @@ const DATA = {
       ]
     },
     { id:"ef1-geometria-l2", moduloId:"ef1-geometria", titulo:"Figuras Espaciais e Simetria",
+      figura:{tipo:"solidos", params:{lista:["cubo","esfera"]}},
       conteudoTexto:"Figuras espaciais têm volume, como o cubo (dado) e a esfera (bola). Simetria é quando dividimos uma figura ao meio e as duas partes ficam igualzinhas, como um espelho.",
       exemplo:[
         "Um dado é um cubo — tem 6 faces quadradas.",
@@ -342,8 +514,24 @@ const DATA = {
       ]
     },
 
+    { id:"ef1-geometria-l3", moduloId:"ef1-geometria", titulo:"Retângulos e Triângulos",
+      figura:{tipo:"formas-planas", params:{lista:["retangulo","triangulo"]}},
+      conteudoTexto:"O retângulo tem 4 lados, mas diferente do quadrado, só os lados opostos são iguais entre si. O triângulo é a figura plana com o menor número de lados possível: apenas 3.",
+      exemplo:[
+        "Uma porta costuma ter formato de retângulo: 2 lados compridos e 2 lados curtos.",
+        "Um pedaço de pizza cortado bem no meio forma um triângulo.",
+        "Conte os lados: retângulo tem 4, triângulo tem 3."
+      ],
+      quiz:[
+        { pergunta:"Quantos lados tem um triângulo?", opcoes:["3","4","5"], correta:0, explicacao:"Triângulo vem de 'tri' = três lados." },
+        { pergunta:"No retângulo, quais lados são iguais entre si?", opcoes:["Todos os 4 lados","Os lados opostos","Nenhum"], correta:1, explicacao:"No retângulo, os lados de cima e baixo são iguais entre si, e os das laterais também." },
+        { tipo:"aberta", pergunta:"Quantos lados tem a figura com o menor número de lados possível entre as figuras planas?", resposta:["3","tres","três"], explicacao:"O triângulo, com 3 lados, é a figura plana fechada com menos lados possível." }
+      ]
+    },
+
     // ---------- EF1 · Grandezas e Medidas ----------
     { id:"ef1-medidas-l1", moduloId:"ef1-medidas", titulo:"Tempo: Relógio e Calendário",
+      figura:{tipo:"relogio", params:{hora:3, minuto:15}},
       conteudoTexto:"O tempo é medido em segundos, minutos, horas, dias, semanas e meses. O relógio mostra as horas e minutos do dia; o calendário mostra os dias, semanas e meses do ano.",
       exemplo:[
         "Uma hora tem 60 minutos.",
@@ -356,6 +544,7 @@ const DATA = {
       ]
     },
     { id:"ef1-medidas-l2", moduloId:"ef1-medidas", titulo:"Comprimento, Massa e Capacidade",
+      figura:{tipo:"compara-medidas", params:{itens:[{label:"Porta",valor:2,unidade:"m"},{label:"Saco de arroz",valor:5,unidade:"kg"},{label:"Garrafa",valor:2,unidade:"L"}]}},
       conteudoTexto:"Para medir comprimento (tamanho), usamos o metro. Para medir massa (peso), usamos o quilo. Para medir capacidade (quanto líquido cabe em algo), usamos o litro.",
       exemplo:[
         "A altura de uma porta é medida em metros.",
@@ -368,8 +557,25 @@ const DATA = {
       ]
     },
 
+    { id:"ef1-medidas-l3", moduloId:"ef1-medidas", titulo:"Comparando e Ordenando Medidas",
+      figura:{tipo:"compara-medidas", params:{itens:[{label:"Corda A",valor:4,unidade:"m"},{label:"Corda B",valor:7,unidade:"m"}]}},
+      conteudoTexto:"Para comparar medidas, elas precisam estar na mesma unidade. Depois, é só comparar os números: quanto maior o número, maior a medida (usando a mesma unidade).",
+      exemplo:[
+        "Compare 2 litros e 5 litros de água.",
+        "As duas medidas já estão em litros.",
+        "5 é maior que 2.",
+        "Logo, 5 litros é mais água que 2 litros."
+      ],
+      quiz:[
+        { pergunta:"O que é mais pesado: 3kg de arroz ou 1kg de arroz?", opcoes:["3kg","1kg","Os dois pesam igual"], correta:0, explicacao:"3kg é uma quantidade maior de peso que 1kg." },
+        { pergunta:"Uma garrafa tem 2 litros e outra tem 500ml (menos de 1 litro). Qual tem mais líquido?", opcoes:["A de 2 litros","A de 500ml","As duas são iguais"], correta:0, explicacao:"2 litros é bem mais que meio litro (500ml)." },
+        { tipo:"aberta", pergunta:"Uma corda de 4 metros e outra de 7 metros: qual é a mais comprida (responda o comprimento em metros)?", resposta:["7","7 metros","7m"], explicacao:"7 metros é maior que 4 metros." }
+      ]
+    },
+
     // ---------- EF1 · Gráficos Simples ----------
     { id:"ef1-graficos-l1", moduloId:"ef1-graficos", titulo:"Lendo Tabelas",
+      figura:{tipo:"tabela", params:{cabecalho:["Fruta","Alunos"], linhas:[["Maçã",8],["Banana",5]]}},
       conteudoTexto:"Uma tabela organiza informações em linhas e colunas, o que facilita comparar quantidades rapidinho.",
       exemplo:[
         "Imagine uma tabela com as frutas favoritas da turma.",
@@ -382,6 +588,7 @@ const DATA = {
       ]
     },
     { id:"ef1-graficos-l2", moduloId:"ef1-graficos", titulo:"Gráfico de Barras",
+      figura:{tipo:"barras-nomeadas", params:{itens:[{nome:"Cachorro",valor:7},{nome:"Gato",valor:4}]}},
       conteudoTexto:"O gráfico de barras usa barrinhas de tamanhos diferentes para mostrar quantidades — quanto maior a barra, maior a quantidade.",
       exemplo:[
         "Cada barra representa uma categoria (por exemplo, uma fruta).",
@@ -391,6 +598,22 @@ const DATA = {
       quiz:[
         { pergunta:"Num gráfico de barras, o que a altura da barra representa?", opcoes:["A cor escolhida","A quantidade daquele item","O nome do item"], correta:1, explicacao:"Quanto mais alta a barra, maior a quantidade representada." },
         { pergunta:"Se a barra do 'cachorro' é mais alta que a do 'gato', isso significa que:", opcoes:["Tem mais gatos","Tem mais cachorros","Tem a mesma quantidade"], correta:1, explicacao:"Barra mais alta = quantidade maior." }
+      ]
+    },
+
+    { id:"ef1-graficos-l3", moduloId:"ef1-graficos", titulo:"Coletando Dados: Fazendo uma Pesquisa",
+      figura:{tipo:"pictograma", params:{itens:[{nome:"Cachorro",qtd:6},{nome:"Outro animal",qtd:4}]}},
+      conteudoTexto:"Antes de montar uma tabela ou gráfico, precisamos coletar os dados — perguntar e anotar as respostas de um grupo de pessoas sobre algum assunto.",
+      exemplo:[
+        "Pergunte a 10 colegas qual é a cor favorita.",
+        "Anote cada resposta numa listinha, uma marquinha por pessoa.",
+        "Depois, conte quantas marquinhas cada cor recebeu.",
+        "Esses números viram a base de uma tabela ou gráfico."
+      ],
+      quiz:[
+        { pergunta:"O primeiro passo antes de montar um gráfico é:", opcoes:["Desenhar as barras","Coletar os dados perguntando às pessoas","Pintar de várias cores"], correta:1, explicacao:"Sem coletar os dados primeiro, não temos números para colocar no gráfico." },
+        { pergunta:"Se você perguntou a 10 pessoas e 4 escolheram 'futebol', o que esse número 4 representa?", opcoes:["A quantidade de pessoas que escolheu futebol","O total de pessoas perguntadas","Um número aleatório"], correta:0, explicacao:"4 é a contagem de respostas para aquela categoria." },
+        { tipo:"aberta", pergunta:"Se 10 pessoas responderam e 6 escolheram 'cachorro' como animal favorito, quantas escolheram outro animal?", resposta:["4"], explicacao:"10 - 6 = 4 pessoas escolheram outro animal." }
       ]
     },
 
@@ -424,6 +647,22 @@ const DATA = {
       ]
     },
 
+    { id:"ef2-algebra-l3", moduloId:"ef2-algebra", titulo:"Sistemas de Equações do 1º Grau",
+      conteudoTexto:"Um sistema de equações é um conjunto de duas (ou mais) equações com as mesmas incógnitas, que devem ser resolvidas juntas. Um jeito comum de resolver é o método da substituição.",
+      formulaLatex:"\\begin{cases}x+y=10\\\\ x-y=2\\end{cases} \\;\\Rightarrow\\; x=6,\\; y=4",
+      exemplo:[
+        "Resolva x+y=10 e x-y=2.",
+        "Isole x na primeira: x = 10 - y.",
+        "Substitua na segunda: (10-y) - y = 2 → 10 - 2y = 2 → y = 4.",
+        "Voltando: x = 10 - 4 = 6."
+      ],
+      quiz:[
+        { pergunta:"Um sistema de equações do 1º grau com 2 incógnitas normalmente tem quantas equações?", opcoes:["1","2","5"], correta:1, explicacao:"Para resolver duas incógnitas, geralmente precisamos de duas equações." },
+        { pergunta:"No método da substituição, o primeiro passo é:", opcoes:["Somar as duas equações direto","Isolar uma incógnita numa das equações","Multiplicar tudo por zero"], correta:1, explicacao:"Isolamos uma variável para substituir na outra equação." },
+        { tipo:"aberta", pergunta:"No sistema x+y=10 e x-y=2, qual o valor de x?", resposta:["6"], explicacao:"Resolvendo o sistema, x=6 e y=4." }
+      ]
+    },
+
     // ---------- EF2 · Razões e Proporções ----------
     { id:"ef2-razoes-l1", moduloId:"ef2-razoes", titulo:"Porcentagem no Dia a Dia",
       conteudoTexto:"Porcentagem é uma razão em que o total é dividido em 100 partes iguais. É muito usada em descontos, juros e estatísticas.",
@@ -441,6 +680,7 @@ const DATA = {
     },
     { id:"ef2-razoes-l2", moduloId:"ef2-razoes", titulo:"Regra de Três Simples",
       conteudoTexto:"A regra de três simples é usada quando duas grandezas são diretamente ou inversamente proporcionais e queremos descobrir um valor desconhecido.",
+      figura:{tipo:"regra-de-tres", params:{colA:{titulo:"Canetas", v1:3, v2:5}, colB:{titulo:"Preço (R$)", v1:9, v2:"x"}, inversa:false}},
       exemplo:[
         "Se 3 canetas custam R$9, quanto custam 5 canetas?",
         "Monte a proporção: 3/9 = 5/x.",
@@ -450,6 +690,22 @@ const DATA = {
       quiz:[
         { pergunta:"Se 2kg de arroz custam R$10, quanto custam 6kg?", opcoes:["R$20","R$30","R$15"], correta:1, explicacao:"10/2 = 5 por kg; 5 × 6 = 30." },
         { pergunta:"A regra de três simples envolve quantas grandezas?", opcoes:["1","2","3"], correta:1, explicacao:"Ela relaciona exatamente duas grandezas proporcionais." }
+      ]
+    },
+
+    { id:"ef2-razoes-l3", moduloId:"ef2-razoes", titulo:"Juros Simples",
+      conteudoTexto:"Juros simples é o valor extra pago (ou ganho) sobre um valor inicial (capital), calculado sempre sobre o valor original, período após período.",
+      formulaLatex:"J = C \\times i \\times t",
+      exemplo:[
+        "Capital de R$1000, com juros de 2% ao mês, por 3 meses.",
+        "J = 1000 × 0,02 × 3.",
+        "J = 60.",
+        "Você pagaria R$60 de juros."
+      ],
+      quiz:[
+        { pergunta:"Na fórmula J = C×i×t, o que representa a letra 'C'?", opcoes:["O capital (valor inicial)","O tempo","A taxa de juros"], correta:0, explicacao:"C é o capital, o valor inicial sobre o qual os juros incidem." },
+        { pergunta:"No juro simples, os juros são calculados sempre sobre:", opcoes:["O valor inicial (capital)","O valor do mês anterior, já com juros","Um valor aleatório"], correta:0, explicacao:"Diferente do juro composto, o juro simples sempre usa o capital original." },
+        { tipo:"aberta", pergunta:"Com capital de R$500, taxa de 3% ao mês (0,03), por 2 meses, quanto é o juro (só o número)?", resposta:["30"], explicacao:"J = 500 × 0,03 × 2 = 30." }
       ]
     },
 
@@ -470,19 +726,42 @@ const DATA = {
     { id:"ef2-aritmetica-l2", moduloId:"ef2-aritmetica", titulo:"Potenciação e Radiciação",
       conteudoTexto:"Potenciação é multiplicar um número por ele mesmo várias vezes (a base elevada a um expoente). Radiciação é a operação inversa: descobrir qual número, multiplicado por ele mesmo, resulta no valor de dentro da raiz.",
       formulaLatex:"2^3 = 2\\times2\\times2 = 8 \\qquad \\sqrt{16}=4",
+      exemplo:[
+        "Calcule 2³.",
+        "2³ = 2 × 2 × 2.",
+        "2³ = 8.",
+        "Já a raiz quadrada de 16 é 4, pois 4 × 4 = 16."
+      ],
       quiz:[
         { pergunta:"Quanto é 3² (3 elevado ao quadrado)?", opcoes:["6","9","3"], correta:1, explicacao:"3 × 3 = 9." },
         { pergunta:"Quanto é a raiz quadrada de 25?", opcoes:["5","25","10"], correta:0, explicacao:"5 × 5 = 25, então a raiz quadrada de 25 é 5." }
       ]
     },
 
+    { id:"ef2-aritmetica-l3", moduloId:"ef2-aritmetica", titulo:"Números Racionais e Dízimas Periódicas",
+      conteudoTexto:"Um número racional pode ser escrito como fração (a/b, com b diferente de zero). Algumas frações, quando viram decimal, geram uma dízima periódica: um número decimal que se repete infinitamente.",
+      exemplo:[
+        "Transforme 1/3 em decimal.",
+        "1 ÷ 3 = 0,333333...",
+        "O algarismo 3 se repete para sempre.",
+        "Isso é uma dízima periódica, escrita como 0,3̄."
+      ],
+      quiz:[
+        { pergunta:"1/3 em decimal é uma:", opcoes:["Dízima periódica","Fração impossível","Número inteiro"], correta:0, explicacao:"1/3 = 0,333... com o 3 se repetindo infinitamente." },
+        { pergunta:"Todo número racional pode ser escrito como:", opcoes:["Uma fração a/b","Apenas números negativos","Só números inteiros"], correta:0, explicacao:"É exatamente essa a definição de número racional." },
+        { tipo:"aberta", pergunta:"Que algarismo se repete na dízima periódica de 2/3 = 0,6666...?", resposta:["6"], explicacao:"2 dividido por 3 dá 0,666... com o 6 se repetindo." }
+      ]
+    },
+
     // ---------- EF2 · Teoria dos Números ----------
     { id:"ef2-teoria-l1", moduloId:"ef2-teoria-numeros", titulo:"Divisibilidade e Números Primos",
       conteudoTexto:"Um número é divisível por outro quando a divisão dá resto zero. Existem critérios que facilitam descobrir isso sem dividir — por exemplo, todo número par é divisível por 2. Números primos são aqueles que só podem ser divididos por 1 e por eles mesmos, como 2, 3, 5, 7, 11.",
+      figura:{tipo:"primos-compostos", params:{}},
       exemplo:[
         "O número 42 termina em 2, então é par → divisível por 2.",
         "A soma dos algarismos de 42 é 4+2=6, que é divisível por 3 → 42 também é.",
-        "Já o número 7 só pode ser dividido por 1 e por 7 → é primo."
+        "Já o número 7 só pode ser dividido por 1 e por 7 → é primo.",
+        "Repare na figura: os números primos só formam uma fileira de pontos, enquanto os compostos formam uma grade — porque podem ser divididos em partes iguais."
       ],
       quiz:[
         { pergunta:"Qual desses números é primo?", opcoes:["9","11","15"], correta:1, explicacao:"11 só é divisível por 1 e por 11." },
@@ -490,11 +769,13 @@ const DATA = {
       ]
     },
     { id:"ef2-teoria-l2", moduloId:"ef2-teoria-numeros", titulo:"MMC e MDC",
-      conteudoTexto:"O MMC (mínimo múltiplo comum) é o menor número que é múltiplo de dois números ao mesmo tempo. O MDC (máximo divisor comum) é o maior número que divide os dois ao mesmo tempo.",
+      conteudoTexto:"O MMC (mínimo múltiplo comum) é o menor número que é múltiplo de dois números ao mesmo tempo. O MDC (máximo divisor comum) é o maior número que divide os dois ao mesmo tempo. Um jeito rápido de calcular os dois é pela fatoração em escada, dividindo os números por números primos.",
+      figura:{tipo:"mmc-mdc", params:{a:8, b:12}},
       exemplo:[
         "MMC entre 4 e 6: múltiplos de 4 são 4,8,12,16...; múltiplos de 6 são 6,12,18...",
         "O menor número em comum é 12 → MMC(4,6) = 12.",
-        "MDC entre 12 e 18: divisores comuns são 1,2,3,6 → o maior é 6."
+        "MDC entre 12 e 18: divisores comuns são 1,2,3,6 → o maior é 6.",
+        "Pela fatoração em escada (veja a figura): dividindo 8 e 12 por primos em comum até chegar a 1 e 1 dá o MMC; parando quando não há mais divisor comum dá o MDC."
       ],
       quiz:[
         { pergunta:"Qual o MMC entre 4 e 6?", opcoes:["24","12","6"], correta:1, explicacao:"12 é o menor número que aparece nos múltiplos de 4 e de 6." },
@@ -502,9 +783,26 @@ const DATA = {
       ]
     },
 
+    { id:"ef2-teoria-l3", moduloId:"ef2-teoria-numeros", titulo:"Números Compostos e Fatoração",
+      conteudoTexto:"Um número composto é aquele que tem mais de dois divisores (diferente do primo). Fatorar um número é escrevê-lo como um produto de números primos.",
+      figura:{tipo:"fatoracao-simples", params:{n:12}},
+      exemplo:[
+        "Fatore o número 12.",
+        "12 = 2 × 6.",
+        "6 = 2 × 3.",
+        "Então 12 = 2 × 2 × 3, ou seja, 2² × 3."
+      ],
+      quiz:[
+        { pergunta:"Um número composto tem:", opcoes:["Só 2 divisores","Mais de 2 divisores","Nenhum divisor"], correta:1, explicacao:"Números primos têm exatamente 2 divisores; compostos têm mais que isso." },
+        { pergunta:"Qual a fatoração completa (em primos) do número 12?", opcoes:["2 × 6","2² × 3","3 × 4"], correta:1, explicacao:"12 = 2 × 2 × 3 = 2² × 3, todos primos." },
+        { tipo:"aberta", pergunta:"Qual é o menor número primo que divide 20?", resposta:["2"], explicacao:"20 é par, então 2 é o menor primo que o divide." }
+      ]
+    },
+
     // ---------- EF2 · Geometria e Triângulos ----------
     { id:"ef2-geo-l1", moduloId:"ef2-geometria-triangulos", titulo:"Ângulos e Polígonos",
       conteudoTexto:"Um ângulo é a abertura formada entre duas retas que se encontram, medida em graus. Um polígono é uma figura fechada feita só de lados retos — o número de lados dá o nome (triângulo=3, quadrilátero=4, pentágono=5...).",
+      figura:{tipo:"soma-angulos", params:{}},
       exemplo:[
         "A soma dos ângulos internos de um triângulo é sempre 180°.",
         "Num quadrado, cada ângulo interno mede 90°.",
@@ -518,6 +816,7 @@ const DATA = {
     { id:"ef2-geo-l2", moduloId:"ef2-geometria-triangulos", titulo:"Teorema de Pitágoras",
       conteudoTexto:"No triângulo retângulo, o quadrado da hipotenusa (o lado maior, oposto ao ângulo reto) é igual à soma dos quadrados dos catetos (os outros dois lados).",
       formulaLatex:"a^2 = b^2 + c^2",
+      figura:{tipo:"pitagoras", params:{oposto:3, adjacente:4}},
       exemplo:[
         "Triângulo com catetos 3 e 4.",
         "hipotenusa² = 3² + 4² = 9 + 16 = 25.",
@@ -529,10 +828,27 @@ const DATA = {
       ]
     },
 
+    { id:"ef2-geo-l3", moduloId:"ef2-geometria-triangulos", titulo:"Teorema de Tales",
+      conteudoTexto:"O Teorema de Tales diz que quando um feixe de retas paralelas é cortado por duas retas transversais, os segmentos formados são proporcionais.",
+      formulaLatex:"\\frac{a}{b} = \\frac{c}{d}",
+      exemplo:[
+        "Se a/b = 3/6 e c=4, encontre d.",
+        "Monte a proporção: 3/6 = 4/d.",
+        "Multiplique cruzado: 3d = 24.",
+        "d = 8."
+      ],
+      quiz:[
+        { pergunta:"O Teorema de Tales relaciona retas:", opcoes:["Paralelas cortadas por transversais","Perpendiculares apenas","Curvas quaisquer"], correta:0, explicacao:"Ele é sobre retas paralelas cortadas por transversais, formando segmentos proporcionais." },
+        { pergunta:"Se 3/6 = 4/d, quanto vale d?", opcoes:["8","2","12"], correta:0, explicacao:"3d=24, então d=8." },
+        { tipo:"aberta", pergunta:"Se 2/4 = x/10, quanto vale x?", resposta:["5"], explicacao:"2×10=4x → 20=4x → x=5." }
+      ]
+    },
+
     // ---------- EF2 · Áreas e Volumes ----------
     { id:"ef2-areas-l1", moduloId:"ef2-areas-volumes", titulo:"Perímetro e Área de Figuras Planas",
       conteudoTexto:"Perímetro é a soma de todos os lados de uma figura (a 'volta' dela). Área é o espaço que a figura ocupa por dentro.",
       formulaLatex:"\\text{Área do retângulo} = base \\times altura",
+      figura:{tipo:"retangulo-area", params:{base:5, altura:3}},
       exemplo:[
         "Retângulo com base 5 e altura 3.",
         "Perímetro = 2 × (5+3) = 16.",
@@ -554,6 +870,21 @@ const DATA = {
       quiz:[
         { pergunta:"Qual o volume de uma caixa com 2m de comprimento, 3m de largura e 4m de altura?", opcoes:["9 m³","24 m³","20 m³"], correta:1, explicacao:"2 × 3 × 4 = 24." },
         { pergunta:"O volume de um objeto mede:", opcoes:["Sua altura apenas","O espaço que ele ocupa","Seu peso"], correta:1, explicacao:"Volume é sempre uma medida de espaço tridimensional." }
+      ]
+    },
+
+    { id:"ef2-areas-l3", moduloId:"ef2-areas-volumes", titulo:"Área do Triângulo e do Círculo",
+      conteudoTexto:"A área do triângulo é base vezes altura dividido por 2. A área do círculo usa o número π (pi, aproximadamente 3,14) multiplicado pelo raio ao quadrado.",
+      formulaLatex:"A_{triangulo} = \\frac{base \\times altura}{2} \\qquad A_{circulo} = \\pi r^2",
+      figura:{tipo:"triangulo-circulo-area", params:{baseT:6, alturaT:4, raioC:2}},
+      exemplo:[
+        "Triângulo com base 6 e altura 4: área = (6×4)/2 = 12.",
+        "Círculo com raio 2: área = π × 2² = π × 4 ≈ 12,56."
+      ],
+      quiz:[
+        { pergunta:"Qual a área de um triângulo com base 8 e altura 5?", opcoes:["40","20","13"], correta:1, explicacao:"(8×5)/2 = 40/2 = 20." },
+        { pergunta:"Na fórmula da área do círculo, o que fazemos com o raio?", opcoes:["Multiplicamos por 2","Elevamos ao quadrado","Dividimos por 2"], correta:1, explicacao:"A = π × r², ou seja, elevamos o raio ao quadrado." },
+        { tipo:"aberta", pergunta:"Qual a área de um triângulo com base 10 e altura 6?", resposta:["30"], explicacao:"(10×6)/2 = 30." }
       ]
     },
 
@@ -586,200 +917,851 @@ const DATA = {
       ]
     },
 
+    { id:"ef2-estat-l3", moduloId:"ef2-estatistica", titulo:"Lendo Gráficos de Linha e Setores",
+      conteudoTexto:"O gráfico de linha mostra como um valor muda ao longo do tempo, ligando pontos com uma linha. O gráfico de setores (pizza) mostra como um total se divide em partes, cada fatia representando uma porcentagem.",
+      figura:{tipo:"linha-setor", params:{}},
+      exemplo:[
+        "Num gráfico de linha de temperatura, uma linha subindo mostra que a temperatura aumentou.",
+        "Num gráfico de pizza de gastos, a fatia maior é a categoria em que mais se gastou.",
+        "A soma de todas as fatias do gráfico de pizza é sempre 100%."
+      ],
+      quiz:[
+        { pergunta:"O gráfico de linha é mais indicado para mostrar:", opcoes:["Mudanças ao longo do tempo","Só um valor único","Cores favoritas"], correta:0, explicacao:"Linhas conectam pontos ao longo do tempo, mostrando tendências." },
+        { pergunta:"A soma de todas as fatias de um gráfico de setores é:", opcoes:["50%","100%","Depende do gráfico"], correta:1, explicacao:"As fatias sempre representam o total, que é 100%." },
+        { tipo:"aberta", pergunta:"Se um gráfico de pizza tem 3 fatias de 50%, 30% e uma última fatia, qual a porcentagem da última fatia?", resposta:["20","20%"], explicacao:"100 - 50 - 30 = 20%." }
+      ]
+    },
+
     // ---------- EM · Funções ----------
     { id:"em-funcoes-l1", moduloId:"em-funcoes", titulo:"Função Afim (1º grau)",
+      figura:{tipo:"funcao", sub:"afim", params:{a:2,b:1}},
       conteudoTexto:"Uma função afim tem a forma f(x) = ax + b e seu gráfico é sempre uma reta. O coeficiente 'a' define a inclinação da reta, e 'b' é o ponto onde ela corta o eixo y.",
       formulaLatex:"f(x) = ax + b",
       exemplo:[
         "Dada f(x) = 2x + 1, calcule f(3).",
         "Substitua x por 3: f(3) = 2(3) + 1.",
         "f(3) = 6 + 1.",
-        "f(3) = 7."
+        "f(3) = 7.",
+        "Calcule também f(-1): f(-1) = 2(-1)+1 = -1."
       ],
       quiz:[
         { pergunta:"Na função f(x) = 3x - 2, qual o valor de f(2)?", opcoes:["4","6","8"], correta:0, explicacao:"3(2) - 2 = 6 - 2 = 4." },
-        { pergunta:"O coeficiente 'a' de uma função afim representa:", opcoes:["A inclinação da reta","Onde a reta corta o eixo y","O valor máximo da função"], correta:0, explicacao:"'a' é o coeficiente angular — quanto maior, mais inclinada a reta." }
+        { pergunta:"O coeficiente 'a' de uma função afim representa:", opcoes:["A inclinação da reta","Onde a reta corta o eixo y","O valor máximo da função"], correta:0, explicacao:"'a' é o coeficiente angular — quanto maior, mais inclinada a reta." },
+        { pergunta:"Se f(x)=ax+b passa pelos pontos (1,5) e (3,11), qual o valor de a?", opcoes:["2","3","6"], correta:1, explicacao:"a é o coeficiente angular: (11-5)/(3-1) = 6/2 = 3.", dificuldade:"dificil" }
       ]
     },
     { id:"em-funcoes-l2", moduloId:"em-funcoes", titulo:"Função Quadrática (2º grau)",
+      figura:{tipo:"funcao", sub:"quadratica", params:{a:1,b:-4,c:3}},
       conteudoTexto:"Uma função quadrática tem a forma f(x) = ax² + bx + c e seu gráfico é uma parábola. Se a > 0, a parábola abre para cima (tem ponto mínimo); se a < 0, abre para baixo (tem ponto máximo).",
       formulaLatex:"x_v = \\frac{-b}{2a}",
       exemplo:[
         "Encontre o vértice de f(x) = x² - 4x + 3.",
         "a=1, b=-4 → x_v = -(-4)/2(1) = 2.",
         "Calcule f(2): 4 - 8 + 3 = -1.",
-        "Vértice: (2, -1)."
+        "Vértice: (2, -1).",
+        "As raízes dessa função são x=1 e x=3, pois f(1)=0 e f(3)=0."
       ],
       quiz:[
         { pergunta:"Se a > 0 na função quadrática, a parábola tem:", opcoes:["Ponto mínimo","Ponto máximo","Nenhum extremo"], correta:0, explicacao:"Parábolas com concavidade para cima (a>0) têm um ponto mínimo." },
-        { pergunta:"Qual a fórmula do x do vértice?", opcoes:["x = -b/2a","x = -b/a","x = b/2a"], correta:0, explicacao:"x_v = -b/2a é a fórmula do vértice." }
+        { pergunta:"Qual a fórmula do x do vértice?", opcoes:["x = -b/2a","x = -b/a","x = b/2a"], correta:0, explicacao:"x_v = -b/2a é a fórmula do vértice." },
+        { pergunta:"Uma função quadrática tem vértice em (3,-4) e concavidade para cima. Quantas raízes reais ela tem?", opcoes:["0","1","2"], correta:2, explicacao:"Como o vértice está abaixo do eixo x e a parábola abre para cima, ela cruza o eixo x duas vezes.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-funcoes-l3", moduloId:"em-funcoes", titulo:"Função Exponencial e Logarítmica",
+      figura:{tipo:"funcao", sub:"exponencial", params:{a:2}},
+      conteudoTexto:"A função exponencial tem a incógnita no expoente: f(x) = aˣ. Ela cresce (ou decresce) muito rápido — usada para modelar crescimento populacional ou juros compostos. A função logarítmica é a inversa da exponencial.",
+      formulaLatex:"f(x) = a^x \\qquad \\log_a(a^x) = x",
+      exemplo:[
+        "Calcule f(x) = 2ˣ para x=3.",
+        "f(3) = 2³ = 2×2×2.",
+        "f(3) = 8.",
+        "Para x=0, f(0)=2⁰=1 — toda função exponencial da forma aˣ passa pelo ponto (0,1)."
+      ],
+      quiz:[
+        { pergunta:"Na função exponencial f(x)=aˣ, onde fica a incógnita x?", opcoes:["Na base","No expoente","Não aparece"], correta:1, explicacao:"É justamente por ter x no expoente que a função é chamada de exponencial." },
+        { pergunta:"A função logarítmica é:", opcoes:["A inversa da exponencial","Igual à função afim","Sempre decrescente"], correta:0, explicacao:"Logaritmo 'desfaz' a exponenciação, por isso é sua função inversa." },
+        { tipo:"aberta", pergunta:"Quanto é 2³ (2 elevado a 3)?", resposta:["8"], explicacao:"2×2×2 = 8." },
+        { tipo:"aberta", pergunta:"Se f(x)=3ˣ, qual o valor de f(2)?", resposta:["9"], explicacao:"3² = 9.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Trigonometria ----------
     { id:"em-trig-l1", moduloId:"em-trigonometria", titulo:"Seno, Cosseno e Tangente",
+      figura:{tipo:"triangulo", params:{reto:true, oposto:3, adjacente:4}},
       conteudoTexto:"No triângulo retângulo, o seno de um ângulo é a razão entre o cateto oposto e a hipotenusa; o cosseno é a razão entre o cateto adjacente e a hipotenusa; a tangente é a razão entre o cateto oposto e o cateto adjacente.",
       formulaLatex:"\\sin\\theta = \\frac{\\text{cateto oposto}}{\\text{hipotenusa}}",
       exemplo:[
         "Triângulo com cateto oposto = 3 e hipotenusa = 5.",
         "sin(θ) = 3/5.",
-        "sin(θ) = 0,6."
+        "sin(θ) = 0,6.",
+        "Nesse mesmo triângulo, a hipotenusa mede 5 (Teorema de Pitágoras), então cos(θ) = 4/5 = 0,8."
       ],
       quiz:[
         { pergunta:"Num triângulo com cateto oposto 6 e hipotenusa 10, qual o seno do ângulo?", opcoes:["0,6","0,4","1,6"], correta:0, explicacao:"6/10 = 0,6." },
-        { pergunta:"A tangente é a razão entre:", opcoes:["Cateto oposto e cateto adjacente","Cateto oposto e hipotenusa","Os dois catetos, sempre iguais"], correta:0, explicacao:"tan(θ) = cateto oposto / cateto adjacente." }
+        { pergunta:"A tangente é a razão entre:", opcoes:["Cateto oposto e cateto adjacente","Cateto oposto e hipotenusa","Os dois catetos, sempre iguais"], correta:0, explicacao:"tan(θ) = cateto oposto / cateto adjacente." },
+        { pergunta:"Se sen(θ)=0,6, qual o valor aproximado de cos(θ), sabendo que sen²+cos²=1?", opcoes:["0,8","0,4","1,2"], correta:0, explicacao:"cos(θ) = √(1-0,6²) = √(1-0,36) = √0,64 = 0,8.", dificuldade:"dificil" }
       ]
     },
     { id:"em-trig-l2", moduloId:"em-trigonometria", titulo:"Lei dos Senos",
+      figura:{tipo:"triangulo", params:{reto:false}},
       conteudoTexto:"A lei dos senos relaciona lados e ângulos de qualquer triângulo, não apenas triângulos retângulos. É muito usada quando não temos um ângulo de 90°.",
       formulaLatex:"\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}",
       exemplo:[
         "Cada lado dividido pelo seno do ângulo oposto a ele é sempre igual.",
         "Se conhecemos um lado e seu ângulo oposto, achamos essa razão constante.",
-        "Com a razão, descobrimos os outros lados ou ângulos do triângulo."
+        "Com a razão, descobrimos os outros lados ou ângulos do triângulo.",
+        "Se a=10, sen(A)=0,5 e sen(B)=0,25, então b = (10×0,25)/0,5 = 5."
       ],
       quiz:[
         { pergunta:"A lei dos senos pode ser usada em:", opcoes:["Qualquer triângulo","Só triângulos retângulos"], correta:0, explicacao:"Diferente do seno/cosseno básico, a lei dos senos vale para todo triângulo." },
-        { pergunta:"No denominador de cada fração da lei dos senos fica:", opcoes:["O seno do ângulo oposto ao lado","O cosseno do ângulo","O próprio lado ao quadrado"], correta:0, explicacao:"Cada lado é dividido pelo seno do ângulo oposto a ele." }
+        { pergunta:"No denominador de cada fração da lei dos senos fica:", opcoes:["O seno do ângulo oposto ao lado","O cosseno do ângulo","O próprio lado ao quadrado"], correta:0, explicacao:"Cada lado é dividido pelo seno do ângulo oposto a ele." },
+        { tipo:"aberta", pergunta:"Se a/sen(A) = 8 e sen(B) = 0,5, qual o valor do lado b?", resposta:["4"], explicacao:"b = sen(B) × (a/sen(A)) = 0,5 × 8 = 4.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-trig-l3", moduloId:"em-trigonometria", titulo:"Ciclo Trigonométrico e Lei dos Cossenos",
+      figura:{tipo:"ciclo", params:{angulo:60}},
+      conteudoTexto:"O ciclo trigonométrico é um círculo de raio 1 usado para representar seno e cosseno de qualquer ângulo, não só os de triângulo retângulo. A Lei dos Cossenos generaliza o Teorema de Pitágoras para qualquer triângulo.",
+      formulaLatex:"a^2 = b^2 + c^2 - 2bc\\cos(A)",
+      exemplo:[
+        "Se A=90°, cos(90°)=0.",
+        "A fórmula vira a² = b² + c² - 0.",
+        "Ou seja, a² = b² + c² — exatamente o Teorema de Pitágoras!",
+        "No ciclo trigonométrico, sen(60°) ≈ 0,87 e cos(60°) = 0,5."
+      ],
+      quiz:[
+        { pergunta:"O ciclo trigonométrico é um círculo de raio:", opcoes:["1","2","10"], correta:0, explicacao:"O ciclo trigonométrico é sempre um círculo de raio 1 (círculo unitário)." },
+        { pergunta:"Quando o ângulo A é 90°, a Lei dos Cossenos se transforma em:", opcoes:["Teorema de Tales","Teorema de Pitágoras","Lei dos Senos"], correta:1, explicacao:"cos(90°)=0, então a fórmula vira a²=b²+c², que é Pitágoras." },
+        { tipo:"aberta", pergunta:"Qual o valor de cos(90°)?", resposta:["0"], explicacao:"O cosseno de 90 graus é sempre 0." },
+        { pergunta:"Num triângulo com b=5, c=7 e ângulo A=60° (cos60°=0,5), qual o valor de a² pela Lei dos Cossenos?", opcoes:["39","74","25"], correta:0, explicacao:"a² = 5²+7²-2×5×7×0,5 = 25+49-35 = 39.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Sequências e Matrizes ----------
     { id:"em-seq-l1", moduloId:"em-sequencias", titulo:"Progressão Aritmética (PA)",
+      figura:{tipo:"sequencia", params:{termos:[2,5,8,11,14]}},
       conteudoTexto:"Uma PA é uma sequência de números em que a diferença entre termos consecutivos é sempre a mesma, chamada razão (r).",
       formulaLatex:"a_n = a_1 + (n-1)\\cdot r",
       exemplo:[
         "Sequência: 2, 5, 8, 11...",
         "A razão é r=3 (a diferença entre termos vizinhos).",
-        "10º termo: a₁₀ = 2 + (10-1)×3 = 29."
+        "10º termo: a₁₀ = 2 + (10-1)×3 = 29.",
+        "A soma dos 5 primeiros termos dessa PA é 2+5+8+11+14 = 40."
       ],
       quiz:[
         { pergunta:"Na PA (3, 7, 11, 15...), qual a razão?", opcoes:["3","4","7"], correta:1, explicacao:"7-3=4, 11-7=4 — a diferença constante é 4." },
-        { pergunta:"Qual o 5º termo da PA (2, 5, 8, 11...)?", opcoes:["14","17","11"], correta:0, explicacao:"a₅ = 2 + (5-1)×3 = 2+12 = 14." }
+        { pergunta:"Qual o 5º termo da PA (2, 5, 8, 11...)?", opcoes:["14","17","11"], correta:0, explicacao:"a₅ = 2 + (5-1)×3 = 2+12 = 14." },
+        { tipo:"aberta", pergunta:"Numa PA com a1=4 e razão 5, qual o valor do 8º termo?", resposta:["39"], explicacao:"a8 = 4+(8-1)×5 = 4+35 = 39.", dificuldade:"dificil" }
       ]
     },
     { id:"em-seq-l2", moduloId:"em-sequencias", titulo:"Matrizes e Determinantes",
+      figura:{tipo:"matriz", params:{matriz:[[2,3],[1,4]]}},
       conteudoTexto:"Uma matriz é uma tabela de números organizados em linhas e colunas. O determinante é um número calculado a partir de uma matriz quadrada, muito usado para resolver sistemas lineares.",
       formulaLatex:"\\det\\begin{pmatrix}a & b\\\\ c & d\\end{pmatrix} = ad - bc",
       exemplo:[
         "Matriz [[2,3],[1,4]].",
         "Determinante = (2×4) - (3×1).",
-        "Determinante = 8 - 3 = 5."
+        "Determinante = 8 - 3 = 5.",
+        "Trocando a ordem das linhas, o determinante muda de sinal: det([[1,4],[2,3]]) = 3-8 = -5."
       ],
       quiz:[
         { pergunta:"Qual o determinante da matriz [[2,3],[1,4]]?", opcoes:["5","11","8"], correta:0, explicacao:"(2×4) - (3×1) = 8 - 3 = 5." },
-        { pergunta:"O determinante é calculado a partir de uma matriz:", opcoes:["Quadrada","De qualquer tamanho","Só com números negativos"], correta:0, explicacao:"Determinantes só existem para matrizes quadradas (mesmo número de linhas e colunas)." }
+        { pergunta:"O determinante é calculado a partir de uma matriz:", opcoes:["Quadrada","De qualquer tamanho","Só com números negativos"], correta:0, explicacao:"Determinantes só existem para matrizes quadradas (mesmo número de linhas e colunas)." },
+        { pergunta:"Qual o determinante da matriz [[3,1],[2,5]]?", opcoes:["13","17","10"], correta:0, explicacao:"(3×5)-(1×2) = 15-2 = 13.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-seq-l3", moduloId:"em-sequencias", titulo:"Progressão Geométrica (PG)",
+      figura:{tipo:"sequencia", params:{termos:[2,4,8,16], cor:"#ffb74d"}},
+      conteudoTexto:"Uma PG é uma sequência de números em que cada termo é obtido multiplicando o anterior por um valor fixo, chamado razão (q).",
+      formulaLatex:"a_n = a_1 \\cdot q^{(n-1)}",
+      exemplo:[
+        "Sequência: 2, 6, 18, 54...",
+        "A razão é q=3 (cada termo é o anterior × 3).",
+        "5º termo: a₅ = 2 × 3⁴ = 2 × 81 = 162.",
+        "A soma dos 4 primeiros termos dessa PG é 2+4+8+16 = 30."
+      ],
+      quiz:[
+        { pergunta:"Na PG (3, 6, 12, 24...), qual a razão?", opcoes:["2","3","6"], correta:0, explicacao:"Cada termo é o dobro do anterior, então q=2." },
+        { pergunta:"Diferente da PA, na PG cada termo é obtido:", opcoes:["Somando uma razão fixa","Multiplicando por uma razão fixa","Dividindo pela posição"], correta:1, explicacao:"PG usa multiplicação pela razão; PA usa soma." },
+        { tipo:"aberta", pergunta:"Na PG (2, 4, 8, 16...), qual o próximo termo depois de 16?", resposta:["32"], explicacao:"16 × 2 = 32." },
+        { tipo:"aberta", pergunta:"Numa PG com a1=3 e razão 2, qual o valor do 5º termo?", resposta:["48"], explicacao:"a5 = 3×2⁴ = 3×16 = 48.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Geometria Analítica ----------
     { id:"em-geoan-l1", moduloId:"em-geo-analitica", titulo:"Distância entre Dois Pontos",
+      figura:{tipo:"plano", params:{pontos:[[0,0],[3,4]], mostrarDistancia:true}},
       conteudoTexto:"No plano cartesiano, a distância entre dois pontos é calculada usando o Teorema de Pitágoras aplicado às diferenças das coordenadas.",
       formulaLatex:"d = \\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}",
       exemplo:[
         "Pontos A(0,0) e B(3,4).",
         "d = √[(3-0)² + (4-0)²] = √(9+16).",
-        "d = √25 = 5."
+        "d = √25 = 5.",
+        "Se os pontos fossem (1,1) e (4,5), a distância seria √[(4-1)²+(5-1)²] = √(9+16) = 5."
       ],
       quiz:[
         { pergunta:"Qual a distância entre os pontos (0,0) e (3,4)?", opcoes:["5","7","25"], correta:0, explicacao:"√(3²+4²) = √25 = 5." },
-        { pergunta:"A fórmula da distância entre pontos tem como base qual teorema?", opcoes:["Teorema de Tales","Teorema de Pitágoras","Lei dos Cossenos"], correta:1, explicacao:"A fórmula vem diretamente do Teorema de Pitágoras aplicado no plano cartesiano." }
+        { pergunta:"A fórmula da distância entre pontos tem como base qual teorema?", opcoes:["Teorema de Tales","Teorema de Pitágoras","Lei dos Cossenos"], correta:1, explicacao:"A fórmula vem diretamente do Teorema de Pitágoras aplicado no plano cartesiano." },
+        { pergunta:"Qual a distância entre os pontos (2,3) e (6,6)?", opcoes:["5","7","9"], correta:0, explicacao:"√[(6-2)²+(6-3)²] = √(16+9) = √25 = 5.", dificuldade:"dificil" }
       ]
     },
     { id:"em-geoan-l2", moduloId:"em-geo-analitica", titulo:"Equação da Reta",
+      figura:{tipo:"plano", params:{reta:{m:2,n:1}}},
       conteudoTexto:"A equação de uma reta no plano cartesiano pode ser escrita como y = mx + n, onde m é o coeficiente angular (inclinação) e n é onde a reta cruza o eixo y.",
       formulaLatex:"y = mx + n",
       exemplo:[
         "Reta com m=2 e n=1: y = 2x + 1.",
         "Em x=3: y = 2(3)+1.",
-        "y = 7."
+        "y = 7.",
+        "Se a reta passar pelos pontos (0,1) e (2,5), o coeficiente angular é m = (5-1)/(2-0) = 2, confirmando y=2x+1."
       ],
       quiz:[
         { pergunta:"Na equação da reta y=mx+n, o que 'm' representa?", opcoes:["A inclinação da reta","Onde ela corta o eixo x","O tamanho da reta"], correta:0, explicacao:"'m' é o coeficiente angular — a inclinação da reta." },
-        { pergunta:"Se y = 3x - 2, qual o valor de y quando x = 2?", opcoes:["4","6","8"], correta:0, explicacao:"3(2)-2 = 6-2 = 4." }
+        { pergunta:"Se y = 3x - 2, qual o valor de y quando x = 2?", opcoes:["4","6","8"], correta:0, explicacao:"3(2)-2 = 6-2 = 4." },
+        { tipo:"aberta", pergunta:"Uma reta passa pelos pontos (0,3) e (2,7). Qual o coeficiente angular m?", resposta:["2"], explicacao:"m = (7-3)/(2-0) = 4/2 = 2.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-geoan-l3", moduloId:"em-geo-analitica", titulo:"Equação da Circunferência",
+      figura:{tipo:"plano", params:{circulo:{centro:[0,0],raio:5}}},
+      conteudoTexto:"A equação de uma circunferência no plano cartesiano, com centro (a,b) e raio r, mostra todos os pontos que estão à mesma distância r do centro.",
+      formulaLatex:"(x-a)^2+(y-b)^2=r^2",
+      exemplo:[
+        "Circunferência com centro (0,0) e raio 5.",
+        "Equação: x² + y² = 25.",
+        "Qualquer ponto que satisfaça essa equação está na borda do círculo.",
+        "Se o centro fosse (2,-1) com raio 3, a equação seria (x-2)²+(y+1)²=9."
+      ],
+      quiz:[
+        { pergunta:"Na equação (x-a)²+(y-b)²=r², o que (a,b) representa?", opcoes:["O centro da circunferência","Um ponto qualquer da borda","O diâmetro"], correta:0, explicacao:"(a,b) são as coordenadas do centro da circunferência." },
+        { pergunta:"Qual o raio da circunferência x² + y² = 25?", opcoes:["25","5","12,5"], correta:1, explicacao:"r² = 25, então r = 5." },
+        { tipo:"aberta", pergunta:"Qual o raio da circunferência x² + y² = 9?", resposta:["3"], explicacao:"r² = 9, então r = 3." },
+        { pergunta:"Qual o raio da circunferência (x-1)²+(y-2)²=49?", opcoes:["7","49","24,5"], correta:0, explicacao:"r² = 49, então r = 7.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Geometria Espacial ----------
     { id:"em-geoesp-l1", moduloId:"em-geo-espacial", titulo:"Prismas e Pirâmides",
+      figura:{tipo:"solidos", params:{lista:["prisma","piramide"]}},
       conteudoTexto:"Um prisma tem duas bases iguais e paralelas, ligadas por faces retangulares. Uma pirâmide tem uma única base e faces triangulares que se encontram num único ponto, o ápice.",
       formulaLatex:"V_{prisma} = \\text{Área da base} \\times altura",
       exemplo:[
         "Prisma com área da base = 10 e altura = 5.",
         "Volume = 10 × 5.",
-        "Volume = 50."
+        "Volume = 50.",
+        "O volume de uma pirâmide é 1/3 da área da base vezes a altura — por isso, uma pirâmide tem sempre menos volume que um prisma de mesma base e altura."
       ],
       quiz:[
         { pergunta:"O que diferencia um prisma de uma pirâmide?", opcoes:["O prisma tem duas bases; a pirâmide tem uma só, terminando em ápice","Não há diferença entre eles","A pirâmide é sempre maior"], correta:0, explicacao:"Essa é a principal diferença estrutural entre os dois sólidos." },
-        { pergunta:"Como calculamos o volume de um prisma?", opcoes:["Área da base vezes a altura","Só a altura","Área da base dividida pela altura"], correta:0, explicacao:"V = área da base × altura." }
+        { pergunta:"Como calculamos o volume de um prisma?", opcoes:["Área da base vezes a altura","Só a altura","Área da base dividida pela altura"], correta:0, explicacao:"V = área da base × altura." },
+        { pergunta:"Um prisma tem área da base 20 e altura 6. Uma pirâmide tem a mesma base e altura. Qual a razão entre o volume do prisma e o da pirâmide?", opcoes:["3","2","1/3"], correta:0, explicacao:"Volume do prisma=120, da pirâmide=40 (1/3 de 120). Razão = 120/40 = 3.", dificuldade:"dificil" }
       ]
     },
     { id:"em-geoesp-l2", moduloId:"em-geo-espacial", titulo:"Cilindros, Cones e Esferas",
+      figura:{tipo:"solidos", params:{lista:["cilindro","cone","esfera"]}},
       conteudoTexto:"O cilindro tem duas bases circulares paralelas. O cone tem uma base circular e termina numa ponta (vértice). A esfera é totalmente redonda, como uma bola, sem nenhuma base.",
       formulaLatex:"V_{esfera} = \\frac{4}{3}\\pi r^3",
       exemplo:[
         "Uma lata de refrigerante é um exemplo de cilindro.",
         "Um cone de sorvete é um exemplo de cone.",
-        "Uma bola de futebol é um exemplo de esfera."
+        "Uma bola de futebol é um exemplo de esfera.",
+        "O volume do cone é 1/3 do volume de um cilindro de mesma base e altura."
       ],
       quiz:[
         { pergunta:"Qual sólido tem uma única base circular e termina em um vértice?", opcoes:["Cilindro","Cone","Esfera"], correta:1, explicacao:"O cone tem uma base circular e afunila até um ponto." },
-        { pergunta:"Quantas bases tem uma esfera?", opcoes:["0","1","2"], correta:0, explicacao:"A esfera é completamente redonda, sem nenhuma base plana." }
+        { pergunta:"Quantas bases tem uma esfera?", opcoes:["0","1","2"], correta:0, explicacao:"A esfera é completamente redonda, sem nenhuma base plana." },
+        { tipo:"aberta", pergunta:"Uma esfera tem raio 3. Usando V=(4/3)πr³, qual o valor de r³ que entra na fórmula?", resposta:["27"], explicacao:"3³ = 27.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-geoesp-l3", moduloId:"em-geo-espacial", titulo:"Área de Superfície de Sólidos",
+      figura:{tipo:"planificacao-cubo", params:{}},
+      conteudoTexto:"A área de superfície é a soma das áreas de todas as faces de um sólido — é como se 'desembrulhássemos' o sólido e medíssemos o papel todo esticado.",
+      formulaLatex:"A_{cubo} = 6a^2",
+      exemplo:[
+        "Cubo com aresta a=3.",
+        "Cada face é um quadrado de área 3² = 9.",
+        "O cubo tem 6 faces: A = 6 × 9 = 54.",
+        "Repare na planificação: um cubo 'desdobrado' forma 6 quadrados iguais, todos com a mesma área."
+      ],
+      quiz:[
+        { pergunta:"Quantas faces tem um cubo?", opcoes:["4","6","8"], correta:1, explicacao:"Um cubo tem 6 faces quadradas iguais." },
+        { pergunta:"Qual a área de superfície de um cubo com aresta 2?", opcoes:["8","24","16"], correta:1, explicacao:"6 × 2² = 6 × 4 = 24." },
+        { tipo:"aberta", pergunta:"Qual a área de superfície de um cubo com aresta 4? (só o número)", resposta:["96"], explicacao:"6 × 4² = 6 × 16 = 96." },
+        { pergunta:"Qual a área de superfície de um cubo com aresta 5?", opcoes:["150","125","30"], correta:0, explicacao:"6 × 5² = 6 × 25 = 150.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Análise Combinatória ----------
     { id:"em-comb-l1", moduloId:"em-combinatoria", titulo:"Fatorial, Arranjos e Combinações",
+      figura:{tipo:"combinatoria", sub:"arvore", params:{elementos:["A","B","C"]}},
       conteudoTexto:"O fatorial de um número (n!) é o produto de todos os inteiros de 1 até n. Arranjo é escolher e ordenar elementos; combinação é escolher elementos sem se importar com a ordem.",
       formulaLatex:"n! = n\\times(n-1)\\times\\,...\\,\\times1",
       exemplo:[
         "Calcule 4!.",
         "4! = 4 × 3 × 2 × 1.",
-        "4! = 24."
+        "4! = 24.",
+        "Com 3 elementos (A, B, C), existem 3! = 6 formas diferentes de organizá-los em fila."
       ],
       quiz:[
         { pergunta:"Quanto é 4! (4 fatorial)?", opcoes:["24","16","12"], correta:0, explicacao:"4×3×2×1 = 24." },
-        { pergunta:"Na combinação, a ordem dos elementos escolhidos:", opcoes:["Importa","Não importa","Depende do caso"], correta:1, explicacao:"Combinação não se importa com a ordem — só quais elementos foram escolhidos." }
+        { pergunta:"Na combinação, a ordem dos elementos escolhidos:", opcoes:["Importa","Não importa","Depende do caso"], correta:1, explicacao:"Combinação não se importa com a ordem — só quais elementos foram escolhidos." },
+        { pergunta:"De quantas formas podemos escolher 2 frutas dentre 4 disponíveis, sem se importar com a ordem (combinação)?", opcoes:["6","12","4"], correta:0, explicacao:"C(4,2) = 4!/(2!×2!) = 6.", dificuldade:"dificil" }
       ]
     },
     { id:"em-comb-l2", moduloId:"em-combinatoria", titulo:"Probabilidade Condicional",
+      figura:{tipo:"combinatoria", sub:"venn", params:{elementos:["Evento A","Evento B"]}},
       conteudoTexto:"Probabilidade condicional é a chance de um evento acontecer, sabendo que outro evento já aconteceu. Ela 'atualiza' a probabilidade com base numa informação nova.",
       formulaLatex:"P(A|B) = \\frac{P(A \\cap B)}{P(B)}",
       exemplo:[
         "Tirar uma carta de baralho sabendo que ela é vermelha.",
         "Isso muda o total de casos possíveis (de 52 para 26 cartas vermelhas).",
-        "A probabilidade condicional recalcula a chance dentro desse novo cenário."
+        "A probabilidade condicional recalcula a chance dentro desse novo cenário.",
+        "Se P(A∩B)=0,2 e P(B)=0,5, então P(A|B) = 0,2/0,5 = 0,4."
       ],
       quiz:[
         { pergunta:"Probabilidade condicional calcula a chance de um evento:", opcoes:["Acontecer sem nenhuma informação extra","Acontecer sabendo que outro evento já ocorreu","Nunca acontecer"], correta:1, explicacao:"É a probabilidade recalculada com base numa condição já conhecida." },
-        { pergunta:"O símbolo P(A|B) significa:", opcoes:["Probabilidade de A e B juntos","Probabilidade de A dado que B ocorreu","Probabilidade de B dado A"], correta:1, explicacao:"A barra '|' se lê 'dado que' — probabilidade de A, sabendo que B já aconteceu." }
+        { pergunta:"O símbolo P(A|B) significa:", opcoes:["Probabilidade de A e B juntos","Probabilidade de A dado que B ocorreu","Probabilidade de B dado A"], correta:1, explicacao:"A barra '|' se lê 'dado que' — probabilidade de A, sabendo que B já aconteceu." },
+        { tipo:"aberta", pergunta:"Se P(A∩B)=0,3 e P(B)=0,6, qual o valor de P(A|B)?", resposta:["0,5","0.5"], explicacao:"P(A|B) = 0,3/0,6 = 0,5.", dificuldade:"dificil" }
+      ]
+    },
+
+    { id:"em-comb-l3", moduloId:"em-combinatoria", titulo:"Permutações",
+      figura:{tipo:"combinatoria", sub:"arvore", params:{elementos:["X","Y","Z"]}},
+      conteudoTexto:"Permutação é uma forma especial de arranjo, em que usamos todos os elementos disponíveis, mudando apenas a ordem entre eles. O número de permutações de n elementos é n!.",
+      formulaLatex:"P_n = n!",
+      exemplo:[
+        "De quantas formas 3 pessoas podem sentar em 3 cadeiras?",
+        "P₃ = 3! = 3×2×1.",
+        "P₃ = 6 formas diferentes.",
+        "A árvore mostra os primeiros passos possíveis — cada galho se abre em outras possibilidades até formar todos os 3! = 6 arranjos."
+      ],
+      quiz:[
+        { pergunta:"O número de permutações de n elementos é dado por:", opcoes:["n!","n²","2n"], correta:0, explicacao:"Permutações de n elementos = n fatorial (n!)." },
+        { pergunta:"De quantas formas 4 livros diferentes podem ser organizados numa prateleira?", opcoes:["4","16","24"], correta:2, explicacao:"P₄ = 4! = 4×3×2×1 = 24." },
+        { tipo:"aberta", pergunta:"De quantas formas 3 amigos podem ficar em fila (P₃)?", resposta:["6"], explicacao:"3! = 3×2×1 = 6." },
+        { pergunta:"De quantas formas 5 pessoas diferentes podem se sentar em 5 cadeiras em fila?", opcoes:["120","20","60"], correta:0, explicacao:"5! = 5×4×3×2×1 = 120.", dificuldade:"dificil" }
       ]
     },
 
     // ---------- EM · Estatística Avançada ----------
     { id:"em-estatav-l1", moduloId:"em-estat-avancada", titulo:"Mediana e Moda",
+      figura:{tipo:"estatistica", sub:"pontos", params:{valores:[2,3,3,5,9]}},
       conteudoTexto:"A mediana é o valor do meio de um conjunto de dados organizados em ordem. A moda é o valor que mais se repete no conjunto.",
       exemplo:[
         "Conjunto ordenado: 2, 3, 3, 5, 9.",
         "O valor do meio é 3 → mediana = 3.",
-        "O valor que mais se repete também é 3 → moda = 3."
+        "O valor que mais se repete também é 3 → moda = 3.",
+        "Se o conjunto tivesse número par de valores, como (2,3,5,9), a mediana seria a média dos dois valores centrais: (3+5)/2 = 4."
       ],
       quiz:[
         { pergunta:"No conjunto (1, 2, 2, 3, 8), qual é a moda?", opcoes:["1","2","8"], correta:1, explicacao:"O número 2 aparece duas vezes, mais que qualquer outro." },
-        { pergunta:"A mediana é:", opcoes:["A soma de todos os valores","O valor do meio, com os dados ordenados","O valor que mais aparece"], correta:1, explicacao:"A mediana é o valor central de um conjunto ordenado." }
+        { pergunta:"A mediana é:", opcoes:["A soma de todos os valores","O valor do meio, com os dados ordenados","O valor que mais aparece"], correta:1, explicacao:"A mediana é o valor central de um conjunto ordenado." },
+        { pergunta:"Qual a mediana do conjunto (7, 2, 9, 4, 5)? (organize os valores antes de responder)", opcoes:["5","4","7"], correta:0, explicacao:"Ordenando: 2,4,5,7,9 — o valor central é 5.", dificuldade:"dificil" }
       ]
     },
     { id:"em-estatav-l2", moduloId:"em-estat-avancada", titulo:"Variância e Desvio Padrão",
+      figura:{tipo:"estatistica", sub:"duas", params:{a:[5,6,5,6,5],b:[1,9,2,10,3], labelA:"Baixa dispersão", labelB:"Alta dispersão"}},
       conteudoTexto:"A variância mede o quanto os dados estão espalhados em relação à média. O desvio padrão é a raiz quadrada da variância e indica essa dispersão na mesma unidade dos dados originais.",
       formulaLatex:"\\sigma = \\sqrt{\\text{variância}}",
       exemplo:[
         "Se os dados estão muito próximos da média, a variância é baixa.",
         "Se os dados estão muito espalhados, a variância é alta.",
-        "O desvio padrão traduz essa dispersão de volta à unidade original dos dados."
+        "O desvio padrão traduz essa dispersão de volta à unidade original dos dados.",
+        "Repare na figura: os pontos do grupo de baixa dispersão ficam bem próximos entre si, enquanto os do grupo de alta dispersão estão bem espalhados, mesmo que as médias possam ser parecidas."
       ],
       quiz:[
         { pergunta:"O desvio padrão é calculado a partir da:", opcoes:["Moda","Raiz quadrada da variância","Mediana"], correta:1, explicacao:"σ = √variância." },
-        { pergunta:"Quanto maior o desvio padrão, mais os dados estão:", opcoes:["Concentrados perto da média","Espalhados/dispersos","Sempre iguais"], correta:1, explicacao:"Desvio padrão alto indica maior dispersão dos dados em relação à média." }
+        { pergunta:"Quanto maior o desvio padrão, mais os dados estão:", opcoes:["Concentrados perto da média","Espalhados/dispersos","Sempre iguais"], correta:1, explicacao:"Desvio padrão alto indica maior dispersão dos dados em relação à média." },
+        { pergunta:"Um conjunto de dados com desvio padrão igual a 0 significa que:", opcoes:["Todos os valores são iguais entre si","Os dados estão muito espalhados","É impossível calcular a média"], correta:0, explicacao:"Sem nenhuma variação em torno da média, o desvio padrão é zero.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"em-estatav-l3", moduloId:"em-estat-avancada", titulo:"Interpretando Dados Complexos",
+      figura:{tipo:"estatistica", sub:"duas", params:{a:[6,7,6,7,6], b:[2,9,4,10,5], labelA:"Turma A", labelB:"Turma B"}},
+      conteudoTexto:"Ao analisar um conjunto de dados, é importante olhar não só a média, mas também a mediana, a moda e a dispersão (desvio padrão) juntas — cada uma conta uma parte diferente da história dos dados.",
+      exemplo:[
+        "Dois grupos podem ter a mesma média, mas desvios padrão muito diferentes.",
+        "Um grupo com desvio padrão baixo tem notas mais parecidas entre si.",
+        "Um grupo com desvio padrão alto tem notas muito espalhadas, mesmo com a mesma média.",
+        "Duas turmas podem ter a mesma média de notas, mas a turma mais dispersa tem alunos com desempenhos bem mais desiguais entre si."
+      ],
+      quiz:[
+        { pergunta:"Dois grupos com a mesma média podem ter desvios padrão diferentes?", opcoes:["Sim","Não","Só se as médias também forem diferentes"], correta:0, explicacao:"Média e desvio padrão medem coisas diferentes: centro e dispersão dos dados." },
+        { pergunta:"Para entender bem um conjunto de dados, o ideal é observar:", opcoes:["Só a média","Média, mediana, moda e dispersão juntas","Só o maior valor"], correta:1, explicacao:"Cada medida estatística revela um aspecto diferente dos dados." },
+        { tipo:"aberta", pergunta:"Qual medida estatística indica o valor que mais se repete num conjunto de dados?", resposta:["moda"], explicacao:"A moda é justamente o valor mais frequente." },
+        { tipo:"aberta", pergunta:"Se duas turmas têm a mesma média, mas a turma X tem desvio padrão maior que a turma Y, qual turma tem notas mais desiguais entre os alunos? (responda X ou Y)", resposta:["x","turma x"], explicacao:"Desvio padrão maior indica maior desigualdade entre as notas dos alunos.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ========================= PORTUGUÊS =========================
+
+    // ---------- PT · EF1 · Alfabeto e Sons das Letras ----------
+    { id:"pt-ef1-alfabeto-l1", moduloId:"pt-ef1-alfabeto", titulo:"Vogais e Consoantes",
+      conteudoTexto:"O alfabeto tem 26 letras. As vogais são A, E, I, O, U — podem ser faladas sozinhas, com a boca aberta. As demais letras são consoantes, que geralmente precisam de uma vogal ao lado para formar o som de uma sílaba.",
+      exemplo:[
+        "Pegue a palavra BOLA.",
+        "B é consoante, O é vogal, L é consoante, A é vogal.",
+        "As vogais e consoantes se intercalam para formar a palavra."
+      ],
+      quiz:[
+        { pergunta:"Quantas vogais existem no alfabeto?", opcoes:["5","26","21"], correta:0, explicacao:"As vogais são A, E, I, O, U — cinco no total." },
+        { pergunta:"Qual destas letras é uma vogal?", opcoes:["B","E","T"], correta:1, explicacao:"E é uma das cinco vogais do alfabeto." }
+      ]
+    },
+    { id:"pt-ef1-alfabeto-l2", moduloId:"pt-ef1-alfabeto", titulo:"O Som das Letras (Fonemas)",
+      conteudoTexto:"Fonema é o som que uma letra representa quando falamos. Às vezes, uma mesma letra pode ter sons diferentes dependendo da palavra.",
+      exemplo:[
+        "A letra C soa como 'K' na palavra CASA.",
+        "A mesma letra C soa como 'S' na palavra CINEMA.",
+        "É o mesmo símbolo, mas com sons diferentes."
+      ],
+      quiz:[
+        { pergunta:"O que é um fonema?", opcoes:["O nome da letra","O som da letra quando falamos","Um tipo de palavra"], correta:1, explicacao:"Fonema é o som, e não o nome, da letra." },
+        { pergunta:"Na palavra 'cinema', que som faz a letra C?", opcoes:["Som de K","Som de S","Som de T"], correta:1, explicacao:"Antes de E e I, o C costuma soar como S." }
+      ]
+    },
+
+    // ---------- PT · EF1 · Sílabas e Formação de Palavras ----------
+    { id:"pt-ef1-silabas-l1", moduloId:"pt-ef1-silabas", titulo:"O que é uma Sílaba",
+      conteudoTexto:"Sílaba é cada 'pedacinho' sonoro de uma palavra, dito numa única emissão de voz. Toda sílaba tem pelo menos uma vogal.",
+      exemplo:[
+        "A palavra CASA se divide em CA-SA.",
+        "São 2 pedacinhos sonoros: CA e SA.",
+        "Cada pedacinho é uma sílaba."
+      ],
+      quiz:[
+        { pergunta:"Quantas sílabas tem a palavra 'BOLA'?", opcoes:["1","2","3"], correta:1, explicacao:"BO-LA tem 2 sílabas." },
+        { pergunta:"Toda sílaba precisa ter pelo menos uma:", opcoes:["Consoante","Vogal","Letra maiúscula"], correta:1, explicacao:"Sem vogal, não existe som de sílaba." }
+      ]
+    },
+    { id:"pt-ef1-silabas-l2", moduloId:"pt-ef1-silabas", titulo:"Encontros Vocálicos",
+      conteudoTexto:"Quando duas vogais ficam juntas numa palavra, formam um encontro vocálico. Pode ser um ditongo (na mesma sílaba, como em 'pai') ou hiato (em sílabas separadas, como em 'sa-í-da').",
+      exemplo:[
+        "Em PAI, as letras A e I ficam juntas na mesma sílaba: é um ditongo.",
+        "Em SAÚDE, o A e o Ú ficam em sílabas diferentes (sa-ú-de): é um hiato."
+      ],
+      quiz:[
+        { pergunta:"Em 'PAI', as vogais A e I formam um:", opcoes:["Ditongo","Hiato","Não formam encontro"], correta:0, explicacao:"As duas vogais ficam na mesma sílaba, formando um ditongo." },
+        { pergunta:"Um encontro vocálico acontece quando:", opcoes:["Duas vogais ficam juntas na palavra","Duas consoantes ficam juntas","Não há vogais na palavra"], correta:0, explicacao:"É justamente o encontro de duas vogais seguidas." }
+      ]
+    },
+
+    // ---------- PT · EF1 · Substantivo, Adjetivo e Verbo ----------
+    { id:"pt-ef1-classes-basicas-l1", moduloId:"pt-ef1-classes-basicas", titulo:"Substantivo: O Nome das Coisas",
+      conteudoTexto:"Substantivo é a palavra que dá nome a pessoas, animais, lugares e objetos.",
+      exemplo:[
+        "Na frase 'O CACHORRO correu no PARQUE'.",
+        "CACHORRO nomeia um animal — é substantivo.",
+        "PARQUE nomeia um lugar — também é substantivo."
+      ],
+      quiz:[
+        { pergunta:"Qual destas palavras é um substantivo?", opcoes:["Correr","Cachorro","Rápido"], correta:1, explicacao:"Cachorro dá nome a um animal, por isso é substantivo." },
+        { pergunta:"Substantivo dá nome a:", opcoes:["Ações","Pessoas, animais, lugares e coisas","Apenas números"], correta:1, explicacao:"Substantivos nomeiam seres, lugares e objetos." }
+      ]
+    },
+    { id:"pt-ef1-classes-basicas-l2", moduloId:"pt-ef1-classes-basicas", titulo:"Adjetivo e Verbo",
+      conteudoTexto:"Adjetivo é a palavra que dá uma característica ao substantivo (como ele é). Verbo é a palavra que indica uma ação, um estado ou um acontecimento.",
+      exemplo:[
+        "'O gato PRETO PULOU o muro.'",
+        "PRETO descreve como o gato é — é adjetivo.",
+        "PULOU indica a ação do gato — é verbo."
+      ],
+      quiz:[
+        { pergunta:"Na frase 'A casa AZUL é bonita', qual é o adjetivo?", opcoes:["Casa","Azul","É"], correta:1, explicacao:"Azul descreve a característica da casa." },
+        { pergunta:"Verbo indica:", opcoes:["Uma característica","Uma ação ou estado","O nome de um lugar"], correta:1, explicacao:"O verbo mostra o que acontece na frase." }
+      ]
+    },
+
+    // ---------- PT · EF1 · Pontuação e Acentuação ----------
+    { id:"pt-ef1-pontuacao-l1", moduloId:"pt-ef1-pontuacao", titulo:"Ponto Final, Interrogação e Exclamação",
+      conteudoTexto:"O ponto final (.) termina uma frase comum. O ponto de interrogação (?) é usado em perguntas. O ponto de exclamação (!) mostra surpresa ou emoção forte.",
+      exemplo:[
+        "'Você viu o cachorro?' usa interrogação, porque é uma pergunta.",
+        "'Que susto!' usa exclamação, porque mostra emoção forte."
+      ],
+      quiz:[
+        { pergunta:"Qual pontuação usamos ao final de uma pergunta?", opcoes:[".","?","!"], correta:1, explicacao:"O ponto de interrogação marca perguntas." },
+        { pergunta:"'Que legal!' termina com qual pontuação, e por quê?", opcoes:["Exclamação, por mostrar emoção","Interrogação, por ser pergunta","Ponto final, por ser comum"], correta:0, explicacao:"A frase expressa entusiasmo, por isso usa exclamação." }
+      ]
+    },
+    { id:"pt-ef1-pontuacao-l2", moduloId:"pt-ef1-pontuacao", titulo:"Para que Serve o Acento",
+      conteudoTexto:"O acento (como agudo ´ e circunflexo ^) marca a sílaba mais forte de uma palavra (a sílaba tônica) e às vezes muda o som da vogal.",
+      exemplo:[
+        "SOFÁ tem acento na última sílaba.",
+        "Isso mostra que 'FÁ' é a sílaba pronunciada com mais força."
+      ],
+      quiz:[
+        { pergunta:"Para que serve o acento numa palavra?", opcoes:["Deixar a palavra mais bonita","Marcar a sílaba mais forte","Não serve para nada"], correta:1, explicacao:"O acento indica a sílaba tônica, a mais forte na pronúncia." },
+        { pergunta:"Na palavra 'SOFÁ', qual sílaba é a mais forte?", opcoes:["SO","FÁ"], correta:1, explicacao:"O acento está sobre o A de FÁ, marcando essa sílaba como a mais forte." }
+      ]
+    },
+
+    // ---------- PT · EF1 · Interpretação de Texto ----------
+    { id:"pt-ef1-interpretacao-l1", moduloId:"pt-ef1-interpretacao", titulo:"Encontrando a Ideia Principal",
+      conteudoTexto:"Interpretar um texto é entender o que ele quer dizer. Um bom primeiro passo é descobrir a ideia principal: do que o texto está falando.",
+      exemplo:[
+        "Um texto sobre 'como escovar os dentes' tem várias frases explicando os passos.",
+        "Mas a ideia principal é uma só: ensinar a escovação correta."
+      ],
+      quiz:[
+        { pergunta:"Interpretar um texto significa:", opcoes:["Decorar todas as palavras","Entender o que o texto quer dizer","Contar quantas letras tem"], correta:1, explicacao:"Interpretar é compreender o sentido do texto." },
+        { pergunta:"A ideia principal de um texto é:", opcoes:["Um detalhe pequeno","Do que o texto trata, no geral","O título apenas"], correta:1, explicacao:"É o assunto central que o texto desenvolve." }
+      ]
+    },
+    { id:"pt-ef1-interpretacao-l2", moduloId:"pt-ef1-interpretacao", titulo:"Personagens, Lugar e Tempo numa História",
+      conteudoTexto:"Toda história tem personagens (quem participa), um lugar (onde acontece) e um tempo (quando acontece). Identificar essas partes ajuda a entender melhor o texto.",
+      exemplo:[
+        "Em 'Chapeuzinho Vermelho', a personagem principal é a menina.",
+        "O lugar é a floresta.",
+        "O tempo é indefinido, começando com 'Era uma vez'."
+      ],
+      quiz:[
+        { pergunta:"Numa história, quem participa dos acontecimentos é chamado de:", opcoes:["Personagem","Cenário","Título"], correta:0, explicacao:"Personagem é quem vive a história." },
+        { pergunta:"O 'lugar' de uma história indica:", opcoes:["Quando ela acontece","Onde ela acontece","Quem é o autor"], correta:1, explicacao:"O lugar é o cenário onde a ação se passa." }
+      ]
+    },
+
+    // ---------- PT · EF1 · Produção de Texto ----------
+    { id:"pt-ef1-producao-l1", moduloId:"pt-ef1-producao", titulo:"Escrevendo um Bilhete",
+      conteudoTexto:"Um bilhete é um texto curto para avisar algo a alguém. Geralmente tem: para quem é, a mensagem, e quem escreveu.",
+      exemplo:[
+        "'Mãe, fui brincar na casa do Pedro. Volto às 18h. Beijos, Ana.'",
+        "Tem o destinatário (Mãe), a mensagem e quem escreveu (Ana)."
+      ],
+      quiz:[
+        { pergunta:"Um bilhete geralmente tem:", opcoes:["Só desenhos","Para quem é, a mensagem e quem escreveu","Apenas números"], correta:1, explicacao:"Essas três partes formam a estrutura básica de um bilhete." },
+        { pergunta:"Bilhetes são textos:", opcoes:["Muito longos","Curtos e diretos","Sem nenhuma informação"], correta:1, explicacao:"O bilhete é objetivo, passando uma mensagem rápida." }
+      ]
+    },
+    { id:"pt-ef1-producao-l2", moduloId:"pt-ef1-producao", titulo:"Contando uma História: Início, Meio e Fim",
+      conteudoTexto:"Uma boa história tem começo (apresenta os personagens e o lugar), meio (o que acontece, o problema) e fim (como tudo termina).",
+      exemplo:[
+        "Início: 'Era uma vez um coelho.'",
+        "Meio: 'Um dia, ele se perdeu na floresta.'",
+        "Fim: 'Depois de procurar, encontrou o caminho de casa.'"
+      ],
+      quiz:[
+        { pergunta:"As três partes de uma história são:", opcoes:["Início, meio e fim","Título, autor e ano","Personagem, cor e som"], correta:0, explicacao:"Toda narrativa segue essa estrutura básica." },
+        { pergunta:"No 'meio' da história, geralmente acontece:", opcoes:["A apresentação dos personagens","O problema ou acontecimento principal","O fechamento da história"], correta:1, explicacao:"É no meio que o conflito ou desafio da história se desenrola." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Classes de Palavras ----------
+    { id:"pt-ef2-classes-l1", moduloId:"pt-ef2-classes-palavras", titulo:"Substantivos: Próprios, Comuns e Coletivos",
+      conteudoTexto:"Substantivo próprio nomeia algo específico, sempre com letra maiúscula (como 'Brasil'). Substantivo comum nomeia de forma geral (como 'país'). Substantivo coletivo nomeia um grupo (como 'cardume', grupo de peixes).",
+      exemplo:[
+        "'Maria' é próprio.",
+        "'Menina' é comum.",
+        "'Turma' é coletivo (grupo de alunos)."
+      ],
+      quiz:[
+        { pergunta:"Qual destes é um substantivo próprio?", opcoes:["cidade","São Paulo","lugar"], correta:1, explicacao:"São Paulo nomeia um lugar específico, por isso é próprio e com maiúscula." },
+        { pergunta:"'Cardume' é um substantivo:", opcoes:["Próprio","Comum","Coletivo"], correta:2, explicacao:"Cardume nomeia um grupo de peixes — é coletivo." }
+      ]
+    },
+    { id:"pt-ef2-classes-l2", moduloId:"pt-ef2-classes-palavras", titulo:"Verbos: Tempo e Modo",
+      conteudoTexto:"O verbo muda de forma para indicar o tempo (passado, presente, futuro) e o modo da ação.",
+      exemplo:[
+        "'Eu ANDEI' — passado.",
+        "'Eu ANDO' — presente.",
+        "'Eu ANDAREI' — futuro. Mesmo verbo, tempos diferentes."
+      ],
+      quiz:[
+        { pergunta:"'Eu estudarei' está em qual tempo verbal?", opcoes:["Passado","Presente","Futuro"], correta:2, explicacao:"A terminação '-arei' indica ação futura." },
+        { pergunta:"O verbo muda de forma principalmente para indicar:", opcoes:["A cor da frase","Tempo e modo da ação","O tamanho da palavra"], correta:1, explicacao:"Essas são as principais informações que a conjugação verbal transmite." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Sujeito e Predicado ----------
+    { id:"pt-ef2-sintaxe-l1", moduloId:"pt-ef2-sintaxe", titulo:"Sujeito e Predicado",
+      conteudoTexto:"Toda oração pode ser dividida em sujeito (quem pratica ou sofre a ação) e predicado (tudo que se diz sobre o sujeito, geralmente com o verbo).",
+      exemplo:[
+        "'O MENINO chutou a bola.'",
+        "O MENINO é o sujeito.",
+        "'chutou a bola' é o predicado."
+      ],
+      quiz:[
+        { pergunta:"Na frase 'A professora explicou a lição', qual é o sujeito?", opcoes:["A professora","Explicou","A lição"], correta:0, explicacao:"'A professora' é quem pratica a ação." },
+        { pergunta:"O predicado de uma oração geralmente contém:", opcoes:["Só substantivos","O verbo e o que se diz sobre o sujeito","Apenas adjetivos"], correta:1, explicacao:"O predicado é construído em torno do verbo." }
+      ]
+    },
+    { id:"pt-ef2-sintaxe-l2", moduloId:"pt-ef2-sintaxe", titulo:"Frase, Oração e Período",
+      conteudoTexto:"Frase é qualquer enunciado com sentido completo. Oração é a estrutura organizada em torno de um verbo. Período é uma frase formada por uma ou mais orações.",
+      exemplo:[
+        "'Socorro!' é uma frase sem verbo.",
+        "'Ele correu.' é uma oração (tem verbo).",
+        "'Ele correu porque estava com medo.' é um período com duas orações."
+      ],
+      quiz:[
+        { pergunta:"Toda oração precisa ter:", opcoes:["Um verbo","Um adjetivo","Uma vírgula"], correta:0, explicacao:"É o verbo que organiza a estrutura de uma oração." },
+        { pergunta:"Um período pode ser formado por:", opcoes:["Só uma palavra","Uma ou mais orações","Apenas números"], correta:1, explicacao:"Período é a frase organizada em uma ou mais orações." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Ortografia ----------
+    { id:"pt-ef2-ortografia-l1", moduloId:"pt-ef2-ortografia", titulo:"X ou CH?",
+      conteudoTexto:"Não existe uma regra fixa para todos os casos, mas algumas dicas ajudam: depois de ditongos, geralmente usamos X (como em 'caixa'); em palavras derivadas de outras com CH, mantemos o CH (como 'encharcar', de 'charco').",
+      exemplo:[
+        "'Caixa' usa X, porque vem depois do ditongo AI.",
+        "'Encharcar' mantém o CH porque vem de 'charco'."
+      ],
+      quiz:[
+        { pergunta:"Depois de um ditongo (como AI), geralmente usamos:", opcoes:["X","CH","Nenhum dos dois"], correta:0, explicacao:"Ex: caixa, peixe, frouxo." },
+        { pergunta:"'Charco' dá origem a 'encharcar', mantendo:", opcoes:["O X","O CH","Nenhuma letra"], correta:1, explicacao:"Palavras derivadas mantêm a grafia da palavra de origem." }
+      ]
+    },
+    { id:"pt-ef2-ortografia-l2", moduloId:"pt-ef2-ortografia", titulo:"Por Que ou Porque?",
+      conteudoTexto:"'Por que' (separado, sem acento) é usado em perguntas. 'Porque' (junto) é usado para dar uma explicação ou motivo, geralmente em respostas.",
+      exemplo:[
+        "'Por que você chegou atrasado?' — pergunta.",
+        "'Cheguei atrasado porque perdi o ônibus.' — explicação."
+      ],
+      quiz:[
+        { pergunta:"Em perguntas, usamos:", opcoes:["Porque","Por que","Porquê"], correta:1, explicacao:"'Por que' separado é usado para perguntar." },
+        { pergunta:"Para dar uma explicação numa resposta, usamos:", opcoes:["Por que","Porque","Por quê"], correta:1, explicacao:"'Porque' junto explica um motivo." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Concordância Verbal e Nominal ----------
+    { id:"pt-ef2-concordancia-l1", moduloId:"pt-ef2-concordancia", titulo:"Concordância Nominal",
+      conteudoTexto:"Concordância nominal é o ajuste entre substantivo, artigo e adjetivo em gênero (masculino/feminino) e número (singular/plural).",
+      exemplo:[
+        "'As casas brancas.'",
+        "Todos no feminino plural: AS, CASAS, BRANCAS."
+      ],
+      quiz:[
+        { pergunta:"Na frase 'O menino esperto', o adjetivo 'esperto' concorda em:", opcoes:["Gênero e número com 'menino'","Só em número","Não precisa concordar"], correta:0, explicacao:"Adjetivo concorda em gênero e número com o substantivo." },
+        { pergunta:"'As flor bonita' está com a concordância:", opcoes:["Correta","Errada — deveria ser 'As flores bonitas'"], correta:1, explicacao:"Artigo, substantivo e adjetivo devem concordar no plural." }
+      ]
+    },
+    { id:"pt-ef2-concordancia-l2", moduloId:"pt-ef2-concordancia", titulo:"Concordância Verbal",
+      conteudoTexto:"Concordância verbal é o ajuste entre o sujeito e o verbo em número (singular/plural) e pessoa.",
+      exemplo:[
+        "'O aluno estuda.' — singular.",
+        "'Os alunos estudam.' — plural. O verbo muda conforme o sujeito."
+      ],
+      quiz:[
+        { pergunta:"Se o sujeito é plural, o verbo geralmente fica:", opcoes:["No singular","No plural","Sem verbo"], correta:1, explicacao:"O verbo concorda em número com o sujeito." },
+        { pergunta:"'Os meninos brincou no parque' está:", opcoes:["Correto","Errado — deveria ser 'brincaram'"], correta:1, explicacao:"O sujeito plural exige o verbo também no plural." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Gêneros Textuais ----------
+    { id:"pt-ef2-generos-l1", moduloId:"pt-ef2-generos-textuais", titulo:"O que são Gêneros Textuais",
+      conteudoTexto:"Gênero textual é o 'tipo' de texto, com uma estrutura e objetivo próprios — como notícia, receita, carta ou história em quadrinhos.",
+      exemplo:[
+        "Uma receita tem lista de ingredientes e modo de preparo.",
+        "Uma notícia conta um fato recente com data e local."
+      ],
+      quiz:[
+        { pergunta:"Uma receita culinária é um exemplo de:", opcoes:["Gênero textual","Substantivo","Verbo"], correta:0, explicacao:"A receita é um gênero textual com estrutura própria." },
+        { pergunta:"O que diferencia uma notícia de um poema?", opcoes:["A estrutura e o objetivo de cada gênero","Nada, são iguais","Só o tamanho da letra"], correta:0, explicacao:"Cada gênero tem finalidade e forma diferentes." }
+      ]
+    },
+    { id:"pt-ef2-generos-l2", moduloId:"pt-ef2-generos-textuais", titulo:"Identificando a Finalidade de um Texto",
+      conteudoTexto:"Cada texto tem uma finalidade: informar, convencer, emocionar, ensinar ou divertir. Reconhecer essa finalidade ajuda a interpretar melhor o texto.",
+      exemplo:[
+        "Um anúncio publicitário quer convencer você a comprar algo.",
+        "Uma bula de remédio quer informar como usá-lo."
+      ],
+      quiz:[
+        { pergunta:"Qual a finalidade principal de um anúncio publicitário?", opcoes:["Convencer a comprar","Só informar dados científicos","Contar uma história de terror"], correta:0, explicacao:"Anúncios têm finalidade persuasiva." },
+        { pergunta:"Uma bula de remédio tem como finalidade principal:", opcoes:["Divertir o leitor","Informar como usar o remédio","Vender um produto qualquer"], correta:1, explicacao:"A bula é um gênero informativo." }
+      ]
+    },
+
+    // ---------- PT · EF2 · Figuras de Linguagem ----------
+    { id:"pt-ef2-figuras-l1", moduloId:"pt-ef2-figuras-linguagem", titulo:"Metáfora e Comparação",
+      conteudoTexto:"Comparação usa uma palavra de ligação (como 'como') para comparar duas coisas. Metáfora compara sem essa palavra, como se uma coisa realmente fosse a outra.",
+      exemplo:[
+        "'Ele é como um leão' — comparação.",
+        "'Ele é um leão' — metáfora."
+      ],
+      quiz:[
+        { pergunta:"'Ela é como uma estrela' é um exemplo de:", opcoes:["Metáfora","Comparação","Nenhuma figura"], correta:1, explicacao:"O uso de 'como' caracteriza a comparação." },
+        { pergunta:"Na metáfora, a ligação entre as duas coisas comparadas é feita:", opcoes:["Com a palavra 'como'","Sem palavra de ligação, como se fossem a mesma coisa","Sempre com números"], correta:1, explicacao:"A metáfora funde as duas ideias sem conectivo." }
+      ]
+    },
+    { id:"pt-ef2-figuras-l2", moduloId:"pt-ef2-figuras-linguagem", titulo:"Hipérbole e Personificação",
+      conteudoTexto:"Hipérbole é um exagero proposital para dar ênfase. Personificação é dar características humanas a seres que não são humanos.",
+      exemplo:[
+        "'Já te falei mil vezes!' — hipérbole (exagero).",
+        "'O vento sussurrava segredos.' — personificação (o vento 'sussurra' como uma pessoa)."
+      ],
+      quiz:[
+        { pergunta:"'Chorei rios de lágrimas' é um exemplo de:", opcoes:["Hipérbole","Personificação","Nenhuma figura"], correta:0, explicacao:"É um exagero proposital para dar ênfase à emoção." },
+        { pergunta:"Dar características humanas a um objeto ou animal é chamado de:", opcoes:["Hipérbole","Personificação","Comparação"], correta:1, explicacao:"Personificação humaniza seres não-humanos." }
+      ]
+    },
+
+    // ---------- PT · EM · Escolas Literárias ----------
+    { id:"pt-em-literatura-l1", moduloId:"pt-em-literatura", titulo:"O que são Escolas Literárias",
+      conteudoTexto:"Escolas literárias (ou estilos de época) são períodos da história da literatura com características e ideias em comum, como o Romantismo (emoção e idealização) e o Realismo (crítica social e objetividade).",
+      exemplo:[
+        "No Romantismo, os autores idealizavam o amor e a natureza.",
+        "No Realismo, os autores criticavam a sociedade de forma mais objetiva.",
+        "Já o Arcadismo, período anterior ao Romantismo, valorizava a vida simples no campo (bucolismo), em oposição à vida na corte."
+      ],
+      quiz:[
+        { pergunta:"O Romantismo é marcado principalmente por:", opcoes:["Idealização e emoção","Crítica social objetiva","Apenas poesia sem sentimento"], correta:0, explicacao:"O Romantismo valoriza a emoção, o amor idealizado e a natureza." },
+        { pergunta:"O Realismo, em contraste com o Romantismo, tende a ser:", opcoes:["Mais idealizado","Mais crítico e objetivo","Sem nenhuma crítica social"], correta:1, explicacao:"O Realismo busca retratar a sociedade de forma crítica e objetiva." },
+        { pergunta:"Uma obra que idealiza o amor impossível e valoriza sentimentos exagerados provavelmente pertence a qual escola literária?", opcoes:["Romantismo","Realismo","Parnasianismo"], correta:0, explicacao:"A idealização do amor e da emoção é marca registrada do Romantismo.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-literatura-l2", moduloId:"pt-em-literatura", titulo:"Modernismo Brasileiro",
+      conteudoTexto:"O Modernismo no Brasil começou oficialmente com a Semana de Arte Moderna de 1922, trazendo uma linguagem mais livre, valorização da cultura brasileira e ruptura com padrões tradicionais.",
+      exemplo:[
+        "Autores modernistas experimentaram uma linguagem mais próxima da fala popular brasileira.",
+        "Houve valorização de temas e cenários nacionais.",
+        "O Modernismo brasileiro costuma ser dividido em três fases: a primeira (ruptura, anos 1920), a segunda (regionalismo social, anos 1930) e a terceira (pós-1945, com autores como Guimarães Rosa)."
+      ],
+      quiz:[
+        { pergunta:"O Modernismo brasileiro começou oficialmente em qual evento?", opcoes:["Semana de Arte Moderna de 1922","Independência do Brasil","Proclamação da República"], correta:0, explicacao:"A Semana de 1922, em São Paulo, marcou o início oficial do movimento." },
+        { pergunta:"Uma característica do Modernismo é:", opcoes:["Linguagem rígida e tradicional","Linguagem mais livre e valorização da cultura brasileira","Apenas imitar estilos europeus"], correta:1, explicacao:"O Modernismo rompeu com padrões rígidos anteriores." },
+        { pergunta:"Uma obra que mistura crítica social com linguagem regional, publicada nos anos 1930, provavelmente pertence a qual fase do Modernismo?", opcoes:["Primeira fase","Segunda fase","Terceira fase"], correta:1, explicacao:"A segunda fase do Modernismo é marcada pelo regionalismo e pela crítica social.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ---------- PT · EM · Redação (ENEM) ----------
+    { id:"pt-em-redacao-l1", moduloId:"pt-em-redacao", titulo:"Estrutura da Redação Dissertativo-Argumentativa",
+      conteudoTexto:"Esse tipo de redação (cobrado no ENEM) tem estrutura: introdução (apresenta o tema e a tese), desenvolvimento (argumentos que sustentam a tese) e conclusão (retoma a ideia e propõe uma solução).",
+      exemplo:[
+        "Introdução: apresenta o problema e a tese.",
+        "Desenvolvimento: 2 parágrafos com argumentos diferentes.",
+        "Conclusão: propõe uma solução prática.",
+        "Um erro comum é confundir introdução com resumo do texto motivador — a introdução deve apresentar sua própria tese, não apenas repetir os textos de apoio."
+      ],
+      quiz:[
+        { pergunta:"A redação dissertativo-argumentativa tem quantas partes principais?", opcoes:["2","3","5"], correta:1, explicacao:"Introdução, desenvolvimento e conclusão." },
+        { pergunta:"Na conclusão desse tipo de redação, é esperado:", opcoes:["Repetir a introdução igualzinha","Propor uma solução para o problema","Não concluir nada"], correta:1, explicacao:"A conclusão deve trazer uma proposta que resolva o problema discutido." },
+        { pergunta:"Num parágrafo de desenvolvimento, o que geralmente vem logo após a apresentação do argumento?", opcoes:["Uma nova tese","Um exemplo ou dado que sustente o argumento","A proposta de intervenção"], correta:1, explicacao:"O argumento precisa ser sustentado por exemplos, dados ou repertório sociocultural.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-redacao-l2", moduloId:"pt-em-redacao", titulo:"Proposta de Intervenção (ENEM)",
+      conteudoTexto:"No ENEM, a conclusão da redação deve trazer uma proposta de intervenção detalhada: quem vai agir, o que vai fazer, como e com que finalidade, buscando resolver o problema discutido.",
+      exemplo:[
+        "'O Ministério da Educação (quem) deveria criar campanhas informativas (o quê) nas escolas (como) para reduzir o problema discutido (finalidade).'",
+        "Propostas de intervenção muito genéricas, como 'a população deveria se conscientizar', tendem a perder pontos por falta de detalhamento."
+      ],
+      quiz:[
+        { pergunta:"A proposta de intervenção do ENEM deve aparecer:", opcoes:["No início do texto","Na conclusão","Não é necessária"], correta:1, explicacao:"É na conclusão que a proposta de solução é apresentada." },
+        { pergunta:"Uma boa proposta de intervenção deve indicar:", opcoes:["Só um agente, sem detalhes","Quem, o quê, como e para quê","Apenas uma opinião pessoal"], correta:1, explicacao:"Esses são os elementos que a banca do ENEM espera encontrar." },
+        { pergunta:"Qual das opções abaixo é uma proposta de intervenção mais completa?", opcoes:["'As pessoas deveriam ser mais conscientes.'","'O governo deveria fazer algo a respeito.'","'O Ministério da Saúde deveria criar campanhas nas escolas, por meio de palestras, para reduzir o problema.'"], correta:2, explicacao:"Essa opção detalha quem age, o que faz e como — os elementos que a banca do ENEM espera.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ---------- PT · EM · Período Composto ----------
+    { id:"pt-em-sintaxe-l1", moduloId:"pt-em-sintaxe-avancada", titulo:"Orações Coordenadas",
+      conteudoTexto:"Orações coordenadas são independentes entre si (nenhuma 'depende' gramaticalmente da outra), mas podem estar ligadas por conjunções como 'e', 'mas', 'ou'.",
+      exemplo:[
+        "'Ele estudou e passou na prova.'",
+        "As duas orações são independentes, ligadas por 'e'.",
+        "Existem 5 tipos de orações coordenadas: aditivas (e), adversativas (mas), alternativas (ou), conclusivas (logo) e explicativas (pois)."
+      ],
+      quiz:[
+        { pergunta:"Orações coordenadas são caracterizadas por serem:", opcoes:["Dependentes uma da outra","Independentes entre si","Sempre sem verbo"], correta:1, explicacao:"Cada oração coordenada tem sentido completo por si só." },
+        { pergunta:"'Estudei, mas não passei' tem as orações ligadas por qual conjunção?", opcoes:["e","mas","porque"], correta:1, explicacao:"'Mas' liga as duas orações, indicando oposição." },
+        { pergunta:"Na frase 'Estude bastante, pois a prova será difícil', a oração destacada é:", opcoes:["Aditiva","Explicativa","Alternativa"], correta:1, explicacao:"A conjunção 'pois' introduz uma explicação/justificativa.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-sintaxe-l2", moduloId:"pt-em-sintaxe-avancada", titulo:"Orações Subordinadas",
+      conteudoTexto:"Orações subordinadas dependem de uma oração principal para ter sentido completo — funcionam como um termo dela.",
+      exemplo:[
+        "'Espero QUE VOCÊ VENÇA.'",
+        "A oração 'que você vença' depende de 'Espero' para fazer sentido completo.",
+        "Orações subordinadas substantivas funcionam como um substantivo dentro da oração principal, como em 'Percebi QUE ELE MENTIU', que exerce a função de objeto direto."
+      ],
+      quiz:[
+        { pergunta:"Uma oração subordinada:", opcoes:["Tem sentido completo sozinha","Depende de outra oração para ter sentido completo","Nunca tem verbo"], correta:1, explicacao:"Ela funciona como parte da oração principal." },
+        { pergunta:"Na frase 'Espero que você vença', qual é a oração principal?", opcoes:["Espero","Que você vença","As duas juntas são a principal"], correta:0, explicacao:"'Espero' é a oração da qual a outra depende." },
+        { pergunta:"Na frase 'É importante que você estude', a oração 'que você estude' funciona como:", opcoes:["Sujeito da oração principal","Objeto direto","Adjetivo"], correta:0, explicacao:"A oração subordinada substantiva subjetiva funciona como sujeito de 'é importante'.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ---------- PT · EM · Semântica ----------
+    { id:"pt-em-semantica-l1", moduloId:"pt-em-semantica", titulo:"Sinônimos, Antônimos e Ambiguidade",
+      conteudoTexto:"Sinônimos são palavras com significado parecido; antônimos têm significado oposto. Ambiguidade é quando uma frase pode ter mais de um sentido.",
+      exemplo:[
+        "'Feliz' e 'contente' são sinônimos.",
+        "'Feliz' e 'triste' são antônimos.",
+        "'Vi o rapaz com o binóculo' é ambígua: quem tinha o binóculo?",
+        "Um caso famoso de ambiguidade: 'A polícia prendeu o ladrão em sua casa' — de quem é a casa, do ladrão ou da polícia?"
+      ],
+      quiz:[
+        { pergunta:"'Grande' e 'enorme' são exemplos de:", opcoes:["Sinônimos","Antônimos","Ambiguidade"], correta:0, explicacao:"Têm significados muito próximos." },
+        { pergunta:"Uma frase ambígua é aquela que:", opcoes:["Tem apenas um sentido claro","Pode ser entendida de mais de uma forma","Não tem verbo"], correta:1, explicacao:"A ambiguidade gera mais de uma interpretação possível." },
+        { pergunta:"Qual frase abaixo é ambígua?", opcoes:["'Maria viu o cachorro correndo.'","'João comprou um carro novo ontem.'","'O professor corrigiu as provas rapidamente.'"], correta:0, explicacao:"Não fica claro quem estava correndo: Maria ou o cachorro.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-semantica-l2", moduloId:"pt-em-semantica", titulo:"Ironia e Eufemismo",
+      conteudoTexto:"Ironia é dizer o contrário do que se pensa, geralmente com tom crítico ou de humor. Eufemismo é suavizar uma ideia desagradável, dizendo de um jeito mais ameno.",
+      exemplo:[
+        "'Que dia lindo!' dito durante uma tempestade — ironia.",
+        "'Ele partiu desta vida' — eufemismo para 'ele morreu'.",
+        "O eufemismo também é usado em contextos profissionais, como dizer 'colaborador foi desligado' em vez de 'foi demitido'."
+      ],
+      quiz:[
+        { pergunta:"Dizer 'Que ótimo!' de forma sarcástica durante um problema é um exemplo de:", opcoes:["Ironia","Eufemismo","Hipérbole"], correta:0, explicacao:"A ironia diz o oposto do que realmente se pensa." },
+        { pergunta:"Eufemismo serve para:", opcoes:["Exagerar uma ideia","Suavizar uma ideia desagradável","Comparar duas coisas"], correta:1, explicacao:"O eufemismo torna uma ideia dura mais amena." },
+        { pergunta:"'Ele foi convidado a se retirar da empresa' é um exemplo de:", opcoes:["Ironia","Eufemismo","Hipérbole"], correta:1, explicacao:"A frase suaviza a ideia de demissão.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ---------- PT · EM · Interpretação Avançada ----------
+    { id:"pt-em-interpretacao-l1", moduloId:"pt-em-interpretacao-avancada", titulo:"Identificando a Tese de um Texto",
+      conteudoTexto:"Em textos argumentativos, a tese é a ideia central que o autor defende. Identificá-la é essencial para entender o posicionamento do texto.",
+      exemplo:[
+        "Num artigo defendendo a reciclagem, a tese pode ser 'a reciclagem é essencial para reduzir o impacto ambiental'.",
+        "Os parágrafos seguintes trazem argumentos que sustentam essa ideia.",
+        "Em textos mais longos, a tese pode reaparecer reformulada ao final, reforçando o posicionamento defendido ao longo do texto."
+      ],
+      quiz:[
+        { pergunta:"A tese de um texto argumentativo é:", opcoes:["Um exemplo qualquer citado","A ideia central que o autor defende","O título do texto"], correta:1, explicacao:"A tese é o posicionamento central defendido pelo autor." },
+        { pergunta:"Identificar a tese ajuda o leitor a:", opcoes:["Decorar o texto","Entender o posicionamento do autor","Ignorar os argumentos"], correta:1, explicacao:"Saber a tese orienta a leitura de todo o restante do texto." },
+        { pergunta:"Se um texto afirma que 'a tecnologia isola as pessoas', mas depois lista vários benefícios da tecnologia para conectar pessoas, isso indica que o texto:", opcoes:["Defende só uma tese, sem contradição","Pode estar relativizando ou contrapondo argumentos à tese inicial","Não tem nenhuma tese"], correta:1, explicacao:"Textos argumentativos bem construídos costumam ponderar contra-argumentos antes de reforçar a tese.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-interpretacao-l2", moduloId:"pt-em-interpretacao-avancada", titulo:"Inferência: Lendo nas Entrelinhas",
+      conteudoTexto:"Inferir é concluir algo que o texto não diz diretamente, mas que pode ser deduzido a partir de pistas presentes nele.",
+      exemplo:[
+        "Se um texto diz 'Ele chegou encharcado e reclamando do trânsito parado'.",
+        "Podemos inferir que estava chovendo e havia um engarrafamento.",
+        "Cuidado: inferir não é o mesmo que 'inventar' — a conclusão precisa ser sustentada por pistas reais presentes no texto."
+      ],
+      quiz:[
+        { pergunta:"Inferir significa:", opcoes:["Copiar exatamente o que o texto diz","Concluir algo com base em pistas do texto","Ignorar o texto completamente"], correta:1, explicacao:"A inferência usa pistas do texto para chegar a uma conclusão não explícita." },
+        { pergunta:"Se o texto diz que alguém 'chegou encharcado', é razoável inferir que:", opcoes:["Estava fazendo sol forte","Provavelmente estava chovendo","Ele tinha acabado de nadar"], correta:1, explicacao:"É a inferência mais razoável a partir da pista dada." },
+        { pergunta:"Se um texto diz 'Ele chegou ofegante, olhando o relógio sem parar', é razoável inferir que:", opcoes:["Ele está atrasado e correu","Ele está descansando","Ele está entediado"], correta:0, explicacao:"Ofegante e olhando o relógio sugerem pressa e atraso.", dificuldade:"dificil" }
+      ]
+    },
+
+    // ---------- PT · EM · Variação Linguística ----------
+    { id:"pt-em-variacao-l1", moduloId:"pt-em-variacao-linguistica", titulo:"Não Existe 'Jeito Errado' de Falar",
+      conteudoTexto:"A língua varia de acordo com região, idade, grupo social e situação — são as variações linguísticas. Nenhuma variação é 'errada'; o que muda é a adequação ao contexto (formal ou informal).",
+      exemplo:[
+        "'Nóis vamo' é comum na fala informal de certas regiões.",
+        "Em uma redação formal, usaríamos 'nós vamos' — não porque um seja errado, mas porque cada contexto pede uma variante.",
+        "O preconceito linguístico acontece quando se julga alguém como 'errado' por usar uma variação linguística diferente da norma culta, mesmo sendo uma forma de falar legítima."
+      ],
+      quiz:[
+        { pergunta:"Variação linguística acontece por causa de:", opcoes:["Região, idade, grupo social e situação","Apenas erros de português","Falta de estudo"], correta:0, explicacao:"São fatores naturais que moldam as variações da língua." },
+        { pergunta:"Em uma redação formal, é esperado usar:", opcoes:["A norma culta/padrão","Qualquer gíria regional","Só abreviações de internet"], correta:0, explicacao:"Contextos formais pedem a norma culta da língua." },
+        { pergunta:"Julgar a fala de uma pessoa de determinada região como 'feia' ou 'errada', só por ser diferente da norma culta, é um exemplo de:", opcoes:["Norma culta","Preconceito linguístico","Função poética"], correta:1, explicacao:"Toda variação linguística é legítima; julgá-la como inferior é preconceito linguístico.", dificuldade:"dificil" }
+      ]
+    },
+    { id:"pt-em-variacao-l2", moduloId:"pt-em-variacao-linguistica", titulo:"Funções da Linguagem",
+      conteudoTexto:"Toda mensagem tem uma função predominante: informar (referencial), expressar emoção (emotiva), convencer (apelativa), focar na própria linguagem (poética), entre outras.",
+      exemplo:[
+        "Um anúncio 'Compre já!' tem função apelativa (quer convencer).",
+        "Um poema tem função poética, valorizando a forma das palavras.",
+        "A função fática da linguagem serve para testar ou manter o canal de comunicação, como em 'Alô, está me ouvindo?'."
+      ],
+      quiz:[
+        { pergunta:"Um anúncio publicitário que tenta convencer o consumidor usa principalmente a função:", opcoes:["Poética","Apelativa/conativa","Emotiva"], correta:1, explicacao:"O objetivo do anúncio é persuadir — função apelativa." },
+        { pergunta:"A função poética da linguagem valoriza principalmente:", opcoes:["A forma e a sonoridade das palavras","Apenas informações objetivas","Só números e dados"], correta:0, explicacao:"A função poética dá destaque à construção estética da mensagem." },
+        { pergunta:"'Alô? Você está me ouvindo?' no início de uma ligação é um exemplo da função da linguagem:", opcoes:["Fática","Poética","Emotiva"], correta:0, explicacao:"A função fática testa/mantém o canal de comunicação entre emissor e receptor.", dificuldade:"dificil" }
       ]
     }
   ]
@@ -788,13 +1770,33 @@ const DATA = {
 /* =========================================================================
    ESTADO E NAVEGAÇÃO (progresso fica só na memória da sessão)
    ========================================================================= */
-const state = { quizProgress:{} };
+const state = { completedLicoes: new Set() };
 
 function nivelById(id){ return DATA.niveis.find(n=>n.id===id); }
-function modulosByNivel(id){ return DATA.modulos.filter(m=>m.nivelId===id); }
+function materiaById(id){ return DATA.materias.find(m=>m.id===id); }
+function modulosByMateriaNivel(materiaId, nivelId){ return DATA.modulos.filter(m=>m.nivelId===nivelId && m.materiaId===materiaId); }
 function licoesByModulo(id){ return DATA.licoes.filter(l=>l.moduloId===id); }
 function licaoById(id){ return DATA.licoes.find(l=>l.id===id); }
 function moduloById(id){ return DATA.modulos.find(m=>m.id===id); }
+function licoesByMateriaNivel(materiaId, nivelId){
+  const modIds = new Set(modulosByMateriaNivel(materiaId, nivelId).map(m=>m.id));
+  return DATA.licoes.filter(l=>modIds.has(l.moduloId));
+}
+function progressoModulo(moduloId){
+  const lics = licoesByModulo(moduloId);
+  const done = lics.filter(l=>state.completedLicoes.has(l.id)).length;
+  return { done, total: lics.length };
+}
+function progressoMateriaNivel(materiaId, nivelId){
+  const lics = licoesByMateriaNivel(materiaId, nivelId);
+  const done = lics.filter(l=>state.completedLicoes.has(l.id)).length;
+  return { done, total: lics.length };
+}
+function normalizarTexto(s){
+  return (s || "").toString().trim().toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(",", ".");
+}
 
 function navigate(hash){ location.hash = hash; }
 window.addEventListener("hashchange", render);
@@ -805,10 +1807,14 @@ function render(){
   const parts = hash.split("/").filter(Boolean);
   const app = document.getElementById("app");
 
-  if(parts[0] === "nivel" && parts[1] && parts[2] === "modulo" && parts[3]){
-    renderModulo(app, parts[1], parts[3]);
-  } else if(parts[0] === "nivel" && parts[1]){
-    renderNivel(app, parts[1]);
+  if(parts[0] === "materia" && parts[1] && parts[2] === "nivel" && parts[3] && parts[4] === "modulo" && parts[5]){
+    renderModulo(app, parts[1], parts[3], parts[5]);
+  } else if(parts[0] === "materia" && parts[1] && parts[2] === "nivel" && parts[3] && parts[4] === "revisao"){
+    renderRevisao(app, parts[1], parts[3]);
+  } else if(parts[0] === "materia" && parts[1] && parts[2] === "nivel" && parts[3]){
+    renderNivel(app, parts[1], parts[3]);
+  } else if(parts[0] === "materia" && parts[1]){
+    renderMateriaHub(app, parts[1]);
   } else if(parts[0] === "licao" && parts[1]){
     renderLicao(app, parts[1]);
   } else {
@@ -817,61 +1823,144 @@ function render(){
   window.scrollTo(0,0);
 }
 
-/* ---------- HOME ---------- */
+/* ---------- HOME (escolha da disciplina) ---------- */
 function renderHome(app){
   document.body.removeAttribute("data-theme");
   app.innerHTML = `
     <div class="topbar wrap">
-      <div class="brand"><span class="brand-dot"></span> Trilhas de Matemática</div>
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
     </div>
     <div class="hero">
-      <h1>Uma trilha de matemática<br>para cada fase da vida</h1>
-      <p>Do primeiro contato com os números até a véspera do vestibular. Escolha sua etapa para começar.</p>
+      <h1>Uma trilha para cada<br>disciplina e fase da vida</h1>
+      <p>Escolha a disciplina e depois a etapa de ensino — do primeiro contato até a véspera do vestibular.</p>
+    </div>
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="search-input" placeholder="Buscar um assunto (ex: frações, Bhaskara, orações, redação...)">
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="portals portals-2col" id="portals-list">
+      ${DATA.materias.map(m => `
+        <div class="portal portal-materia portal-${m.id}" onclick="navigate('materia/${m.id}')">
+          <div class="icone">${m.icone}</div>
+          <h3>${m.titulo}</h3>
+          <p>${m.descricao}</p>
+          <div class="ir">Ver trilhas →</div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="footer-note">Conteúdo baseado na BNCC — estrutura de dados pronta para conectar ao Firestore.</div>
+  `;
+
+  const input = document.getElementById("search-input");
+  const results = document.getElementById("search-results");
+  const portalsList = document.getElementById("portals-list");
+
+  input.addEventListener("input", () => {
+    const q = normalizarTexto(input.value);
+    if(q.length < 2){
+      results.innerHTML = "";
+      portalsList.style.display = "grid";
+      return;
+    }
+    portalsList.style.display = "none";
+    const found = DATA.licoes
+      .filter(l => normalizarTexto(l.titulo + " " + l.conteudoTexto).includes(q))
+      .slice(0, 8);
+
+    if(!found.length){
+      results.innerHTML = `<div class="search-empty">Nenhum assunto encontrado para "${input.value}".</div>`;
+      return;
+    }
+    results.innerHTML = found.map(l => {
+      const modulo = moduloById(l.moduloId);
+      const nivel = nivelById(modulo.nivelId);
+      const materia = materiaById(modulo.materiaId);
+      return `
+        <div class="search-item" onclick="navigate('licao/${l.id}')">
+          <div class="si-icon">${modulo.icone}</div>
+          <div class="si-text">
+            <div class="si-title">${l.titulo}</div>
+            <div class="si-path">${materia.titulo} · ${nivel.titulo} · ${modulo.titulo}</div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  });
+}
+
+/* ---------- HUB DA DISCIPLINA (escolha da trilha/nível) ---------- */
+function renderMateriaHub(app, materiaId){
+  const materia = materiaById(materiaId);
+  if(!materia){ renderHome(app); return; }
+  document.body.removeAttribute("data-theme");
+
+  app.innerHTML = `
+    <div class="topbar wrap">
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
+      <div class="crumbs"><a onclick="navigate('/')">← trocar disciplina</a></div>
+    </div>
+    <div class="hero">
+      <div style="font-size:2.2rem;">${materia.icone}</div>
+      <h1>${materia.titulo}</h1>
+      <p>${materia.descricao}</p>
     </div>
     <div class="portals">
       ${DATA.niveis.map(n => `
-        <div class="portal portal-${n.tema}" onclick="navigate('nivel/${n.id}')">
+        <div class="portal portal-${n.tema}" onclick="navigate('materia/${materiaId}/nivel/${n.id}')">
           ${n.tema==='ef1' ? '<div class="blob"></div><div class="blob2"></div>' : ''}
           ${n.tema==='ef2' ? '<div class="stripe"></div>' : ''}
           <div class="icone">${n.icone}</div>
           <div class="sub">${n.subtitulo}</div>
           <h3>${n.titulo}</h3>
-          <p>${n.descricao}</p>
+          <p>${(n.descricaoPorMateria && n.descricaoPorMateria[materiaId]) || n.descricao}</p>
           <div class="ir">Entrar na trilha →</div>
         </div>
       `).join("")}
     </div>
-    <div class="footer-note">Conteúdo baseado na BNCC.</div>
   `;
 }
 
 /* ---------- NÍVEL → lista de módulos ---------- */
-function renderNivel(app, nivelId){
+function renderNivel(app, materiaId, nivelId){
   const nivel = nivelById(nivelId);
-  if(!nivel){ renderHome(app); return; }
+  const materia = materiaById(materiaId);
+  if(!nivel || !materia){ renderHome(app); return; }
   document.body.setAttribute("data-theme", nivel.tema);
-  const mods = modulosByNivel(nivelId);
-  const soon = DATA.modulosEmBreve[nivelId] || [];
+  const mods = modulosByMateriaNivel(materiaId, nivelId);
+  const soon = (DATA.modulosEmBreve[materiaId] && DATA.modulosEmBreve[materiaId][nivelId]) || [];
+  const prog = progressoMateriaNivel(materiaId, nivelId);
+  const pct = prog.total ? Math.round((prog.done / prog.total) * 100) : 0;
 
   app.innerHTML = `
     <div class="topbar wrap">
-      <div class="brand"><span class="brand-dot"></span> Trilhas de Matemática</div>
-      <div class="crumbs"><a href="#/" onclick="navigate('/')">← todas as trilhas</a></div>
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
+      <div class="crumbs"><a onclick="navigate('materia/${materiaId}')">← ${materia.icone} ${materia.titulo}</a></div>
     </div>
     <div class="page wrap">
       <div class="page-header">
-        <div class="level-tag">${nivel.subtitulo}</div>
+        <div class="level-tag">${materia.titulo} · ${nivel.subtitulo}</div>
         <h1>${nivel.icone} ${nivel.titulo}</h1>
-        <p>${nivel.descricao}</p>
+        <p>${(nivel.descricaoPorMateria && nivel.descricaoPorMateria[materiaId]) || nivel.descricao}</p>
+        <div class="progress-summary">
+          <span>${prog.done}/${prog.total} lições concluídas</span>
+          <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:${pct}%"></div></div>
+        </div>
+        <button class="btn-revisao" onclick="navigate('materia/${materiaId}/nivel/${nivelId}/revisao')">⚡ Revisão rápida</button>
       </div>
       <div class="grid-cards">
-        ${mods.map(m => `
-          <div class="mod-card" onclick="navigate('nivel/${nivelId}/modulo/${m.id}')">
+        ${mods.map(m => {
+          const mp = progressoModulo(m.id);
+          const mpct = mp.total ? Math.round((mp.done / mp.total) * 100) : 0;
+          return `
+          <div class="mod-card" onclick="navigate('materia/${materiaId}/nivel/${nivelId}/modulo/${m.id}')">
             <div class="icone">${m.icone}</div>
             <h4>${m.titulo}</h4>
-            <div class="count">${licoesByModulo(m.id).length} lições</div>
+            <div class="count mini-progress">
+              ${mp.done}/${mp.total} lições ${mp.done === mp.total && mp.total ? '✓' : ''}
+              <div class="mini-bar-outer"><div class="mini-bar-inner" style="width:${mpct}%"></div></div>
+            </div>
           </div>
-        `).join("")}
+        `; }).join("")}
       </div>
       ${soon.length ? `
       <div class="modulos-soon-list">
@@ -883,32 +1972,37 @@ function renderNivel(app, nivelId){
 }
 
 /* ---------- MÓDULO → lista de lições ---------- */
-function renderModulo(app, nivelId, moduloId){
+function renderModulo(app, materiaId, nivelId, moduloId){
   const nivel = nivelById(nivelId);
+  const materia = materiaById(materiaId);
   const modulo = moduloById(moduloId);
-  if(!nivel || !modulo){ renderHome(app); return; }
+  if(!nivel || !materia || !modulo){ renderHome(app); return; }
   document.body.setAttribute("data-theme", nivel.tema);
   const lics = licoesByModulo(moduloId);
 
   app.innerHTML = `
     <div class="topbar wrap">
-      <div class="brand"><span class="brand-dot"></span> Trilhas de Matemática</div>
-      <div class="crumbs"><a onclick="navigate('nivel/${nivelId}')">← ${nivel.titulo}</a></div>
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
+      <div class="crumbs"><a onclick="navigate('materia/${materiaId}/nivel/${nivelId}')">← ${nivel.titulo}</a></div>
     </div>
     <div class="page wrap">
       <div class="page-header">
-        <div class="level-tag">${modulo.icone} módulo</div>
+        <div class="level-tag">${materia.titulo} · ${modulo.icone} módulo</div>
         <h1>${modulo.titulo}</h1>
         <p>${modulo.descricao}</p>
       </div>
       <div class="lic-list">
-        ${lics.map((l,i) => `
+        ${lics.map((l,i) => {
+          const done = state.completedLicoes.has(l.id);
+          return `
           <div class="lic-row" onclick="navigate('licao/${l.id}')">
-            <div class="lic-num">${String(i+1).padStart(2,'0')}</div>
+            ${done
+              ? `<div class="lic-check done">✓</div>`
+              : `<div class="lic-num">${String(i+1).padStart(2,'0')}</div>`}
             <h4>${l.titulo}</h4>
             <div class="lic-arrow">→</div>
           </div>
-        `).join("")}
+        `; }).join("")}
       </div>
     </div>
   `;
@@ -920,22 +2014,31 @@ function renderLicao(app, licaoId){
   if(!licao){ renderHome(app); return; }
   const modulo = moduloById(licao.moduloId);
   const nivel = nivelById(modulo.nivelId);
+  const materia = materiaById(modulo.materiaId);
   document.body.setAttribute("data-theme", nivel.tema);
+  setFigTema(nivel.tema);
 
   app.innerHTML = `
     <div class="topbar wrap">
-      <div class="brand"><span class="brand-dot"></span> Trilhas de Matemática</div>
-      <div class="crumbs"><a onclick="navigate('nivel/${nivel.id}/modulo/${modulo.id}')">← ${modulo.titulo}</a></div>
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
+      <div class="crumbs"><a onclick="navigate('materia/${materia.id}/nivel/${nivel.id}/modulo/${modulo.id}')">← ${modulo.titulo}</a></div>
     </div>
     <div class="page wrap">
       <div class="licao-body">
-        <div class="level-tag">${nivel.titulo}</div>
+        <div class="level-tag">${materia.icone} ${materia.titulo} · ${nivel.titulo}</div>
         <h1 style="margin-top:6px;">${licao.titulo}</h1>
 
         <div class="licao-section">
           <h3>O que é</h3>
           <p class="licao-texto">${licao.conteudoTexto}</p>
         </div>
+
+        ${licao.figura ? `
+          <div class="licao-section">
+            <h3>Visualização</h3>
+            <div class="figura-box">${gerarFigura(licao.figura)}</div>
+          </div>
+        ` : ""}
 
         ${licao.formulaLatex ? `
           <div class="licao-section">
@@ -944,12 +2047,14 @@ function renderLicao(app, licaoId){
           </div>
         ` : ""}
 
+        ${licao.exemplo && licao.exemplo.length ? `
         <div class="licao-section">
           <h3>Exemplo passo a passo</h3>
           <div class="exemplo-box">
             ${licao.exemplo.map((s,i)=>`<div class="exemplo-step"><b>${i+1}</b><span>${s}</span></div>`).join("")}
           </div>
         </div>
+        ` : ""}
 
         <div class="licao-section" id="quiz-container">
           <h3>Vamos praticar?</h3>
@@ -966,59 +2071,934 @@ function renderLicao(app, licaoId){
   mountQuiz(licao);
 }
 
-/* ---------- QUIZ ---------- */
-function mountQuiz(licao){
+/* ---------- GERADORES DE FIGURAS SVG (cores adaptadas ao tema ativo) ---------- */
+const FIG_TEMAS = {
+  ef1: { bg:"#fff8ed", grid:"rgba(61,52,139,.16)", axis:"#6b6f9e", linha:"#e0426b", destaque:"#0e7ba8", terciaria:"#0a8f5b", texto:"#3d348b", textoSuave:"#6b6f9e" },
+  ef2: { bg:"#ffffff", grid:"rgba(20,20,43,.16)", axis:"#55577a", linha:"#4a4ee0", destaque:"#e0426b", terciaria:"#06915c", texto:"#14142b", textoSuave:"#55577a" },
+  em:  { bg:"#151924", grid:"rgba(100,181,246,.18)", axis:"#8a93a8", linha:"#64b5f6", destaque:"#ffb74d", terciaria:"#06d6a0", texto:"#e8eaf0", textoSuave:"#8a93a8" }
+};
+let FIG = FIG_TEMAS.em;
+function setFigTema(tema){ FIG = FIG_TEMAS[tema] || FIG_TEMAS.em; }
+
+function fSvg(viewBox, inner){
+  return `<svg viewBox="${viewBox}" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; font-family:'IBM Plex Mono',monospace;">${inner}</svg>`;
+}
+
+// eixos cartesianos com grade, retorna helpers de conversão de coordenada
+function eixos(w, h, xMin, xMax, yMin, yMax){
+  const px = x => ((x - xMin) / (xMax - xMin)) * w;
+  const py = y => h - ((y - yMin) / (yMax - yMin)) * h;
+  let grid = "";
+  for(let gx = Math.ceil(xMin); gx <= xMax; gx++){ grid += `<line x1="${px(gx)}" y1="0" x2="${px(gx)}" y2="${h}" stroke="${FIG.grid}" stroke-width="1"/>`; }
+  for(let gy = Math.ceil(yMin); gy <= yMax; gy++){ grid += `<line x1="0" y1="${py(gy)}" x2="${w}" y2="${py(gy)}" stroke="${FIG.grid}" stroke-width="1"/>`; }
+  const axes = `<line x1="0" y1="${py(0)}" x2="${w}" y2="${py(0)}" stroke="${FIG.axis}" stroke-width="1.5"/>
+                <line x1="${px(0)}" y1="0" x2="${px(0)}" y2="${h}" stroke="${FIG.axis}" stroke-width="1.5"/>`;
+  return { px, py, svg: grid + axes };
+}
+
+function figuraFuncao(tipo, params){
+  const w=320, h=220;
+  const xMin=-6, xMax=6, yMin=-6, yMax=10;
+  const { px, py, svg } = eixos(w,h,xMin,xMax,yMin,yMax);
+  const f = x => {
+    if(tipo==="afim") return params.a*x + params.b;
+    if(tipo==="quadratica") return params.a*x*x + params.b*x + params.c;
+    if(tipo==="exponencial") return Math.pow(params.a, x);
+    return 0;
+  };
+  let pts = "";
+  for(let x=xMin; x<=xMax; x+=0.25){
+    const y = f(x);
+    if(y < yMin-2 || y > yMax+2) continue;
+    pts += `${px(x)},${py(Math.max(yMin,Math.min(yMax,y)))} `;
+  }
+  let marcadores = "";
+  if(tipo==="quadratica"){
+    const xv = -params.b/(2*params.a);
+    const yv = f(xv);
+    marcadores += `<circle cx="${px(xv)}" cy="${py(yv)}" r="4" fill="${FIG.destaque}"/><text x="${px(xv)+8}" y="${py(yv)-6}" fill="${FIG.destaque}" font-size="11">vértice</text>`;
+    const delta = params.b*params.b - 4*params.a*params.c;
+    if(delta >= 0){
+      const r1 = (-params.b + Math.sqrt(delta))/(2*params.a);
+      const r2 = (-params.b - Math.sqrt(delta))/(2*params.a);
+      [r1,r2].forEach(r=>{ marcadores += `<circle cx="${px(r)}" cy="${py(0)}" r="3.5" fill="${FIG.linha}"/>`; });
+    }
+  }
+  return fSvg(`0 0 ${w} ${h}`, `${svg}<polyline points="${pts}" fill="none" stroke="${FIG.linha}" stroke-width="2.5"/>${marcadores}`);
+}
+
+function figuraPlano(opts){
+  const w=300, h=240;
+  const xMin=opts.xMin ?? -2, xMax=opts.xMax ?? 8, yMin=opts.yMin ?? -2, yMax=opts.yMax ?? 8;
+  const { px, py, svg } = eixos(w,h,xMin,xMax,yMin,yMax);
+  let extra = "";
+  if(opts.circulo){
+    const [cx,cy] = opts.circulo.centro;
+    const rPx = (opts.circulo.raio / (xMax-xMin)) * w;
+    extra += `<circle cx="${px(cx)}" cy="${py(cy)}" r="${rPx}" fill="none" stroke="${FIG.destaque}" stroke-width="2.5"/><circle cx="${px(cx)}" cy="${py(cy)}" r="3" fill="${FIG.destaque}"/>`;
+  }
+  if(opts.reta){
+    const x1=xMin, x2=xMax;
+    const y1 = opts.reta.m*x1 + opts.reta.n, y2 = opts.reta.m*x2 + opts.reta.n;
+    extra += `<line x1="${px(x1)}" y1="${py(y1)}" x2="${px(x2)}" y2="${py(y2)}" stroke="${FIG.linha}" stroke-width="2.5"/>`;
+  }
+  (opts.pontos||[]).forEach(([x,y],i) => {
+    extra += `<circle cx="${px(x)}" cy="${py(y)}" r="4.5" fill="${FIG.destaque}"/><text x="${px(x)+8}" y="${py(y)-8}" fill="${FIG.texto}" font-size="12">(${x},${y})</text>`;
+  });
+  if(opts.mostrarDistancia && opts.pontos && opts.pontos.length===2){
+    const [[x1,y1],[x2,y2]] = opts.pontos;
+    extra += `<line x1="${px(x1)}" y1="${py(y1)}" x2="${px(x2)}" y2="${py(y2)}" stroke="${FIG.linha}" stroke-width="2" stroke-dasharray="5,4"/>`;
+  }
+  return fSvg(`0 0 ${w} ${h}`, svg + extra);
+}
+
+function figuraTriangulo(opts){
+  if(opts.reto){
+    const escala = 34, margin = 44;
+    const oposto = opts.oposto, adjacente = opts.adjacente;
+    const w = adjacente*escala + margin*2 + 30;
+    const h = oposto*escala + margin*2 + 20;
+    const ox = margin, oy = h - margin;
+    const ax = ox, ay = oy - oposto*escala;
+    const bx = ox + adjacente*escala, by = oy;
+    return fSvg(`0 0 ${w} ${h}`, `
+      <polygon points="${ox},${oy} ${ax},${ay} ${bx},${by}" fill="rgba(100,181,246,.08)" stroke="${FIG.linha}" stroke-width="2.5"/>
+      <rect x="${ox}" y="${oy-16}" width="16" height="16" fill="none" stroke="${FIG.axis}" stroke-width="1.5"/>
+      <text x="${ox-36}" y="${(oy+ay)/2}" fill="${FIG.texto}" font-size="14">oposto=${opts.oposto}</text>
+      <text x="${(ox+bx)/2-24}" y="${oy+26}" fill="${FIG.texto}" font-size="14">adjacente=${opts.adjacente}</text>
+      <text x="${(ax+bx)/2+8}" y="${(ay+by)/2-4}" fill="${FIG.destaque}" font-size="14">hipotenusa</text>
+    `);
+  }
+  const w=300, h=200;
+  // triângulo genérico (lei dos senos/cossenos)
+  const A=[60,170], B=[250,170], C=[150,30];
+  return fSvg(`0 0 ${w} ${h}`, `
+    <polygon points="${A.join(',')} ${B.join(',')} ${C.join(',')}" fill="rgba(100,181,246,.08)" stroke="${FIG.linha}" stroke-width="2.5"/>
+    <text x="${A[0]-14}" y="${A[1]+16}" fill="${FIG.destaque}" font-size="14">A</text>
+    <text x="${B[0]+6}" y="${B[1]+16}" fill="${FIG.destaque}" font-size="14">B</text>
+    <text x="${C[0]-4}" y="${C[1]-8}" fill="${FIG.destaque}" font-size="14">C</text>
+    <text x="${(A[0]+B[0])/2-6}" y="${A[1]+22}" fill="${FIG.textoSuave}" font-size="12">c</text>
+    <text x="${(A[0]+C[0])/2-16}" y="${(A[1]+C[1])/2}" fill="${FIG.textoSuave}" font-size="12">b</text>
+    <text x="${(B[0]+C[0])/2+8}" y="${(B[1]+C[1])/2}" fill="${FIG.textoSuave}" font-size="12">a</text>
+  `);
+}
+
+function figuraCiclo(anguloGraus){
+  const w=220, h=220, cx=110, cy=110, r=85;
+  const rad = anguloGraus * Math.PI/180;
+  const px = cx + r*Math.cos(rad), py = cy - r*Math.sin(rad);
+  return fSvg(`0 0 ${w} ${h}`, `
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${FIG.grid}" stroke-width="1.5"/>
+    <line x1="0" y1="${cy}" x2="${w}" y2="${cy}" stroke="${FIG.axis}" stroke-width="1.2"/>
+    <line x1="${cx}" y1="0" x2="${cx}" y2="${h}" stroke="${FIG.axis}" stroke-width="1.2"/>
+    <line x1="${cx}" y1="${cy}" x2="${px}" y2="${py}" stroke="${FIG.linha}" stroke-width="2.5"/>
+    <line x1="${px}" y1="${py}" x2="${px}" y2="${cy}" stroke="${FIG.destaque}" stroke-width="2" stroke-dasharray="4,3"/>
+    <line x1="${cx}" y1="${cy}" x2="${px}" y2="${cy}" stroke="#06d6a0" stroke-width="2" stroke-dasharray="4,3"/>
+    <circle cx="${px}" cy="${py}" r="4" fill="${FIG.linha}"/>
+    <text x="${px+8}" y="${py-8}" fill="${FIG.texto}" font-size="12">${anguloGraus}°</text>
+  `);
+}
+
+function figuraSequencia(termos, cor){
+  const w=320, h=160, margem=30;
+  const max = Math.max(...termos);
+  const larguraBarra = (w-2*margem) / termos.length - 10;
+  let barras = "";
+  termos.forEach((t,i)=>{
+    const altura = (t/max) * (h-50);
+    const x = margem + i*((w-2*margem)/termos.length);
+    const y = h-30-altura;
+    barras += `<rect x="${x}" y="${y}" width="${larguraBarra}" height="${altura}" fill="${cor||FIG.linha}" rx="3"/>
+               <text x="${x+larguraBarra/2}" y="${h-12}" fill="${FIG.texto}" font-size="12" text-anchor="middle">${t}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, barras);
+}
+
+function figuraMatriz(m){
+  const cell=54, w=m[0].length*cell+40, h=m.length*cell+40;
+  let cells = "";
+  m.forEach((row,i)=>{ row.forEach((val,j)=>{
+    cells += `<text x="${20+j*cell+cell/2}" y="${20+i*cell+cell/2+5}" fill="${FIG.texto}" font-size="18" text-anchor="middle">${val}</text>`;
+  }); });
+  return fSvg(`0 0 ${w} ${h}`, `
+    <path d="M18,15 L18,${h-15} M14,15 L22,15 M14,${h-15} L22,${h-15}" stroke="${FIG.linha}" stroke-width="2" fill="none"/>
+    <path d="M${w-18},15 L${w-18},${h-15} M${w-14},15 L${w-22},15 M${w-14},${h-15} L${w-22},${h-15}" stroke="${FIG.linha}" stroke-width="2" fill="none"/>
+    ${cells}
+  `);
+}
+
+function figuraSolidos(lista){
+  const w=340, h=140, passo=w/lista.length;
+  const icones = {
+    cubo:`<path d="M0,20 L34,20 L44,8 L44,-24 L10,-24 L0,-14 Z M0,20 L0,-14 L10,-24 M34,20 L44,8" fill="rgba(100,181,246,.15)" stroke="${FIG.linha}" stroke-width="1.8"/>`,
+    prisma:`<path d="M-4,20 L34,20 L44,10 L6,10 Z M-4,20 L-4,-14 L34,-14 L34,20 M34,-14 L44,-24 L44,10 M-4,-14 L6,-24 L44,-24 M6,-24 L6,10" fill="rgba(100,181,246,.12)" stroke="${FIG.linha}" stroke-width="1.6"/>`,
+    piramide:`<path d="M-6,20 L44,20 L26,-24 Z M-6,20 L26,-24 L44,20" fill="rgba(255,183,77,.12)" stroke="${FIG.destaque}" stroke-width="1.8"/>`,
+    cilindro:`<ellipse cx="20" cy="-14" rx="22" ry="8" fill="none" stroke="${FIG.linha}" stroke-width="1.8"/><path d="M-2,-14 L-2,16 M42,-14 L42,16" stroke="${FIG.linha}" stroke-width="1.8"/><ellipse cx="20" cy="16" rx="22" ry="8" fill="rgba(100,181,246,.1)" stroke="${FIG.linha}" stroke-width="1.8"/>`,
+    cone:`<ellipse cx="20" cy="16" rx="22" ry="8" fill="rgba(255,183,77,.1)" stroke="${FIG.destaque}" stroke-width="1.8"/><path d="M20,-26 L-2,16 M20,-26 L42,16" stroke="${FIG.destaque}" stroke-width="1.8" fill="none"/>`,
+    esfera:`<circle cx="20" cy="0" r="24" fill="rgba(100,181,246,.1)" stroke="${FIG.linha}" stroke-width="1.8"/><ellipse cx="20" cy="0" rx="24" ry="8" fill="none" stroke="${FIG.linha}" stroke-width="1" opacity=".6"/>`
+  };
+  let g = "";
+  lista.forEach((tipo,i)=>{
+    const cx = passo*i + passo/2;
+    g += `<g transform="translate(${cx-20},70)">${icones[tipo]||""}</g><text x="${cx}" y="130" fill="${FIG.texto}" font-size="12" text-anchor="middle">${tipo}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraPlanificacaoCubo(){
+  const s=44, margin=22;
+  const faces = [[1,0],[0,1],[1,1],[2,1],[1,2],[3,1]];
+  const cols = faces.map(f=>f[0]), rows = faces.map(f=>f[1]);
+  const minC=Math.min(...cols), maxC=Math.max(...cols);
+  const minR=Math.min(...rows), maxR=Math.max(...rows);
+  const w = (maxC-minC+1)*s + margin*2;
+  const h = (maxR-minR+1)*s + margin*2;
+  const ox = margin - minC*s, oy = margin - minR*s;
+  let g = "";
+  faces.forEach(([col,row])=>{
+    g += `<rect x="${ox+col*s}" y="${oy+row*s}" width="${s}" height="${s}" fill="rgba(100,181,246,.1)" stroke="${FIG.linha}" stroke-width="1.8"/>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraCombinatoria(tipo, elementos){
+  if(tipo === "venn"){
+    return fSvg("0 0 260 160", `
+      <circle cx="100" cy="80" r="60" fill="rgba(100,181,246,.12)" stroke="${FIG.linha}" stroke-width="2"/>
+      <circle cx="160" cy="80" r="60" fill="rgba(255,183,77,.12)" stroke="${FIG.destaque}" stroke-width="2"/>
+      <text x="70" y="45" fill="${FIG.linha}" font-size="13">${elementos[0]}</text>
+      <text x="175" y="45" fill="${FIG.destaque}" font-size="13">${elementos[1]}</text>
+    `);
+  }
+  // árvore de possibilidades simples para 3 elementos
+  const raiz=[130,20];
+  const nivel1 = elementos.map((_,i)=>[50+i*80,80]);
+  let linhas = "", nos = `<circle cx="${raiz[0]}" cy="${raiz[1]}" r="5" fill="${FIG.linha}"/>`;
+  nivel1.forEach((p,i)=>{
+    linhas += `<line x1="${raiz[0]}" y1="${raiz[1]}" x2="${p[0]}" y2="${p[1]}" stroke="${FIG.grid}" stroke-width="1.5"/>`;
+    nos += `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${FIG.destaque}"/><text x="${p[0]-8}" y="${p[1]+22}" fill="${FIG.texto}" font-size="12">${elementos[i]}</text>`;
+  });
+  return fSvg("0 0 260 130", linhas + nos);
+}
+
+function figuraEstatistica(tipo, params){
+  if(tipo === "pontos"){
+    const w=300, h=120, min=Math.min(...params.valores), max=Math.max(...params.valores);
+    const px = v => 30 + ((v-min)/(max-min||1))*(w-60);
+    let pontos = "", contagem = {};
+    params.valores.forEach(v=>{ contagem[v]=(contagem[v]||0)+1; });
+    let g = `<line x1="20" y1="${h-30}" x2="${w-20}" y2="${h-30}" stroke="${FIG.axis}" stroke-width="1.5"/>`;
+    Object.keys(contagem).forEach(v=>{
+      for(let k=0;k<contagem[v];k++){
+        g += `<circle cx="${px(Number(v))}" cy="${h-40-k*16}" r="6" fill="${FIG.linha}"/>`;
+      }
+      g += `<text x="${px(Number(v))}" y="${h-12}" fill="${FIG.texto}" font-size="12" text-anchor="middle">${v}</text>`;
+    });
+    return fSvg(`0 0 ${w} ${h}`, g);
+  }
+  // duas distribuições lado a lado (mesma média, dispersões diferentes)
+  const w=320, h=150;
+  const grupo = (valores, offsetX, cor) => {
+    const min=Math.min(...valores), max=Math.max(...valores);
+    let g = "";
+    valores.forEach((v,i)=>{
+      const x = offsetX + 20 + i*18;
+      const alturaBase = 100;
+      g += `<circle cx="${x}" cy="${alturaBase - (v-min)*8}" r="6" fill="${cor}"/>`;
+    });
+    return g;
+  };
+  return fSvg(`0 0 ${w} ${h}`, `
+    <line x1="10" y1="120" x2="${w-10}" y2="120" stroke="${FIG.axis}" stroke-width="1.5"/>
+    ${grupo(params.a, 0, FIG.linha)}
+    ${grupo(params.b, 150, FIG.destaque)}
+    <text x="50" y="140" fill="${FIG.linha}" font-size="12">${params.labelA||'Grupo A'}</text>
+    <text x="200" y="140" fill="${FIG.destaque}" font-size="12">${params.labelB||'Grupo B'}</text>
+  `);
+}
+
+function arrowV(x, y1, y2, cor){
+  // seta vertical de (x,y1) até (x,y2) — a ponta fica em y2
+  const dir = y2 > y1 ? 1 : -1;
+  return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${cor}" stroke-width="2.2"/>
+          <path d="M${x-5},${y2-dir*9} L${x+5},${y2-dir*9} L${x},${y2} Z" fill="${cor}"/>`;
+}
+
+function figuraRegraDeTres(o){
+  const w=340, h=190;
+  const x1=64, x2=170, xEq=250;
+  const yTitulo=24, y1=58, y2=118;
+  const v1A=o.colA.v1, v2A=o.colA.v2, v1B=o.colB.v1, v2B=o.colB.v2;
+
+  let equacao;
+  if(!o.inversa){
+    const prod = v1B*v2A, xVal = prod/v1A;
+    equacao = [`${v1A}/${v1B} = ${v2A}/x`, `${v1A} × x = ${v1B} × ${v2A}`, `${v1A}x = ${prod}`, `x = ${xVal}`];
+  } else {
+    const prod = v1A*v1B, xVal = prod/v2A;
+    equacao = [`${v1A} × ${v1B} = ${v2A} × x`, `${prod} = ${v2A}x`, `x = ${xVal}`];
+  }
+
+  const setaB = o.inversa ? arrowV(x2, y2-14, y1+14, FIG.destaque) : arrowV(x2, y1+14, y2-14, FIG.destaque);
+
+  return fSvg(`0 0 ${w} ${h}`, `
+    <text x="${x1}" y="${yTitulo}" fill="${FIG.texto}" font-size="13" font-weight="bold" text-anchor="middle">${o.colA.titulo}</text>
+    <text x="${x2}" y="${yTitulo}" fill="${FIG.texto}" font-size="13" font-weight="bold" text-anchor="middle">${o.colB.titulo}</text>
+    <line x1="${(x1+x2)/2}" y1="34" x2="${(x1+x2)/2}" y2="${y2+14}" stroke="${FIG.grid}" stroke-width="1"/>
+    <text x="${x1}" y="${y1}" fill="${FIG.linha}" font-size="16" text-anchor="middle">${v1A}</text>
+    <text x="${x2}" y="${y1}" fill="${FIG.destaque}" font-size="16" text-anchor="middle">${v1B}</text>
+    <text x="${x1}" y="${y2}" fill="${FIG.linha}" font-size="16" text-anchor="middle">${v2A}</text>
+    <text x="${x2}" y="${y2}" fill="${FIG.destaque}" font-size="16" text-anchor="middle">${v2B}</text>
+    ${arrowV(x1, y1+14, y2-14, FIG.linha)}
+    ${setaB}
+    ${equacao.map((linha,i)=>`<text x="${xEq}" y="${58+i*26}" fill="${FIG.texto}" font-size="13" text-anchor="middle" font-family="'IBM Plex Mono',monospace">${linha}</text>`).join("")}
+  `);
+}
+
+function passoFatoracao(x, y, exigirAmbos){
+  for(let p=2; p<=Math.max(x,y); p++){
+    const divX = x>1 && x%p===0;
+    const divY = y>1 && y%p===0;
+    if(exigirAmbos ? (divX && divY) : (divX || divY)) return p;
+  }
+  return null;
+}
+function escadaFatoracao(a, b, exigirAmbos){
+  const passos = [];
+  let x=a, y=b;
+  while(exigirAmbos ? true : (x!==1 || y!==1)){
+    const p = passoFatoracao(x, y, exigirAmbos);
+    if(!p) break;
+    passos.push({x,y,p});
+    x = (x>1 && x%p===0) ? x/p : x;
+    y = (y>1 && y%p===0) ? y/p : y;
+    if(exigirAmbos && x===1 && y===1) break;
+  }
+  return passos;
+}
+
+function figuraMmcMdc(a, b){
+  const passosMMC = escadaFatoracao(a, b, false);
+  const passosMDC = escadaFatoracao(a, b, true);
+  const mmcVal = passosMMC.reduce((acc,s)=>acc*s.p, 1);
+  const mdcVal = passosMDC.reduce((acc,s)=>acc*s.p, 1);
+  const rowH = 24;
+  const alturaMax = Math.max(passosMMC.length, passosMDC.length);
+  const h = 60 + alturaMax*rowH + 30;
+
+  function desenhar(passos, x0, cor, label, valor){
+    let g = `<text x="${x0}" y="24" fill="${cor}" font-size="14" font-weight="bold">${label}(${a},${b})</text>
+              <line x1="${x0+52}" y1="34" x2="${x0+52}" y2="${34+passos.length*rowH}" stroke="${FIG.grid}" stroke-width="1"/>`;
+    let y = 52;
+    passos.forEach(s=>{
+      g += `<text x="${x0}" y="${y}" fill="${FIG.texto}" font-size="13">${s.x} , ${s.y}</text>
+            <text x="${x0+62}" y="${y}" fill="${cor}" font-size="13">${s.p}</text>`;
+      y += rowH;
+    });
+    g += `<text x="${x0}" y="${y+10}" fill="${cor}" font-size="13" font-weight="bold">${label} = ${passos.map(s=>s.p).join('×')} = ${valor}</text>`;
+    return g;
+  }
+
+  return fSvg(`0 0 320 ${h}`, `
+    ${desenhar(passosMMC, 10, FIG.linha, "MMC", mmcVal)}
+    ${desenhar(passosMDC, 175, FIG.destaque, "MDC", mdcVal)}
+  `);
+}
+
+function expoenteUnicode(n){
+  const map = {"0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹"};
+  return n.toString().split("").map(d=>map[d]).join("");
+}
+
+function figuraPrimosCompostos(){
+  const primos = [2,3,5,7,11];
+  const compostos = [4,6,8,9,10,12];
+  const rowH = 30, dotR = 3.2, dotGap = 10;
+  const h = Math.max(primos.length, compostos.length) * rowH + 50;
+
+  let g = `<text x="20" y="24" fill="${FIG.linha}" font-size="14" font-weight="bold">primo</text>
+            <text x="180" y="24" fill="${FIG.destaque}" font-size="14" font-weight="bold">composto</text>`;
+
+  primos.forEach((n,i)=>{
+    const y = 55 + i*rowH;
+    let dots = "";
+    for(let d=0; d<n; d++){ dots += `<circle cx="${20+d*dotGap}" cy="${y}" r="${dotR}" fill="${FIG.linha}"/>`; }
+    g += dots + `<text x="${20+n*dotGap+10}" y="${y+4}" fill="${FIG.texto}" font-size="14">${n}</text>`;
+  });
+
+  compostos.forEach((n,i)=>{
+    const y = 55 + i*rowH;
+    // encontra um par de fatores para desenhar como grade
+    let a=null, b=null;
+    for(let f=2; f*f<=n; f++){ if(n%f===0){ a=f; b=n/f; } }
+    let dots = "";
+    for(let r=0; r<a; r++){
+      for(let c=0; c<b; c++){
+        dots += `<circle cx="${230+c*dotGap}" cy="${y-6+r*10}" r="${dotR}" fill="${FIG.destaque}"/>`;
+      }
+    }
+    g += `<text x="180" y="${y+4}" fill="${FIG.texto}" font-size="14">${n}</text>` + dots;
+  });
+
+  return fSvg(`0 0 340 ${h}`, g);
+}
+
+function figuraFatoracaoSimples(n){
+  const passos = [];
+  let x = n;
+  while(x !== 1){
+    let p = 2;
+    while(x % p !== 0) p++;
+    passos.push(p);
+    x = x / p;
+  }
+  const contagem = {};
+  passos.forEach(p => contagem[p] = (contagem[p]||0) + 1);
+  const fatoracaoTexto = Object.keys(contagem).sort((a,b)=>a-b)
+    .map(p => contagem[p] > 1 ? `${p}${expoenteUnicode(contagem[p])}` : `${p}`)
+    .join(" · ");
+
+  const rowH = 26, h = passos.length*rowH + 60;
+  let x0 = n, y = 40;
+  let g = "";
+  passos.forEach(p => {
+    const x1 = x0 / p;
+    g += `<text x="20" y="${y}" fill="${FIG.texto}" font-size="15" text-anchor="end">${x0}</text>
+          <line x1="30" y1="${y-16}" x2="30" y2="${y+8}" stroke="${FIG.grid}" stroke-width="1"/>
+          <text x="40" y="${y}" fill="${FIG.linha}" font-size="15">${p}</text>`;
+    x0 = x1;
+    y += rowH;
+  });
+  g += `<text x="20" y="${y}" fill="${FIG.texto}" font-size="15" text-anchor="end">1</text>`;
+  g += `<text x="20" y="${y+34}" fill="${FIG.destaque}" font-size="15" font-weight="bold">${n} = ${fatoracaoTexto}</text>`;
+  return fSvg(`0 0 220 ${h}`, g);
+}
+
+function figuraSomaAngulos(){
+  const A=[40,150], B=[220,150], C=[110,30];
+  function arco(vertice, p1, p2, raio, cor){
+    const ang = (p,c) => Math.atan2(p[1]-c[1], p[0]-c[0]);
+    const a1 = ang(p1, vertice), a2 = ang(p2, vertice);
+    const x1 = vertice[0]+raio*Math.cos(a1), y1 = vertice[1]+raio*Math.sin(a1);
+    const x2 = vertice[0]+raio*Math.cos(a2), y2 = vertice[1]+raio*Math.sin(a2);
+    return `<path d="M${x1},${y1} A${raio},${raio} 0 0 1 ${x2},${y2}" fill="none" stroke="${cor}" stroke-width="2"/>`;
+  }
+  return fSvg("0 0 260 210", `
+    <polygon points="${A.join(',')} ${B.join(',')} ${C.join(',')}" fill="rgba(100,181,246,.08)" stroke="${FIG.linha}" stroke-width="2.5"/>
+    ${arco(A,B,C,22,FIG.destaque)}
+    ${arco(B,A,C,22,FIG.destaque)}
+    ${arco(C,A,B,18,FIG.destaque)}
+    <text x="${A[0]-6}" y="${A[1]+22}" fill="${FIG.destaque}" font-size="13">α</text>
+    <text x="${B[0]-8}" y="${B[1]+22}" fill="${FIG.destaque}" font-size="13">β</text>
+    <text x="${C[0]-4}" y="${C[1]-10}" fill="${FIG.destaque}" font-size="13">γ</text>
+    <text x="70" y="195" fill="${FIG.texto}" font-size="14" font-weight="bold">α + β + γ = 180°</text>
+  `);
+}
+
+function figuraPitagoras(oposto, adjacente){
+  const escala = 24, margin = 20;
+  const hip = Math.sqrt(oposto*oposto + adjacente*adjacente);
+  const qOp = oposto*escala, qAdj = adjacente*escala;
+  const w = qAdj + qOp + margin*2 + 30;
+  const h = qOp + qAdj + margin*2 + 30;
+  const ox = margin + qOp, oy = h - margin - qOp;
+  const ax = ox, ay = oy - oposto*escala;
+  const bx = ox + adjacente*escala, by = oy;
+  return fSvg(`0 0 ${w} ${h}`, `
+    <rect x="${ox-qOp}" y="${ay-qOp}" width="${qOp}" height="${qOp}" fill="rgba(100,181,246,.14)" stroke="${FIG.linha}" stroke-width="1.5"/>
+    <text x="${ox-qOp/2}" y="${ay-qOp/2+5}" fill="${FIG.linha}" font-size="13" text-anchor="middle">${oposto}²</text>
+    <rect x="${ox}" y="${by}" width="${qAdj}" height="${qAdj}" fill="rgba(100,181,246,.14)" stroke="${FIG.linha}" stroke-width="1.5"/>
+    <text x="${ox+qAdj/2}" y="${by+qAdj/2+5}" fill="${FIG.linha}" font-size="13" text-anchor="middle">${adjacente}²</text>
+    <polygon points="${ox},${oy} ${ax},${ay} ${bx},${by}" fill="rgba(255,183,77,.1)" stroke="${FIG.destaque}" stroke-width="2.5"/>
+    <rect x="${ox}" y="${oy-14}" width="14" height="14" fill="none" stroke="${FIG.axis}" stroke-width="1.3"/>
+    <text x="${(ax+bx)/2+10}" y="${(ay+by)/2-8}" fill="${FIG.destaque}" font-size="13">${Math.round(hip*100)/100}²</text>
+  `);
+}
+
+function figuraRetanguloArea(base, altura){
+  const escala = 30, margin = 40;
+  const w = base*escala + margin*2, h = altura*escala + margin*2;
+  return fSvg(`0 0 ${w} ${h}`, `
+    <rect x="${margin}" y="${margin}" width="${base*escala}" height="${altura*escala}" fill="rgba(100,181,246,.14)" stroke="${FIG.linha}" stroke-width="2.5"/>
+    <text x="${margin+base*escala/2}" y="${h-14}" fill="${FIG.texto}" font-size="13" text-anchor="middle">base=${base}</text>
+    <text x="${margin+base*escala+10}" y="${margin+altura*escala/2+4}" fill="${FIG.texto}" font-size="13">altura=${altura}</text>
+    <text x="${margin+base*escala/2}" y="${margin+altura*escala/2+5}" fill="${FIG.destaque}" font-size="14" text-anchor="middle" font-weight="bold">A=${base*altura}</text>
+  `);
+}
+
+function figuraTrianguloCirculoArea(baseT, alturaT, raioC){
+  const escala = 16, margin = 20;
+  const areaT = (baseT*alturaT)/2, areaC = Math.round(Math.PI*raioC*raioC*100)/100;
+  const w = 300, h = 140;
+  const tx0=40, ty0=110, txAlt=tx0+baseT*escala/2, tyAlt=ty0-alturaT*escala;
+  const txDir=tx0+baseT*escala;
+  const cx=220, cy=80, r=raioC*escala;
+  return fSvg(`0 0 ${w} ${h}`, `
+    <polygon points="${tx0},${ty0} ${txDir},${ty0} ${txAlt},${tyAlt}" fill="rgba(100,181,246,.1)" stroke="${FIG.linha}" stroke-width="2"/>
+    <line x1="${txAlt}" y1="${tyAlt}" x2="${txAlt}" y2="${ty0}" stroke="${FIG.destaque}" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="${tx0}" y="${ty0+18}" fill="${FIG.texto}" font-size="11">b=${baseT}</text>
+    <text x="${txAlt+4}" y="${(tyAlt+ty0)/2}" fill="${FIG.destaque}" font-size="11">h=${alturaT}</text>
+    <text x="${tx0}" y="${ty0+34}" fill="${FIG.linha}" font-size="12" font-weight="bold">A=${areaT}</text>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="rgba(255,183,77,.1)" stroke="${FIG.destaque}" stroke-width="2"/>
+    <line x1="${cx}" y1="${cy}" x2="${cx+r}" y2="${cy}" stroke="${FIG.destaque}" stroke-width="1.5"/>
+    <text x="${cx+r/2-4}" y="${cy-6}" fill="${FIG.texto}" font-size="11">r=${raioC}</text>
+    <text x="${cx-20}" y="${cy+r+22}" fill="${FIG.destaque}" font-size="12" font-weight="bold">A≈${areaC}</text>
+  `);
+}
+
+function figuraLinhaSetor(){
+  const w=320, h=150;
+  const linhaPts = [[20,90],[70,60],[120,70],[170,30]].map(p=>p.join(",")).join(" ");
+  const setores = [
+    { pct:50, cor:FIG.linha },
+    { pct:30, cor:FIG.destaque },
+    { pct:20, cor:"#06d6a0" }
+  ];
+  const cx=250, cy=80, r=45;
+  let anguloAtual = -90, fatias = "";
+  setores.forEach(s => {
+    const anguloFatia = (s.pct/100)*360;
+    const a1 = anguloAtual*Math.PI/180, a2 = (anguloAtual+anguloFatia)*Math.PI/180;
+    const x1 = cx+r*Math.cos(a1), y1 = cy+r*Math.sin(a1);
+    const x2 = cx+r*Math.cos(a2), y2 = cy+r*Math.sin(a2);
+    const largeArc = anguloFatia > 180 ? 1 : 0;
+    fatias += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${largeArc} 1 ${x2},${y2} Z" fill="${s.cor}" opacity=".8"/>`;
+    anguloAtual += anguloFatia;
+  });
+  return fSvg(`0 0 ${w} ${h}`, `
+    <text x="20" y="18" fill="${FIG.texto}" font-size="12" font-weight="bold">gráfico de linha</text>
+    <line x1="15" y1="105" x2="185" y2="105" stroke="${FIG.axis}" stroke-width="1.2"/>
+    <polyline points="${linhaPts}" fill="none" stroke="${FIG.linha}" stroke-width="2.5"/>
+    ${[[20,90],[70,60],[120,70],[170,30]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${FIG.linha}"/>`).join("")}
+    <text x="210" y="18" fill="${FIG.texto}" font-size="12" font-weight="bold">gráfico de setores</text>
+    ${fatias}
+    <text x="${cx-40}" y="${h-8}" fill="${FIG.linha}" font-size="11">■ 50%</text>
+    <text x="${cx}" y="${h-8}" fill="${FIG.destaque}" font-size="11">■ 30%</text>
+    <text x="${cx+40}" y="${h-8}" fill="#06d6a0" font-size="11">■ 20%</text>
+  `);
+}
+
+function figuraBlocosPosicional(p){
+  const centenas=p.centenas||0, dezenas=p.dezenas||0, unidades=p.unidades||0;
+  const y=20; let x=14, g="";
+  for(let i=0;i<centenas;i++){
+    g += `<rect x="${x}" y="${y}" width="36" height="36" rx="4" fill="${FIG.linha}" opacity=".2" stroke="${FIG.linha}" stroke-width="2.2"/>`;
+    x += 46;
+  }
+  if(centenas) x += 10;
+  for(let i=0;i<dezenas;i++){
+    g += `<rect x="${x}" y="${y}" width="8" height="36" rx="2" fill="${FIG.destaque}" opacity=".8" stroke="${FIG.destaque}" stroke-width="1.4"/>`;
+    x += 13;
+  }
+  if(dezenas) x += 10;
+  let ux=x, uy=y+24, count=0;
+  for(let i=0;i<unidades;i++){
+    g += `<rect x="${ux}" y="${uy}" width="10" height="10" rx="2" fill="${FIG.terciaria}" opacity=".85" stroke="${FIG.terciaria}" stroke-width="1.2"/>`;
+    count++; ux+=14;
+    if(count%5===0){ ux=x; uy+=14; }
+  }
+  const w = Math.max(x+5*14+30, 220);
+  const h = y+36+50;
+  const legenda = (centenas?centenas+' centena(s) + ':'') + dezenas+' dezena(s) + '+unidades+' unidade(s)';
+  return fSvg(`0 0 ${w} ${h}`, g + `<text x="14" y="${h-12}" fill="${FIG.texto}" font-size="12">${legenda}</text>`);
+}
+
+function figuraComparar(a,b){
+  const simbolo = a>b ? '>' : (a<b ? '<' : '=');
+  return fSvg("0 0 260 130", `
+    <rect x="20" y="25" width="80" height="80" rx="16" fill="${FIG.linha}" opacity=".15" stroke="${FIG.linha}" stroke-width="2.5"/>
+    <text x="60" y="78" fill="${FIG.linha}" font-size="30" text-anchor="middle" font-weight="bold">${a}</text>
+    <text x="130" y="78" fill="${FIG.texto}" font-size="28" text-anchor="middle" font-weight="bold">${simbolo}</text>
+    <rect x="160" y="25" width="80" height="80" rx="16" fill="${FIG.destaque}" opacity=".15" stroke="${FIG.destaque}" stroke-width="2.5"/>
+    <text x="200" y="78" fill="${FIG.destaque}" font-size="30" text-anchor="middle" font-weight="bold">${b}</text>
+  `);
+}
+
+function figuraContagem(tipo, a, b){
+  let g="", x=20;
+  if(tipo === "soma"){
+    for(let i=0;i<a;i++){ g += `<circle cx="${x}" cy="35" r="7" fill="${FIG.linha}" opacity=".85"/>`; x+=18; }
+    for(let i=0;i<b;i++){ g += `<circle cx="${x}" cy="35" r="7" fill="${FIG.destaque}" opacity=".85"/>`; x+=18; }
+    g += `<text x="20" y="72" fill="${FIG.texto}" font-size="14" font-weight="bold">${a} + ${b} = ${a+b}</text>`;
+  } else {
+    for(let i=0;i<a;i++){
+      const removido = i >= (a-b);
+      g += `<circle cx="${x}" cy="35" r="7" fill="${FIG.linha}" opacity="${removido?0.25:0.9}"/>`;
+      if(removido){ g += `<line x1="${x-7}" y1="28" x2="${x+7}" y2="42" stroke="${FIG.destaque}" stroke-width="2.2"/>`; }
+      x += 18;
+    }
+    g += `<text x="20" y="72" fill="${FIG.texto}" font-size="14" font-weight="bold">${a} - ${b} = ${a-b}</text>`;
+  }
+  return fSvg(`0 0 ${Math.max(260, x+20)} 90`, g);
+}
+
+function figuraGruposIguais(grupos, porGrupo){
+  const w = grupos*70+20, h=110;
+  const cores=[FIG.linha, FIG.destaque, FIG.terciaria];
+  let g="";
+  for(let gi=0; gi<grupos; gi++){
+    const gx = 20+gi*70;
+    for(let i=0;i<porGrupo;i++){
+      const col=i%3, row=Math.floor(i/3);
+      g += `<circle cx="${gx+col*16}" cy="${30+row*16}" r="6" fill="${cores[gi%cores.length]}" opacity=".85"/>`;
+    }
+    g += `<rect x="${gx-6}" y="20" width="52" height="${Math.ceil(porGrupo/3)*16+10}" rx="6" fill="none" stroke="${FIG.axis}" stroke-width="1.3" stroke-dasharray="3,3"/>`;
+  }
+  g += `<text x="20" y="${h-14}" fill="${FIG.texto}" font-size="13" font-weight="bold">${grupos} grupos de ${porGrupo} = ${grupos*porGrupo}</text>`;
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraPizza(partes, pintadas){
+  const cx=80, cy=75, r=62;
+  let g="";
+  for(let i=0;i<partes;i++){
+    const a1=(i/partes)*2*Math.PI-Math.PI/2, a2=((i+1)/partes)*2*Math.PI-Math.PI/2;
+    const x1=cx+r*Math.cos(a1), y1=cy+r*Math.sin(a1);
+    const x2=cx+r*Math.cos(a2), y2=cy+r*Math.sin(a2);
+    const large = (a2-a1) > Math.PI ? 1 : 0;
+    const cor = i < pintadas ? FIG.linha : "none";
+    g += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2} Z" fill="${cor}" opacity=".8" stroke="${FIG.texto}" stroke-width="1.6"/>`;
+  }
+  return fSvg("0 0 160 170", g + `<text x="80" y="158" fill="${FIG.texto}" font-size="14" text-anchor="middle" font-weight="bold">${pintadas}/${partes}</text>`);
+}
+
+function figuraBarraFracao(partes, pintadas, rotulo){
+  const w=240, h=76, barW=200, barH=40, x0=20, y0=15;
+  const cellW = barW/partes;
+  let g="";
+  for(let i=0;i<partes;i++){
+    g += `<rect x="${x0+i*cellW}" y="${y0}" width="${cellW}" height="${barH}" fill="${i<pintadas?FIG.linha:'none'}" opacity=".8" stroke="${FIG.texto}" stroke-width="1.6"/>`;
+  }
+  return fSvg(`0 0 ${w} ${h}`, g + `<text x="${x0}" y="${y0+barH+22}" fill="${FIG.texto}" font-size="13">${rotulo}</text>`);
+}
+
+function figuraCompararFracoes(lista){
+  const w=260, h=155;
+  let g="";
+  lista.forEach((fr,i)=>{
+    const [num,den] = fr;
+    const cx=70+i*130, cy=58, r=45;
+    for(let k=0;k<den;k++){
+      const a1=(k/den)*2*Math.PI-Math.PI/2, a2=((k+1)/den)*2*Math.PI-Math.PI/2;
+      const x1=cx+r*Math.cos(a1), y1=cy+r*Math.sin(a1);
+      const x2=cx+r*Math.cos(a2), y2=cy+r*Math.sin(a2);
+      const large=(a2-a1)>Math.PI?1:0;
+      const cor = k<num ? (i===0?FIG.linha:FIG.destaque) : "none";
+      g += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2} Z" fill="${cor}" opacity=".8" stroke="${FIG.texto}" stroke-width="1.4"/>`;
+    }
+    g += `<text x="${cx}" y="128" fill="${FIG.texto}" font-size="14" text-anchor="middle" font-weight="bold">${num}/${den}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function iconeFormaPlana(tipo, cor){
+  switch(tipo){
+    case "quadrado": return `<rect x="-18" y="-18" width="36" height="36" rx="4" fill="${cor}" opacity=".22" stroke="${cor}" stroke-width="3"/>`;
+    case "retangulo": return `<rect x="-24" y="-14" width="48" height="28" rx="4" fill="${cor}" opacity=".22" stroke="${cor}" stroke-width="3"/>`;
+    case "circulo": return `<circle cx="0" cy="0" r="20" fill="${cor}" opacity=".22" stroke="${cor}" stroke-width="3"/>`;
+    case "triangulo": return `<polygon points="0,-22 -20,16 20,16" fill="${cor}" opacity=".22" stroke="${cor}" stroke-width="3"/>`;
+    default: return "";
+  }
+}
+
+function figuraFormasPlanas(lista){
+  const cores=[FIG.linha, FIG.destaque, FIG.terciaria, FIG.linha];
+  const w = lista.length*100+20, h=110;
+  let g="";
+  lista.forEach((tipo,i)=>{
+    const cx = 60+i*100;
+    g += `<g transform="translate(${cx},48)">${iconeFormaPlana(tipo,cores[i%cores.length])}</g>
+          <text x="${cx}" y="95" fill="${FIG.texto}" font-size="13" text-anchor="middle">${tipo}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraRelogio(hora, minuto){
+  const cx=80, cy=80, r=62;
+  const anguloMin = (minuto/60)*360 - 90;
+  const anguloHora = ((hora%12)/12)*360 + (minuto/60)*30 - 90;
+  const ponteiro = (ang,comp,cor,largura) => {
+    const rad = ang*Math.PI/180;
+    const x = cx+comp*Math.cos(rad), y = cy+comp*Math.sin(rad);
+    return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${cor}" stroke-width="${largura}" stroke-linecap="round"/>`;
+  };
+  let marcas = "";
+  for(let i=0;i<12;i++){
+    const ang = i*30*Math.PI/180 - Math.PI/2;
+    const x1=cx+(r-8)*Math.cos(ang), y1=cy+(r-8)*Math.sin(ang);
+    const x2=cx+r*Math.cos(ang), y2=cy+r*Math.sin(ang);
+    marcas += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${FIG.axis}" stroke-width="2"/>`;
+  }
+  return fSvg("0 0 160 170", `
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${FIG.texto}" stroke-width="3"/>
+    ${marcas}
+    ${ponteiro(anguloHora, 32, FIG.texto, 5)}
+    ${ponteiro(anguloMin, 48, FIG.linha, 3.5)}
+    <circle cx="${cx}" cy="${cy}" r="4" fill="${FIG.destaque}"/>
+    <text x="${cx}" y="${cy+r+24}" fill="${FIG.texto}" font-size="14" text-anchor="middle" font-weight="bold">${String(hora).padStart(2,'0')}:${String(minuto).padStart(2,'0')}</text>
+  `);
+}
+
+function figuraComparaMedidas(itens){
+  const max = Math.max(...itens.map(i=>i.valor));
+  const barMax=150, rowH=40, w=290;
+  const h = itens.length*rowH+20;
+  const cores=[FIG.linha, FIG.destaque, FIG.terciaria];
+  let g="";
+  itens.forEach((it,i)=>{
+    const y=20+i*rowH;
+    const largura = (it.valor/max)*barMax;
+    g += `<text x="10" y="${y+14}" fill="${FIG.texto}" font-size="12">${it.label}</text>
+          <rect x="100" y="${y}" width="${largura}" height="18" rx="4" fill="${cores[i%cores.length]}" opacity=".8"/>
+          <text x="${100+largura+8}" y="${y+14}" fill="${FIG.texto}" font-size="12" font-weight="bold">${it.valor}${it.unidade}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraTabela(cabecalho, linhas){
+  const rowH=26, w=240, h=(linhas.length+1)*rowH+20;
+  let g = `<line x1="10" y1="${rowH+14}" x2="${w-10}" y2="${rowH+14}" stroke="${FIG.axis}" stroke-width="1.3"/>
+           <text x="20" y="24" fill="${FIG.texto}" font-size="13" font-weight="bold">${cabecalho[0]}</text>
+           <text x="150" y="24" fill="${FIG.texto}" font-size="13" font-weight="bold">${cabecalho[1]}</text>`;
+  linhas.forEach((l,i)=>{
+    const y = 24+(i+1)*rowH;
+    g += `<text x="20" y="${y}" fill="${FIG.textoSuave}" font-size="13">${l[0]}</text>
+          <text x="150" y="${y}" fill="${FIG.linha}" font-size="13" font-weight="bold">${l[1]}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraBarrasNomeadas(itens){
+  const w = itens.length*70+20, h=170;
+  const max = Math.max(...itens.map(i=>i.valor));
+  const cores=[FIG.linha, FIG.destaque, FIG.terciaria];
+  let g = `<line x1="10" y1="130" x2="${w-10}" y2="130" stroke="${FIG.axis}" stroke-width="1.3"/>`;
+  itens.forEach((it,i)=>{
+    const altura = (it.valor/max)*90;
+    const x = 20+i*70;
+    g += `<rect x="${x}" y="${130-altura}" width="40" height="${altura}" rx="4" fill="${cores[i%cores.length]}" opacity=".85"/>
+          <text x="${x+20}" y="145" fill="${FIG.texto}" font-size="12" text-anchor="middle">${it.nome}</text>
+          <text x="${x+20}" y="${130-altura-8}" fill="${FIG.texto}" font-size="12" text-anchor="middle" font-weight="bold">${it.valor}</text>`;
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function figuraPictograma(itens){
+  const rowH=34, w=280, h=itens.length*rowH+20;
+  let g="";
+  itens.forEach((it,i)=>{
+    const y=24+i*rowH;
+    g += `<text x="10" y="${y+5}" fill="${FIG.texto}" font-size="12">${it.nome}</text>`;
+    let x=110;
+    for(let k=0;k<it.qtd;k++){
+      g += `<circle cx="${x}" cy="${y}" r="6" fill="${FIG.linha}" opacity=".85"/>`;
+      x += 16;
+    }
+  });
+  return fSvg(`0 0 ${w} ${h}`, g);
+}
+
+function gerarFigura(fig){
+  if(!fig) return "";
+  switch(fig.tipo){
+    case "funcao": return figuraFuncao(fig.sub, fig.params);
+    case "plano": return figuraPlano(fig.params);
+    case "triangulo": return figuraTriangulo(fig.params);
+    case "ciclo": return figuraCiclo(fig.params.angulo);
+    case "sequencia": return figuraSequencia(fig.params.termos, fig.params.cor);
+    case "matriz": return figuraMatriz(fig.params.matriz);
+    case "solidos": return figuraSolidos(fig.params.lista);
+    case "planificacao-cubo": return figuraPlanificacaoCubo();
+    case "combinatoria": return figuraCombinatoria(fig.sub, fig.params.elementos);
+    case "estatistica": return figuraEstatistica(fig.sub, fig.params);
+    case "regra-de-tres": return figuraRegraDeTres(fig.params);
+    case "mmc-mdc": return figuraMmcMdc(fig.params.a, fig.params.b);
+    case "fatoracao-simples": return figuraFatoracaoSimples(fig.params.n);
+    case "primos-compostos": return figuraPrimosCompostos();
+    case "soma-angulos": return figuraSomaAngulos();
+    case "pitagoras": return figuraPitagoras(fig.params.oposto, fig.params.adjacente);
+    case "retangulo-area": return figuraRetanguloArea(fig.params.base, fig.params.altura);
+    case "triangulo-circulo-area": return figuraTrianguloCirculoArea(fig.params.baseT, fig.params.alturaT, fig.params.raioC);
+    case "linha-setor": return figuraLinhaSetor();
+    case "blocos-posicional": return figuraBlocosPosicional(fig.params);
+    case "comparar": return figuraComparar(fig.params.a, fig.params.b);
+    case "contagem": return figuraContagem(fig.sub, fig.params.a, fig.params.b);
+    case "grupos-iguais": return figuraGruposIguais(fig.params.grupos, fig.params.porGrupo);
+    case "pizza": return figuraPizza(fig.params.partes, fig.params.pintadas);
+    case "barra-fracao": return figuraBarraFracao(fig.params.partes, fig.params.pintadas, fig.params.rotulo);
+    case "comparar-fracoes": return figuraCompararFracoes(fig.params.lista);
+    case "formas-planas": return figuraFormasPlanas(fig.params.lista);
+    case "relogio": return figuraRelogio(fig.params.hora, fig.params.minuto);
+    case "compara-medidas": return figuraComparaMedidas(fig.params.itens);
+    case "tabela": return figuraTabela(fig.params.cabecalho, fig.params.linhas);
+    case "barras-nomeadas": return figuraBarrasNomeadas(fig.params.itens);
+    case "pictograma": return figuraPictograma(fig.params.itens);
+    default: return "";
+  }
+}
+
+/* ---------- MOTOR DE QUIZ (genérico — usado na lição e na revisão) ---------- */
+function runQuiz(mount, perguntas, callbacks){
   let idx = 0;
   let acertos = 0;
-  const mount = document.getElementById("quiz-mount");
+  const onEach = (callbacks && callbacks.onEach) || function(){};
+  const onComplete = (callbacks && callbacks.onComplete) || function(){};
 
   function draw(){
-    if(idx >= licao.quiz.length){
-      mount.innerHTML = `
-        <div class="quiz-done">
-          <div class="big">${acertos === licao.quiz.length ? '🏆' : '✅'}</div>
-          <h4 style="margin-top:8px;">Você acertou ${acertos} de ${licao.quiz.length}</h4>
-          <p style="opacity:.7; margin-top:6px; font-size:.9rem;">${acertos === licao.quiz.length ? 'Mandou muito bem!' : 'Continue praticando, você está no caminho certo.'}</p>
-        </div>
-      `;
+    if(idx >= perguntas.length){
+      onComplete(acertos, perguntas.length);
       return;
     }
-    const q = licao.quiz[idx];
+    const q = perguntas[idx];
+    const isAberta = q.tipo === "aberta";
+
     mount.innerHTML = `
       <div class="quiz-card">
+        ${isAberta ? '<div class="quiz-tag-aberta">✏️ resposta aberta</div>' : ''}
+        ${q.dificuldade === 'dificil' ? '<div class="quiz-tag-desafio">🔥 desafio</div>' : ''}
         <div class="quiz-q">${q.pergunta}</div>
-        ${q.opcoes.map((op,i) => `<button class="quiz-opt" data-i="${i}">${op}</button>`).join("")}
+        ${isAberta
+          ? `<div class="quiz-input-row">
+               <input type="text" class="quiz-input" id="quiz-aberta-input" placeholder="Digite sua resposta" autocomplete="off">
+               <button class="btn-primary" id="quiz-aberta-confirmar">Confirmar</button>
+             </div>`
+          : q.opcoes.map((op,i) => `<button class="quiz-opt" data-i="${i}">${op}</button>`).join("")}
         <div class="quiz-feedback" id="quiz-feedback"></div>
         <div class="quiz-progress">
-          ${licao.quiz.map((_,i)=>`<div class="quiz-dot ${i<idx?'done':''}"></div>`).join("")}
+          ${perguntas.map((_,i)=>`<div class="quiz-dot ${i<idx?'done':''}"></div>`).join("")}
         </div>
       </div>
     `;
-    mount.querySelectorAll(".quiz-opt").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const chosen = parseInt(btn.dataset.i, 10);
-        const correct = chosen === q.correta;
-        if(correct) acertos++;
-        mount.querySelectorAll(".quiz-opt").forEach(b => {
-          b.disabled = true;
-          const bi = parseInt(b.dataset.i, 10);
-          if(bi === q.correta) b.classList.add("correct");
-          else if(bi === chosen) b.classList.add("wrong");
-        });
-        const fb = document.getElementById("quiz-feedback");
-        fb.textContent = (correct ? "Isso mesmo! " : "Quase — ") + q.explicacao;
-        fb.classList.add("show");
 
-        const nextBtn = document.createElement("button");
-        nextBtn.className = "btn-primary";
-        nextBtn.style.marginTop = "14px";
-        nextBtn.textContent = idx === licao.quiz.length - 1 ? "Ver resultado" : "Próxima pergunta →";
-        nextBtn.onclick = () => { idx++; draw(); };
-        mount.querySelector(".quiz-card").appendChild(nextBtn);
-      }, { once:true });
-    });
+    function afterAnswer(correct){
+      if(correct) acertos++;
+      onEach(idx, correct, q);
+      const fb = document.getElementById("quiz-feedback");
+      fb.textContent = (correct ? "Isso mesmo! " : "Quase — ") + q.explicacao;
+      fb.classList.add("show");
+
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "btn-primary";
+      nextBtn.style.marginTop = "14px";
+      nextBtn.textContent = idx === perguntas.length - 1 ? "Ver resultado" : "Próxima pergunta →";
+      nextBtn.onclick = () => { idx++; draw(); };
+      mount.querySelector(".quiz-card").appendChild(nextBtn);
+    }
+
+    if(isAberta){
+      const input = document.getElementById("quiz-aberta-input");
+      const confirmar = document.getElementById("quiz-aberta-confirmar");
+      const submit = () => {
+        confirmar.disabled = true;
+        input.disabled = true;
+        const valor = normalizarTexto(input.value);
+        const correct = q.resposta.some(r => normalizarTexto(r) === valor);
+        afterAnswer(correct);
+      };
+      confirmar.addEventListener("click", submit, { once:true });
+      input.addEventListener("keydown", e => { if(e.key === "Enter"){ submit(); } }, { once:true });
+    } else {
+      mount.querySelectorAll(".quiz-opt").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const chosen = parseInt(btn.dataset.i, 10);
+          const correct = chosen === q.correta;
+          mount.querySelectorAll(".quiz-opt").forEach(b => {
+            b.disabled = true;
+            const bi = parseInt(b.dataset.i, 10);
+            if(bi === q.correta) b.classList.add("correct");
+            else if(bi === chosen) b.classList.add("wrong");
+          });
+          afterAnswer(correct);
+        }, { once:true });
+      });
+    }
   }
   draw();
+}
+
+/* ---------- QUIZ DE UMA LIÇÃO ---------- */
+function mountQuiz(licao){
+  const mount = document.getElementById("quiz-mount");
+  runQuiz(mount, licao.quiz, {
+    onComplete: (acertos, total) => {
+      state.completedLicoes.add(licao.id);
+      mount.innerHTML = `
+        <div class="quiz-done">
+          <div class="big">${acertos === total ? '🏆' : '✅'}</div>
+          <h4 style="margin-top:8px;">Você acertou ${acertos} de ${total}</h4>
+          <p style="opacity:.7; margin-top:6px; font-size:.9rem;">${acertos === total ? 'Mandou muito bem! Lição concluída.' : 'Lição concluída — continue praticando.'}</p>
+        </div>
+      `;
+    }
+  });
+}
+
+/* ---------- REVISÃO RÁPIDA ---------- */
+function renderRevisao(app, materiaId, nivelId){
+  const nivel = nivelById(nivelId);
+  const materia = materiaById(materiaId);
+  if(!nivel || !materia){ renderHome(app); return; }
+  document.body.setAttribute("data-theme", nivel.tema);
+
+  // junta perguntas de todas as lições da trilha (dentro da mesma disciplina), guardando de qual lição vieram
+  let banco = [];
+  licoesByMateriaNivel(materiaId, nivelId).forEach(l => {
+    l.quiz.forEach(q => banco.push({ ...q, licaoId:l.id, licaoTitulo:l.titulo }));
+  });
+  // embaralha e escolhe até 8 perguntas
+  for(let i = banco.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i+1));
+    [banco[i], banco[j]] = [banco[j], banco[i]];
+  }
+  const perguntas = banco.slice(0, Math.min(8, banco.length));
+  const erradas = [];
+
+  app.innerHTML = `
+    <div class="topbar wrap">
+      <div class="brand" onclick="navigate('/')"><span class="brand-dot"></span> Trilhas de Aprendizado</div>
+      <div class="crumbs"><a onclick="navigate('materia/${materiaId}/nivel/${nivelId}')">← ${nivel.titulo}</a></div>
+    </div>
+    <div class="page wrap">
+      <div class="licao-body">
+        <div class="level-tag">${materia.titulo} · ${nivel.titulo}</div>
+        <h1 style="margin-top:6px;">⚡ Revisão rápida</h1>
+        <div class="revisao-intro">
+          <p style="opacity:.85; line-height:1.5;">Uma mistura de ${perguntas.length} perguntas de vários módulos desta trilha, pra testar o que você já sabe antes de uma prova.</p>
+        </div>
+        <div class="licao-section">
+          <div id="revisao-mount"></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  if(!perguntas.length){
+    document.getElementById("revisao-mount").innerHTML = `<p style="opacity:.7;">Ainda não há perguntas suficientes nesta trilha.</p>`;
+    return;
+  }
+
+  const mount = document.getElementById("revisao-mount");
+  runQuiz(mount, perguntas, {
+    onEach: (idx, correct, q) => { if(!correct) erradas.push(q); },
+    onComplete: (acertos, total) => {
+      mount.innerHTML = `
+        <div class="quiz-done">
+          <div class="big">${acertos === total ? '🏆' : '📚'}</div>
+          <h4 style="margin-top:8px;">Você acertou ${acertos} de ${total}</h4>
+        </div>
+        ${erradas.length ? `
+          <div style="margin-top:18px;">
+            <h3 style="font-size:.85rem; text-transform:uppercase; letter-spacing:.07em; opacity:.65; margin-bottom:6px;">Vale revisar</h3>
+            ${[...new Map(erradas.map(e=>[e.licaoId,e])).values()].map(e => `
+              <div class="revisao-summary-item mod-card" onclick="navigate('licao/${e.licaoId}')">
+                <span>📖</span><span>${e.licaoTitulo}</span>
+              </div>
+            `).join("")}
+          </div>
+        ` : ""}
+      `;
+    }
+  });
 }
 </script>
 </body>
